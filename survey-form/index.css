@@ -1,0 +1,441 @@
+ html {
+     box-sizing: border-box;
+ }
+ *, 
+ *:after,
+ *:before {
+     box-sizing: inherit;
+    accent-color: var(--color);
+     --input-padding: 15px 20px;
+     --boder-radius: 5px;
+     --font-size: 1.9em;
+     --border-width: 3px;
+     --margin: 10px 20px;
+     --color: rgb(24, 51, 55);
+     --border-color:rgb(173, 221, 234);
+     --bckcolor: rgb(207, 241, 249);
+ }
+
+ body {
+     font-size: 10px;
+     margin: auto;
+     background-color: var(--bckcolor)
+ }
+
+ main {
+     width: 60vw;
+     margin: auto;
+ }
+ 
+ article {
+     width: 100%;
+     background-color: #fff;
+ }
+ #description {
+     display: block;
+     width: 50vw;
+     font-size: var(--font-size);
+     margin: 40px auto;
+     line-height: 1.6;
+     letter-spacing: 1px;
+     background-color: #fff;
+
+ }
+
+ form {
+     color: var(--color);
+     margin: 50px;
+     border: 6px rgb(126, 183, 197) solid;
+     background-color: #fff;
+    
+ }
+ form > div {
+     margin: auto;
+     padding-left: 20px;
+ }
+
+ form h1 {
+     color: var(--color);
+     font-size: 3em;
+     letter-spacing: 1.3px;
+     text-align: center;
+     padding: 40px;
+     margin-bottom: 20px;
+     border-bottom: 1px solid rgb(186, 186, 188);
+ }
+
+
+ /* name label */
+ .personal-details {
+     position: relative;
+     display: flex;
+     border: none;
+    
+ }
+ .personal-details > legend {
+    margin: var(--margin);
+    font-size: 1.4em;
+ }
+
+ #name-label,
+ #email-label{
+    font-size: 1.9em;
+    padding: 10px;
+    margin-left: 10px;
+ }
+
+
+#date-label,
+#number-label {
+    font-size: 1.9em;
+    margin-bottom: 10px;
+}
+
+  #email-label > input,
+  #name-label > input {
+    width: 300px;
+     padding: var(--input-padding);
+     margin: 10px 20px;
+     border-radius: var(--boder-radius); 
+    border-color: var(--border-color);
+ }
+
+ .number {
+     position: relative;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+ }
+
+ .store-number,
+ #location {
+     display: flex;
+     flex-direction: column;
+     margin: var(--margin);
+ }
+ .date {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+    margin: var(--margin);
+    
+ }
+ .store-number > input,
+ .date > input{
+     width: 300px;
+     padding: var(--input-padding);
+     border-radius: var(--boder-radius);
+     /* border-width: var(--border-width); */
+  
+ }
+
+ input {
+    border-color: var(--border-color);
+ }
+  
+.date > input {
+    margin-right: 20px;
+
+}
+
+#location > input {
+    padding: var(--input-padding);
+    width: 300px;
+    border-radius: var(--boder-radius);
+    border-width: var(--border-width);
+    margin-bottom: 20px;
+}
+
+#location > label {
+    font-size: var(--font-size);
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+
+#location > legend {
+    font-size: 1.4em;
+}
+
+fieldset {
+    border: none;
+}
+
+.satisfaction {
+    font-size: var(--font-size);
+}
+.satisfaction > p >label {
+    margin-left: 10px;
+}
+
+.satisfaction > p > input[type="radio"],
+.part-2 {
+   font-family: "fontAwsome";
+   /* accent-color: rgb(88, 42, 42); */
+   width: 14px;
+   height: 14px;
+}
+
+
+/* Table */
+
+table {
+    width: 70%;
+    margin-right: 20px 10px;
+    padding: 20px 10px;
+    /* border-collapse: collapse; */
+
+    /* for getting rid of space in between cells. */
+    border-spacing: 0;
+    
+}
+caption > strong {
+    font-size: var(--font-size);
+}
+
+/* border radius */
+thead > tr > :last-child {
+    border-top-right-radius: var(--boder-radius);
+}
+.bdl {
+    border-bottom-left-radius: var(--boder-radius);
+}
+.bdr {
+    border-bottom-right-radius: var(--boder-radius);
+}
+thead > tr > :first-child {
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+    background-color: #fff;
+    
+}
+
+thead > tr > th {
+    
+    background-color: var(--color);
+    font-size: 1.4em;
+    width: 10px;
+    font-weight: normal;
+    padding: 20px ;
+    border-top: 0.1px var(--border-color) solid;
+    border-left: 1px var(--border-color) solid;
+    border-bottom: 0.1px var(--border-color) solid;
+    background-color: var(--bckcolor);
+    text-align: center;
+}
+
+/* border right */
+th {
+    text-align: center;
+}
+thead > tr > :last-child,
+tbody > tr> :last-child {
+    
+   /* border-right: var(--border-width) solid var(border-color) ; */
+   border-right: var(--border-width) solid var(--border-color);
+}
+
+tbody > tr > td {
+/* border-top: 1px var(--color) solid; */
+border-left: 1px var(--border-color) solid;
+border-bottom: 1px var(--border-color) solid;
+padding: 10px 30px;
+
+}
+
+tbody > tr > :first-child {
+    background-color: var(--bckcolor);
+    /* width: 30px; */
+    /* padding-right: 100px; */
+    padding: 20px 30px;
+    padding-top: 10px;
+    font-size: 1.4em;
+    letter-spacing: 1px;
+    border-top: 1px var(--border-color) solid;
+
+    /* for place words inline on a table cell */
+    white-space: nowrap; 
+    overflow: hidden;
+}
+
+#very-poor{
+    
+    /* border-collapse:separate; */
+    border-top-left-radius: 5px;
+    /* color: red; */
+} 
+
+.text-area> legend {
+    font-size: 1.6em;
+}
+textarea {
+    width: 50vw;
+    height: 150px;
+    padding: 10px 5px;
+    margin-right: 2em;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius: var(--boder-radius);
+    /* font-size: 1.5em; */
+}
+
+.text-area > ::placeholder {
+    font-size: 1.3em;
+    padding: 0 5px;
+}
+
+input[type=submit] {
+    position: relative;
+    display: block  ;
+    margin: auto;
+    background-color: var(--color);
+    bottom: 30px;
+    width: 140px;
+    height: 50px;
+    border-radius: 10px;
+    color: #fff;
+   font-weight: 400;
+   font-size: 2em;
+   letter-spacing: 1px;
+
+
+}
+input[type="submit"]:hover {
+    background-color: var(--bckcolor);
+    color: var(--color);
+    border-color: var(--color); 
+}
+
+input[type="checkbox"] {
+    margin-right: 20px;
+}
+
+/* Media query */
+
+@media (max-width: 500px) {
+    body {
+        background-color: rgb(152, 152, 191);
+        font-size: 10px;
+    }
+    main {
+        width: 100%;
+        margin: 0;
+
+    }
+    tbody > tr > td {
+/* border-top: 1px var(--color) solid; */
+border-left: 1px var(--border-color) solid;
+border-bottom: 1px var(--border-color) solid;
+padding: 5px 15px;
+    }
+    thead>tr>th {
+    
+        background-color: var(--color);
+        font-size: 1em;
+        width: 5px;
+        font-weight: normal;
+        padding: 15px;
+        border-top: 0.1px var(--border-color) solid;
+        border-left: 1px var(--border-color) solid;
+        border-bottom: 0.1px var(--border-color) solid;
+        background-color: var(--bckcolor);
+        text-align: center;
+    }
+
+
+    tbody>tr> :first-child {
+        background-color: var(--bckcolor);
+        /* width: 30px; */
+        /* padding-right: 100px; */
+        padding: 5px 7px;
+        padding-top: 5px;
+        font-size: 1.2em;
+        letter-spacing: 1px;
+        border-top: 1px var(--border-color) solid;
+    }
+}
+
+@media (max-width: 650px) {
+    main {
+        /* background-color: red; */
+        display: grid;
+        grid-template-columns: auto;
+        margin: 10px;
+    }
+
+    form {
+        width: 600px;
+    }
+    thead>tr>th {
+        font-size: 1.1em;
+        width: 5px;
+        font-weight: normal;
+        padding: 20px 10px;
+        font-size: 1.3em;
+        font-weight: 800;
+        letter-spacing: 1.6px;
+    }
+    
+    tbody>tr> :first-child {
+        background-color: var(--bckcolor);
+        padding-top: 20px ;
+        font-size: 1.3em;
+        font-weight: 800;
+    }
+
+    tbody>tr>:not(:first-child) {
+        border-left: 1px var(--border-color) solid;
+        border-bottom: 1px var(--border-color) solid;
+        padding: 10px 15px;
+        
+    }
+}
+
+@media (min-width: 650px){
+    main {
+        /* width: 100%; */
+        /* background-color: green; */
+        display: grid;
+        grid-template-columns: repeat(outo-fit, minmax(60px, 1fr));
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "header header header"
+        "header header header"
+        "header header header";
+    }
+    form {
+        /* width: 100vw; */
+        grid-area: header;
+    }
+}
+@media only screen and (max-width: 650px) {
+    main {
+        width: 100vw;
+        /* background-color: yellow; */
+        display: grid;
+        grid-template-columns: repeat(outo-fit, minmax(60px, 1fr));
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "header header header"
+        "header header header"
+        "header header header";
+    }
+    form {
+        /* width: 50%; */
+        grid-area: header;
+    }
+    #name-label > input,
+    #email-label > input,
+    #number-label + input,
+    #date-label + input {
+        width: 230px;
+    }
+    #date-label+input {
+        /* margin-right: 50px; */
+    }
+}
+
+
+

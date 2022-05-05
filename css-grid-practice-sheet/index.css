@@ -1,0 +1,614 @@
+html {
+    box-sizing: border-box;
+}
+*, 
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+body {
+    width: 60vw;
+    margin: auto;
+}
+
+
+
+
+
+/* Create Your First CSS Grid
+    Turn any HTML element into agrid container by setting irs display property to grid.
+    This gives you the ability to use all the other properties associated with CSS Grid.
+    Note: In CSS Grid, the parent element is referred to as the container and its children are called items.
+    *** Challenge 1
+    Change the display of the div with container class grid.*/
+
+    .d1 {background-color: lightskyblue;}
+    .d2 {background-color: lightsalmon;}
+    .d3 {background-color: paleturquoise;}
+    .d4 {background-color: lightpink;}
+    .d5 {background-color: palegreen;}
+
+    .container-1 {
+        font-size: 40px;
+        width: 100%;
+        background-color: lightgrey;
+        display: grid;
+    }
+
+    /* 
+    Add Columns with grid-template-columns
+    Simply creating a grid element does't get you very far. you need to define the structure of the grid as well.
+    
+    To add some columns to the grid, use the grid-template-columns property on agrid container as demonstrated below*/
+
+    .container {
+        display: grid;
+        grid-template-columns: 50px 50px;
+    }
+
+        /* 
+    This will give your grid two columns that are each 50px wide. The number of parameters given to the grid-template-columns property indicates the number of columns in the grid, and the value of each parameter indicates the width of each column. 
+        
+        *** Challenge 2
+        Give the grid container three columns that are each 100px wide
+        */
+
+    .container {
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+    }
+
+    /*
+    Add Rows with grid-template-rows
+    The grid you created in the last challenge will set the number of row automatically. To adjust the rows manually, use the grid-template-rows property in the same way you used grid-template-columns in the previous challenge. 
+
+    Add two rows to the grid that are 50px tall each 
+    */
+
+    .container-2 {
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 50px 50px;
+    }
+    /* 
+    Use CSS Grid units to Change the Size of Columns and Rows
+    You can use absolute and relative unts like px and em  in CSS Grid to define the size of rows and columns.
+    You can use these as well:
+
+    fr: sets the column or row to a fraction of the available space,
+
+    auto: sets  the colum or row to the width or height of its content automatically,
+
+    %: adjusts the column or row to the width of  its container.
+
+    Here's the code that generates the output in the preview:
+     */
+    .container {
+        display: grid;
+        grid-template-columns: auto 50px 10% 2fr 1fr;
+    }
+    /* 
+    This snipet creates five columns. This firs column is as wide as its content, the second column is 50px, the third column is 10% of its container, and for the last two columns; the remaining space is divided into three sections, two are allocated for the fourth column, and one for the fifth. 
+
+    *** Challeng 3
+    Make a grid with three columns whose widths are as follows: 1fr, 100px, and 2fr.
+    */
+
+    .container-3 {
+        display: grid;
+        grid-template-columns: 1fr 100px 2fr;
+        grid-template-rows: 50px 50px;
+    }
+    /* 
+    Create a Column Gap Using gird-column-gap
+    So far in the grids you have created, the columns have all been tight up against each other. Sometimes you want a gap in between the columns. to add a gap between the columns,  use the grid-template-gap property like this:
+
+    grid-column-gap: 10px;
+    This creates 10px of empty space between all of our columns. 
+    */
+    .container-4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-column-gap: 10px;
+    }
+    /* 
+    Create a Row Gap using grid-row-gap
+    You can add a gap in between the rows of  a grid using grid-row-gap in the same way that  you added a gap in between columns in the prvious challenge.
+    
+    Create a gap for the rows that is 5px tall.
+    */
+    
+    .container-5 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-row-gap: 5px;
+    }
+    
+    /* 
+    add Gaps Faster with grid-gap
+    grid-gap is a shorthand proprty for grid-row-gap and grid-column-gap from the previous two challenges that's  more convenient to use. If grid-gap has one value,  it will create a gap between  all rowns and columns. However, if ther are two values, it will use the first one to set the gap beween the rows and the second value for the columns
+    
+    Use grid-gap to introduce a 10px gap between the rows and 20px gap beween the columns.
+    */
+    .container-6 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 10px 40px;
+    }
+
+    img {
+        width: 300px;
+        height: 300px;
+    }
+
+    /* 
+    Use grid-column to Control Spacing
+    Up to this point, all the properties that have been discussed are for grid containers. The grid-column property is the first one for use on the frid items themselves.
+    
+    The hhhpothetical horizontal and vertical line that create the grid are referred  to as line. Thse lines are numbered starting with 1 at the top left corner of the grid and move right for columns and down for rows, counting upward.
+
+    This is what lines look like for 3 x 3 grid: 
+
+    To control the number of  columns an item will consume, you can use the grid-column property in conjunction with the line numbers you want the item to start and stop at.
+    
+    Here's an example: 
+
+    grid-column: 1 / 3;
+    This will make the item start at  the first vertical line of the grid on the left and span to the 3rd line of the grid, consuming two colums. 
+
+    Make the item with the class d5 consume the last two columns of the grid.
+    */
+
+    .container-7 {
+        font-size: 40px;
+        min-height: 300px;
+        background: lightgray;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
+
+    .container-7 > .d5 {
+        grid-column: 2 / 4;
+    }
+    /* 
+    Use grid-row to Control Spacing
+    Of course, you can make items consume multiple rows just like you can with columns. You define the horizontal lines you want an  item to start and stop at using the grid-row property on a grid item.
+
+    Make the element with the d5 class consume the last two rows.
+    */
+
+    .container-8 {
+        font-size: 40px;
+        min-height: 300px;
+        width: 100%;
+        background: lightgray;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 10px;
+    }
+
+    .container-8 > .d5 {
+        grid-column: 2 / 4;
+        grid-row: 2 / 4;
+    }
+    /* 
+    Align an Item Horizontally using jusify-self
+    In CSS Grid, the content of each item is located in a box which is referred to as a cell. You can align the contet's position within a cell horizontally usig the justify-self property on a grid item. By default, this property has a value of stretch,  which will make the content fill the whole width of the cell. This CSS Grid property accepts other values as well: 
+
+    start: aligns the content ar the left of the cell,
+
+    center: aligns the content in the center of the cell,
+
+    end: aligns the content at the right of the cell,
+
+    use the justify-self property to center the item with the class d2.
+    */
+    .container-9 {
+        font-size: 40px;
+        min-height: 300px;
+        width: 100%;
+        background: lightgray;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
+
+    .container-9 > .d2 {
+        justify-self: center;
+    }
+    /* 
+    Align an Item Vertically using align-self
+    Just as you can align an item horizontally, there's a way to align an item vertically as well. To do this, you use the align-self property on an item. This property accepts all of the same values as justify-self from the last challenge. 
+    
+    Align the item with the class d3 virtically at the end
+
+    */
+
+    .container-10 {
+        font-size: 40px;
+        min-height: 300px;
+        width: 100%;
+        background: lightgray;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap : 10px;
+    }
+
+    .container-10 > .d3 {
+        align-self: end;
+    }
+
+    /* 
+    Align All Items Horizontally using justify-items
+    Sometimes you want all the items in your CSS Grid to share the same alignment. You can use the previously learned properties and align them individually, or you can align them all at once horizontally by using justify-items on you grid container. This property can accept all the same value you learned about in the previous two challenges, the difference being that it will move all the items in our grid to the desired alignment.
+
+    Use this property to center all our items horizantally.
+    */
+
+    .container-11 {
+        font-size: 40px;
+        min-height: 300px;
+        width: 100%;
+        background-color: lightgray;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr; 
+        gap: 10px;
+        justify-items: center;
+    }
+
+    /* 
+    Align All Items Vertically using align-items
+    Using the align-items property on a grid container will set the verically alignment for all the items in our grid. 
+
+    Use it now to move all the items to the end of each cell.
+    */
+    .container-12 {
+        font-size: 40px;
+        min-height: 300px;
+        width: 100%;
+        background-color: lightgray;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        align-items: end;
+    }
+
+    /* 
+    Divide the Grid Into an Area Template
+    You can group cells of you grid together into an area and give the area a custom name. Do this by using grid-template-areas on the container like this: 
+
+    grid-template-areas: 
+        "header header header"
+        "advert content content"
+        "advert footer footer";
+    The code above groups the cells of thr grid into four areas:; header, adver, content, and footer. Every word drepresents a cell and every pair of quotation marks represent a row.
+    
+    Change the template  so the footer area spans the entire bottom row. Defining the areas won't have any visual effect right now. Later, you will make an item use an area to see how it works.
+
+    Container class should have a grid-template -area property similar to the ecample but with the footer area spanning the whole bottom row.
+    */
+   
+    .container-13 {
+        font-size: 20px;
+        min-height: 300px;
+        width: 100%;
+        background: lightgray;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 10px;
+        grid-template-areas: 
+        "header header header"
+        "advert content conten"
+        "footer footer footer";
+    }
+    
+
+    /* 
+    Place Item in Grid Areas Using the grid-area Proprty
+    After creating an area template for your grid container, as shown in the previous challenge, you can place an item in your costom area by referencing the name you gave it. to do this, you use the grid-area property on an item like this: 
+
+    .d1 {
+        grid area: header;
+    }
+    this lets the grid know that you want the d1 class to go in the area named header. In this case, the item will use the entire to row because that whole row is named as the header area.
+
+    Place an element with the d5 class in the footer area using the grid-area property
+
+    d5 class should have a grid-area property that has the value of footer.
+    */
+
+    .d1 {
+        grid-area: header;
+    }
+    .d5 {
+        grid-area: footer;
+    }
+
+    /* 
+    Use grid-area Without Creating an Areas Template
+    The grid-area property you learned in the last challenge can be used in another way. If your grid doesn't have an areas template to refernce, you can create an area on the fly for an item to be placed like this::after
+    item1 {grid-area: 1/1/2/4; }
+    This is using the line numbers you learned about earlier to define where the area for theis item will be. The numbers in the example above rersent these values::after
+    grid-area: horizontal line to start at / vertical line to start at / horzontal line to end at / vertical line to end at:
+
+    So the item in the example will consume the rows between line 1 and 2, and the columns beteen line 1 and 4. 
+    
+    Using the grid-area property, place the element width d5 class between the third and fourth horizontal lines and between the first and fourth vertical lines.*/
+.d11 {
+    background-color: lightskyblue;
+}
+
+.d21 {
+    background-color: lightsalmon;
+}
+
+.d31 {
+    background-color: paleturquoise;
+}
+
+.d44 {
+    background-color: lightpink;
+}
+
+.d55 {
+    background-color: palegreen;
+}
+    .container-14 {
+        font-size: 40px;
+        min-height: 300px;
+        width: 100%;
+        background-color: lightgray;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .d55{
+        grid-area: 3/1/4/4;
+    }
+    .d11 {
+        grid-area: 1/1/1/4;
+    }
+    
+    /* 
+    
+    Reduce Repetition Using the repeat function
+    When you used  grid-trmplate-columns and grid-template-rows to define the structure of a grid, you entered a value for each row or column you created.
+
+    Let's say you want a grid with 100 rows of the same height. It is'n very practical to insert 100 values individually. Fortunatley, there's a better way - by using the repeat function to specify the number of items you want you column or row to be repeated, followed by a comma and the value you want  to  repeat.
+
+    Here's an example that  would create the 100 row grid, each row at 50px tall.
+
+    grid-template-rows: repeat(100,  50);
+    You can also repeat multiple values with the repeat function and insert the function amongst other values when defining a grid structure. Here's what that looks like:
+
+    grid-template-rows: repeat(2, 1fr 50px) 20px;
+    This translate to: '
+
+    grid-template-rows: 1fr 50px 1fr 50px 20px;
+    
+    Note: The 1fr 50px is repeated twice followed by 20px;
+
+    Use repeat to remove repetition from the grid-template-columns property.
+
+    container class should have a grid-template-columns property that is repeated 3 columns with the width of 1fr.
+    */
+    .d13 {background-color: lightskyblue;}   
+    .d23 {background-color: lightsalmon;} 
+    .d33 {background-color: paleturquoise;}  
+    .d43 {background-color: lightpink;}
+    .d53 {background-color: palegreen;}
+
+    .container-15 {
+        font-size: 40px; 
+        min-height: 300px;
+        width: 100%;
+        background-color: lightgray;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 10px;
+        
+    }
+
+    /* 
+    Limit Item Size Using the minmax Function
+    There's another built-in function to use with grid-template-columns and grid-template-rows called minmax. It's used to limit the size of items when the grid container changes size. To do this you need to specify the acceptable size range for your item. 
+    
+    Here is an example:
+
+    grid-template-columns: 100px minmax(50px, 200px);
+    In the code above, grid-template-columns is set to create two columns; the first is 100px wide, and the second has the minmum width of 50px and the maximum width of 200px.
+
+    Using the minmax function, replace the 1fr in the repeat function with a column size that has the minimum width of 90px and the maximum width of 1fr, and resize the preview panel to see the effect.
+
+    */
+
+    .d14 {background-color: lightskyblue;}
+    .d24 {background-color: lightsalmon; }   
+    .d34 {background-color: paleturquoise;}  
+    .d44 {background-color: lightpink;}   
+    .d54 {background-color: palegreen;}
+    
+    .container-16 {
+        font-size: 40px;
+        min-height: 300px;
+        width: 100%;
+        background-color: lightgray;
+        display: grid;
+        /* grid-template-columns: repeat(3, 1fr); */
+        grid-template-columns: 100px repeat(3, minmax(90px, 1fr));
+        grid-template-rows: repeat(3, 1fr);
+        gap: 10px;  
+    }
+
+    /* 
+    Create Flexible Layout Using auto-fill
+    the repeat function comes with an option called auto-fill. This allows you to automatically insert as many rows or columns of your desired size as possible depending on the size of the container. You can create  flexible layouts when combining auto-fill with minmax, like this:
+
+    repeat(auto-fill, minmax(60px, 1fr));
+    When the container changes size, this setup keeps inserting 60px coulums and stretching them until it can insert another one.
+    
+    Note: If your grid container can't fit  all your items on one row, it will move them down to a new one.
+
+    In the first grid, use auto-fill with repeat to fill the grid with columns that have a minimum width of 60px and maximum of 1fr. Then resize the preview to see auto-fill in action.
+    */
+
+    .container-17 {
+        font-size: 40px;
+        min-height: 750px;
+        width: 100%;
+        background-color: lightgray;
+    }
+
+    .container-17a {
+        min-height: 350px;
+        width: 100%;
+        margin-bottom: 50px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        grid-template-rows: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .container-17b {
+        min-height: 350;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    
+    /* 
+    
+    Create Flexible Layouts Using auto-fit
+    auto-fit works almost identically to auto-fit. The only difference is that when the container's size exeeds the size of all  the items combined, auto-fill keeps inserting empty rows or columns and pushes your items to the side, while auto-fit collapses those empty rows or columns and stretches your items to the size of the container.
+
+    Note: If your container can't fit all your items on one row, it will move them down to a new one.
+
+    In the second grid, use auto-fit with-repeat to fill the grid with columns that have a minimum width of 60px and maximum of 1fr. Then resize the window to see the difference.
+
+    */
+
+    .container-18 {
+        font-size: 40px;
+        min-height: 750px;
+        width: 100%;
+        background-color: lightgray;
+    }
+    
+    .container-18a {
+        min-height: 350px;
+        width: 100%;
+        margin-bottom: 50px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        grid-template-rows: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    .container-18b {
+        min-height: 350;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        grid-template-rows: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    /* 
+    
+    Use Media Queries to Create Responsive Layouts
+    CSS Grids can be an easy way to make the site more respondsive by using media queries to rearrange grid areas, change dimensions of a grid, and rearrange the placement of items.
+
+    In the preview, when the viewport width is 300px or more, the number of  columns changes from 1 to 2. The adverisement area then occupies the left column completely.
+
+    When the viewport width is 400px or more,  make the header area occupy the top row completely and the footer area occupy the bottom row completely.
+    */
+
+
+    
+        .container-19 {
+            font-size: 1.5em;
+            min-height: 300px;
+            width: 100%;
+            background-color: lightgray;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 50px auto 1fr auto;
+            gap: 10px;
+            grid-template-areas: 
+            " header" 
+            "advert "
+            "content"
+            "footer";
+        }
+        @media(min-width: 660px) {
+            .container-19  {
+                grid-template-columns: auto 1fr;
+                grid-template-rows: auto 1fr auto;
+                grid-template-areas: 
+                "advert header"
+                "advert content"
+                "advert footer";
+            }
+        }
+    @media (min-width: 800px) {
+        .container-19 {
+            grid-template-columns: auto 1fr;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas: 
+            "header header"
+            "advert content"
+            "footer footer";
+        }
+    }
+    .d15 {
+        background-color: skyblue;
+        grid-area: header;
+    }
+    .d25 {
+        background-color: lightsalmon;
+        grid-area: advert
+    }
+    .d35 {
+        background-color: paleturquoise;
+        grid-area: content;
+    }
+    .d45 {
+        background-color: lightpink;
+        grid-area: footer;
+    }
+
+    /* 
+    Create Grids within Grids
+    turning an element into a grid only affects the behavior of its direct decendents. So by turning a direct descendant into a grid, you have a grid within a grid.
+
+    For example, by setting the display and grid-template-columns properties of the element with the item3 class you created a grid within  a grid.
+    
+    Turn the element with the item3 class into a grid with two columns with a width of  auto and 1fr using display and grid-template-columns.
+    */
+    .d355 {
+        background-color: aliceblue;
+        display: grid;
+      
+        grid-template-columns: 1fr 1fr;
+        /* grid-template-rows: 1fr 1fr; */
+        gap: 10px;
+      
+    }
+    .p1 {background-color: palevioletred; }
+    .p2 {background-color: blueviolet;}

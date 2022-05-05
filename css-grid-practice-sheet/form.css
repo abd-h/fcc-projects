@@ -1,0 +1,104 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+
+    accent-color: var(--color);
+    --input-padding: 15px 20px;
+    --boder-radius: 5px;
+    --font-size: 1.9em;
+    --border-width: 3px;
+    --margin: 10px 20px;
+    --color: rgb(24, 51, 55);
+    --border-color:rgb(173, 221, 234);
+    --bckcolor: rgb(207, 241, 249);
+}
+ 
+/* General */
+body {
+    font-size: 10px;
+    margin: auto;
+    background-color: var(--bckcolor)
+}
+
+main {
+    width: 70vw;
+    margin: auto;
+}
+h1 {
+    color: var(--color);
+    font-size: 3em;
+    letter-spacing: 1.3px;
+    text-align: center;
+    padding: 40px;
+    margin-bottom: 20px;
+    /* border-bottom: 1px solid rgb(186, 186, 188); */
+}
+
+form {
+    color: var(--color);
+    margin: auto;
+    border: 6px rgb(126, 183, 197) solid;
+    background-color: #fff;
+    width: 70vw;
+}
+
+.personal-details>legend {
+    margin: var(--margin);
+    font-size: 1.4em;
+}
+#name-label,
+#email-label {
+    font-size: 1.9em;
+    /* padding: 10px; */
+    /* margin-left: 10px; */
+
+    /* text-align: center; */
+}
+
+#email-label + input,
+#name-label + input {
+    width: 300px;
+    padding: var(--input-padding);
+    /* margin: 10px 20px; */
+    border-radius: var(--boder-radius);
+    border-color: var(--border-color);
+}
+
+
+
+
+/* Grids */
+
+.personal-details {
+    background-color: yellow;
+    padding-left: 20px;
+    font-size: 1em;
+    min-height: 200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 350px));
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: start;
+    
+    /* gap: 0px 30px; */
+    grid-template-areas: 
+    "a b"
+    "c d";
+}
+    #name-label {
+        grid-area: a;
+        justify-self: left;
+    }
+    #name-label + input {
+        grid-area: c;
+    }
+    #email-label {
+        grid-area: b;
+    }
+    #email-label + input {
+        grid-area: d;
+        justify-self: first baseline;
+    }
