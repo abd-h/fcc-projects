@@ -1,0 +1,149 @@
+html {
+    box-sizing: border-box;
+}
+*:after,
+*:before,
+* {
+    box-sizing: inherit;
+    --margin: 10px;
+}
+
+body {
+    margin: 0;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 1.7px;
+    font-size: 2.5em;
+}
+
+
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+    letter-spacing: 1.6px;
+}
+
+/* input type search */
+input[type="search"] {
+    width: 350px;
+    padding: 13px 30px;
+}
+input[type="search"] + label {
+    font-size: 1.5em;
+    text-align: center;
+    letter-spacing: 1.6px;
+    width: 200px;
+    background-color: black;
+    padding: 12px 30px;
+    /* border: 2px solid black; */
+}
+label > a {
+    color: white;
+}
+
+/* images */
+.union-jack {
+    width: 40px;
+    max-height: aut;
+}
+/* logo-image */
+#header-img{
+    width: 65px;
+   max-height: 25px;
+}
+
+#header-img {
+    border-radius: 5px;
+}
+
+.personal > a > img {
+    width: 25px;
+    max-height: auto;
+}
+
+/* grids */
+#company-logo {
+    width: 350px;
+    display: grid;
+    grid-template-columns: 60px auto;
+    gap: 10px;
+    align-items: center;
+}
+.input-search {
+    width: 550px;
+    background-color: black;
+    display: grid;
+    grid-template-columns: auto auto;
+    /* gap:30px; */
+    align-items: center;
+    justify-items: center;
+}
+
+.personal {
+    width: 200px;
+    height: 40px;
+    margin: var(--margin);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+    justify-items: center;
+    align-items: center;
+}
+
+.container-1 {
+    font-size: 1.2em;
+    height: 30px;
+    width: 100%;
+    background-color: #eee;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(70px, 200px));
+    grid-template-areas: 
+    "union-jack hire moss . . . . . . stories refer-a-friend find-a-store";
+    justify-items: center;
+    align-items: center;
+}
+.container-1 > li > a:hover {
+    text-decoration: underline;
+}
+.union-jack {
+    position: relative;
+    right: 57px;
+    margin: 0;
+    display: block;
+    grid-area: union;
+}
+.hire {
+    position: relative;
+    right: 110px;
+    grid-area: hire;
+}
+.mossbox {
+    position: relative;
+    right: 100px;
+    text-align: center;
+    width: 190px;
+    grid-area: moss;
+    align-self: center;
+    justify-self: center;
+}
+.stories {
+    position: relative;
+    right: 50px;
+    grid-area: stories;
+}
+.refer-a-friend {
+    position: relative;
+    right: 20px;
+    width: 140px;
+    background-color: yellow;
+    grid-area: refer-a-friend;
+}
+.find-a-store {
+    grid-area: find-a-store;
+}
