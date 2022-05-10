@@ -10,59 +10,63 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header id="title">
-        <div class="company-logo">
-            <div id="company-logo">
-                <img src="./images/leafs.jpg" alt="" id="header-img">
-                <h1>Bespoke & Co.</h1>
-            </div>
-            <div class="input-search">
-                <input type="text" name="" value="" placeholder="What are you looking for?">
-                <label><a href="">search</a></label>
-            </div>
-            <div class="personal">
-                <a href="#"><img src="./images/icon-favourites.png" alt=""></a>
-                <a href="#"><img src="./images/sign-in-icon.png" alt=""></a>
-                <a href="#"><img src="./images/bag-shopping.svg"></a>
-            </div>
-        </div>
-        <nav id="nav-bar">
-
-            <ul class="nav-bar-1">
-                <li class="nav-link"><a href="#">new in</a></li>
-                <li class="nav-link"><a href="#">suits</a></li>
-                <li class="nav-link"><a href="#">formal</a></li>
-                <li class="nav-link"><a href="#">casual</a></li>
-                <li class="nav-link"><a href="#">shirts</a></li>
-                <li class="nav-link"><a href="#">shoes</a></li>
-                <li class="nav-link"><a href="#">accessories</a></li>
-                <li class="nav-link"><a href="#">costome made</a></li>
-                <li class="nav-link"><a href="#">outlet</a></li>
-            </ul>
-
-            <ul class="nav-bar-2">
-                <li><a href="">free delivery over £75<d/a></li>
-                <li><a href="">free return/exchange</a></li>
-                <li><a href="">book a store appoinment</a></li>
-                <li><a href="">10% student discount</a></li>
-            </ul>
-        </nav>
-        <div class="container-1">
-            <ul class="service">
-                <li><a href="#"><img class="union-jack" src="./images/union-jack.png"></a></li>
-                <li class="hire"><a href="#">hire</a></li>
-                <li class="mossbox"><a href="#">moss box subscription</a></li>
-            </ul>
-            <ul class="service">
-                <li class="stories"><a href="#">stories</a></li>
-                <li class="refer-a-friend"><a href="#">refer a friend</a></li>
-                <li class="find-a-store"><a href="#">find a store</a></li>
-            </ul>
-        </div>
-
-    </header>
-
     <main>
+        <header id="header">
+            <div class="container-1">
+                <ul class="service">
+                    <li><a href="#"><img class="union-jack" src="./images/union-jack.png"></a></li>
+                    <li class="hire"><a href="#">hire</a></li>
+                    <li class="mossbox"><a href="#">moss box subscription</a></li>
+                </ul>
+                <ul class="service">
+                    <li class="stories"><a href="#">stories</a></li>
+                    <li class="refer-a-friend"><a href="#">refer a friend</a></li>
+                    <li class="find-a-store"><a href="#">find a store</a></li>
+                </ul>
+            </div>
+
+            <div class="company-logo">
+                <div id="company-logo">
+                    <img src="./images/leafs.jpg" alt="" id="header-img">
+                    <h1>Bespoke & Co.</h1>
+                </div>
+                <div class="input-search">
+                    <input type="text" name="" value="" placeholder="What are you looking for?">
+                    <label><a href="">search</a></label>
+                </div>
+                <div class="personal">
+                    <a href="#"><img src="./images/icon-favourites.png" alt=""></a>
+                    <a href="#"><img src="./images/sign-in-icon.png" alt=""></a>
+                    <a href="#"><img src="./images/bag-shopping.svg"></a>
+                </div>
+            </div>
+
+            <nav id="nav-bar">
+                <ul class="nav-bar-1">
+                <div class="nav-bar-1-container">
+                        <li ><a class="nav-link" href="#main-banner">new in</a></li>
+                        <li ><a class="nav-link" href="#landing-page">suits</a></li>
+                        <li ><a class="nav-link" href="#prices">formal</a></li>
+                        <li><a class="nav-link" href="#product-video1">casual</a></li>
+                        <li><a class="nav-link" href="#product-video2">shirts</a></li>
+                        <li><a class="nav-link" href="#product-video3">shoes</a></li>
+                        <li><a class="nav-link" href="#product-video4">accessories</a></li>
+                        <li><a class="nav-link" href="#product-video5">costome made</a></li>
+                        <li><a class="nav-link" href="#product-video6">outlet</a></li>
+                </div>
+                </ul>
+
+                <ul class="nav-bar-2">
+                    <li><a href="">free delivery over £75</a></li>
+                    <li><a href="">free return/exchange</a></li>
+                    <li><a href="">book a store appoinment</a></li>
+                    <li><a href="">10% student discount</a></li>
+                </ul>
+            </nav>
+            
+        </header>
+
+    
         <div class="catalogue">
 
         </div>
@@ -72,7 +76,7 @@
                 <section class="product">
                     <h2>Weddings</h2>
                     <p>On form when it counts</p>
-                    <p>shop</p>
+                    <p id="landing-page">shop</p>
                 </section>
             </div>
        </a>
@@ -97,9 +101,9 @@
                     Sign up for styling advice, planning tips, speech writing advice and more.
                 </p>
             </div>
-            <form>
+            <form id="form" action=" https://www.freecodecamp.com/email-submit)">
                 <p>
-                    <input type="email" name="email" id="email" size="64" maxlength="64" required autocomplete="email">
+                    <input type="email" name="email" id="email" size="64" maxlength="64" required autocomplete="email" placeholder="jane.doe@gmail.com">
                     <label for="email">Email*</label>
                 </p>
                 <p>
@@ -107,25 +111,60 @@
                     <label for="date">wedding date</label>
                 </p>
                 <p class="form-p">
-                    You are* <br>
+                    <span>You are*</span><br>
                     <input type="radio" id="theGroom" name="role" value="groom"> <br>
                     <label for="theGroom">The groom</label>
                 </p>
-                <p>
+                <p class="guest-container">
                     <input type="radio" id="theGuess" name="role" value="The guest"><br>
                     <label for="theGuest">The Guest</label>
                 </p>
-                <p>
-                    <input type="submit" value="Subscribe">
-                </p>
-
-
+               
+                <!-- submit button -->
+                <input id="submit" type="submit" value="Subscribe">
+            
             </form>
+        </section>
+
+        <section id="prices">
+            <video id="video" width="378px" height="616px" controls>
+                <source src="./images/wedding-suit.mp4" type="video/mp4">
+            </video>
+        </section>
+        <section id="product-video1">
+            <ul>
+                <li>1</li>
+            </ul>
+        </section>
+        <section id="product-video2">
+            <ul>
+                <li>1</li>
+            </ul>
+        </section>
+        <section id="product-video3">
+            <ul>
+                <li>1</li>
+            </ul>
+        </section>
+        <section id="product-video4">
+            <ul>
+                <li>1</li>
+            </ul>
+        </section>
+        <section id="product-video5">
+            <ul>
+                <li>1</li>
+            </ul>
+        </section>
+        <section id="product-video6">
+            <ul>
+                <li>1</li>
+            </ul>
         </section>
 
 
     </main>
    
-    
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 </html>

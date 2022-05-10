@@ -1,6 +1,8 @@
+/* General */
 html {
     box-sizing: border-box;
 }
+
 *:after,
 *:before,
 * {
@@ -9,6 +11,7 @@ html {
     --font-size: 1.2em;
     --light-grey: rgb(240, 240, 240);
     --bkg: rgb(101, 140, 123);
+    --form-bkg: rgb(231, 229, 229);
 }
 
 body {
@@ -21,80 +24,38 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 1.8px;
     font-size: 2.9em;
+    margin-left: 15px;
 }
-
 
 ul {
     list-style-type: none;
 }
+
 a {
     text-decoration: none;
     color: black;
     letter-spacing: 1.6px;
 }
 
-/* input type search */
-input[type="text"] {
-    width: 350px;
-    padding: 13px 30px;
-}
-input[type="text"]:focus {
-    outline:none;
-    border: 1px solid black;
-    padding: 14px 30px;
-}
-.input-search > ::placeholder {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    word-spacing: 2px;
-}
-input[type="text"] + label {
-    display: block;
-    cursor: pointer;
-    position: relative;
-    right: 40px;
-    font-size: 1.5em;
-    text-align: center;
-    letter-spacing: 1.6px;
-    width: 180px;
-    background-color: black;
-    padding: 12px 30px;
-    border: 2px solid black;
-}
-label > a {
-    color: white;
-}
+/* #header container */
+/* #header {
+    background-color: red;
+    height: 230px;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(3, auto-fit);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "t t t"
+    "s s s"
+    "u u u";
+} */
+/* .container-1 {
+    grid-area: t;
+    width: 100vw;  
+} */
 
-/* images */
-.union-jack {
-    width: 30px;
-    /* max-height: auto; */
-    height: 18px;
-}
-/* logo-image */
-#header-img{
-    width: 65px;
-   max-height: 30px;
-}
-
-#header-img {
-    border-radius: 5px;
-}
-
-.personal > a > img {
-    width: 25px;
-    max-height: auto;
-}
-
-.mossbox {
-    word-spacing: 1px;
-}
-
-.nav-link {
-    padding: 10px;
-}
-
-/* flexbox */
+/* container-1 is inside header element and sits at the very top of the page. contains union Jack image */
 .container-1 {
     position: fixed;
     font-size: 1.2em;
@@ -104,13 +65,21 @@ label > a {
     background-color: var(--light-grey);
     display: flex;
     justify-content: space-between;
+    z-index: 3;
 }
 
-.container-1 ul >li>a:hover {
+.container-1 ul>li>a:hover {
     text-decoration: underline;
 }
-.nav-bar-1 :last-child > a {
-    color: red;
+
+.union-jack {
+    width: 30px;
+    /* max-height: auto; */
+    height: 18px;
+}
+
+.mossbox {
+    word-spacing: 1px;
 }
 
 .service {
@@ -124,60 +93,96 @@ label > a {
     z-index: 6
 }
 
-.nav-bar-1 {
-    font-size: var(--font-size);
-    margin:auto;
-    width: 950px;
-    display: flex;
-    justify-content: space-evenly;
-    z-index: 0;
-}
-.nav-bar-2 {
-    font-size: var(--font-size);
-    background-color: var(--light-grey);
-    height: 30px;
-    margin:auto;
-    width: 100vw;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    z-index: 0;
-}
-.nav-bar-2 :first-child > a {
-    position: relative;
-    left: 130px;
-}
-
-#nav-bar {
-    display: flex;
-    flex-direction: column;
-}
-
-
-/* grids */
-
-
 #company-logo {
+    /* background-color: rebeccapurple; */
     width: 350px;
     display: grid;
-    margin-left: 40px;
+    margin-left: 25px;
     grid-template-columns: 60px auto;
     gap: 10px;
     align-items: center;
-    /* background-color: red; */
 }
+
+.company-logo {
+    position: fixed;
+    margin-top: 40px;
+    padding: 20px;
+    width: 100vw;
+    background-color: white;
+    z-index: 300;
+    top: 0;
+    left: 0;
+    right: 0;
+    grid-area: s;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: yellow; */
+}
+
+#header-img {
+    width: 65px;
+    max-height: 30px;
+}
+
+#header-img {
+    border-radius: 5px;
+}
+
+.input-search {
+    grid-area: w;
+}
+
+/* Search bar */
+input[type="text"] {
+    width: 350px;
+    padding: 13px 30px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border: 1px solid black;
+    padding: 14px 30px;
+}
+
 .input-search {
     width: 550px;
     border-style: none;
-    /* border: 1px solid bla? */
-    /* background-color: black; */
     display: grid;
     grid-template-columns: auto auto;
-    /* gap:30px; */
     align-items: center;
     justify-items: center;
 }
 
+.input-search> ::placeholder {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+/* input search label */
+input[type="text"]+label {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    right: 40px;
+    font-size: 1.5em;
+    text-align: center;
+    letter-spacing: 1.6px;
+    width: 180px;
+    background-color: black;
+    padding: 12px 30px;
+    border: 2px solid black;
+}
+
+label>a {
+    color: white;
+}
+
+/* contains styling for favourite icon, sign-in icon and shopping basket */
+.personal>a>img {
+    width: 25px;
+    max-height: auto;
+}
 
 .personal {
     width: 200px;
@@ -189,59 +194,93 @@ label > a {
     align-items: center;
 }
 
-#title {
-    /* position: fixed; */
-    height: 230px;
-    width: 100vw;
-    /* background-color:rgb(212, 70, 70); */
-    display: grid;
-    grid-template-columns: repeat(3, auto-fit);
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: 
-    "t t t"
-    "s s s"
-    "u u u";
-}
-.container-1 {
-    grid-area: t;
-    /* background-color: red; */
-    width: 100vw;
-    /* overflow: hidden; */
-}
-.company-logo {
-    position: fixed;
-    margin-top: 40px;
-    padding: 20px;
+/* navbar */
+#nav-bar {
     width: 100vw;
     background-color: white;
-    z-index: 300;
-    top:0;
-    left: 0;
-    right: 0;
-    grid-area: s;
+    height: 224px;
+    margin-bottom: 50px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
 }
-.input-search {
-    grid-area: w;
-}
-#nav-bar {
+
+/* #nav-bar {
     grid-area: u;
+} */
+
+.nav-bar-1 {
+    width: 100vw;
+    height: 60px;
+    background-color: #fff;
+    position: fixed;
+    padding: 0px 5px;
+    top: 140px;
+    left: 250;
+    font-size: var(--font-size);
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 3;
 }
 
+.nav-bar-1 :last-child>a {
+    color: red;
+}
 
-/* Product */
+.nav-bar-1-container {
+    display: flex;
+    position: fixed;
+    z-index: 3;
+}
+
+.nav-link {
+    padding: 10px;
+}
+
+.nav-bar-2 {
+    position: fixed;
+    font-size: var(--font-size);
+    margin-top: 194px;
+    background-color: var(--light-grey);
+    padding: 12px 0;
+    height: 30px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 3;
+}
+
+.nav-bar-2 :first-child>a {
+    position: relative;
+    left: 95px;
+}
+
+.nav-bar-2 :last-child>a {
+    position: relative;
+    right: 20px;
+}
+
+/* catalogue */
+.catalogue {
+    margin-top: 80px;
+}
+
+/* main product */
+#main-banner {
+    z-index: -3;
+}
 
 .landing-img {
     cursor: pointer;
     color: #fff;
     display: flex;
-    /* */
-    margin-top: -5px;
     z-index: -3;
 }
+
 .product {
-    /* margin-top: -20px; */
     width: 722px;
     height: 518px;
     background-color: rgb(180, 178, 178);
@@ -252,22 +291,24 @@ label > a {
     z-index: -3;
 }
 
-.product > h2 {
+.product>h2 {
     font-size: 6em;
     letter-spacing: 1.6px;
     font-weight: 900;
     text-transform: capitalize;
 }
 
-.product > h2 + p{
+.product>h2+p {
     position: relative;
     bottom: 60px;
     font-size: 1.9em;
     text-transform: lowercase;
 }
-.product > h2 + p::first-letter {
+
+.product>h2+p::first-letter {
     text-transform: uppercase;
 }
+
 .product :last-child {
     position: relative;
     bottom: 90px;
@@ -276,6 +317,7 @@ label > a {
     text-transform: uppercase;
 }
 
+/* Second banner with the background image */
 .mainbanner {
     background-image: url("./images/mainbanner.png");
     background-repeat: no-repeat;
@@ -283,7 +325,6 @@ label > a {
     width: 100vw;
     height: 650px;
 }
-
 
 .weddings2022 {
     cursor: pointer;
@@ -296,10 +337,11 @@ label > a {
     background-color: var(--bkg);
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
     align-items: flex-start;
     line-height: 1.3;
 }
+
 .weddings2022 :first-child {
     width: 175px;
     border: 1px solid #fff;
@@ -311,7 +353,8 @@ label > a {
     padding: 3px;
     text-align: center;
 }
-.weddings2022 :first-child + span {
+
+.weddings2022 :first-child+span {
     font-size: 5.5em;
     font-weight: 900;
     text-transform: lowercase;
@@ -321,59 +364,58 @@ label > a {
     line-height: 1;
     padding: 20px 0;
 }
-.weddings2022 :first-child + span:first-letter {
+
+.weddings2022 :first-child+span:first-letter {
     text-transform: uppercase;
 }
- 
+
 .weddings2022 :last-child {
     font-size: 1.5em;
     color: #fff;
     text-decoration: underline;
-    /* background-color: red; */
     word-spacing: 2px;
     letter-spacing: 2px;
 }
 
-
-
-/* subscribe */
-
+/* Subscription form */
 .subscribe {
-    background-color: rgb(210, 199, 199);;
+    background-color: var(--form-bkg);
     width: 100vw;
     height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 40px;
     padding: 0 100px;
 }
- 
+
 .heading {
-    background-color: #fff;
     width: 500px;
     padding: 0 40px;
     margin: auto;
 }
-.heading > h2 {
+
+.heading>h2 {
     font-size: 4em;
     font-weight: 900;
     word-spacing: 1.5px;
     text-transform: lowercase;
 }
-.heading > h2::first-letter, 
-.heading > h2 +p::first-letter {
+
+.heading>h2::first-letter,
+.heading>h2+p::first-letter {
     text-transform: uppercase;
 }
-.heading > h2 + p {
+
+.heading>h2+p {
     font-size: 1.5em;
     font-weight: 600;
     text-transform: lowercase;
     word-spacing: 1.5px;
 }
 
-/* form subscribe */
+/* Form element */
 form {
-    background-color: #fff;
     width: 600px;
     height: 400px;
     margin: 0;
@@ -384,37 +426,123 @@ form {
 #email,
 #date {
     width: 100%;
-    /* background-color: red; */
     line-height: 2;
     border-top: 0;
     border-left: 0;
     border-right: 0;
     outline: 0;
     border-bottom: 2px solid black;
+    background-color: var(--form-bkg);
 }
+
 #date {
-        position: relative;
-            bottom: 40px;
+    position: relative;
+    bottom: 40px;
 }
-#email + label {
+
+#email+label {
     position: relative;
     bottom: 20px;
-    font-size: 2em;
+    font-size: 1.5em;
     letter-spacing: 1.6;
-    /* background-color: rebeccapurple; */
-    text-transform: capitalize;   
+    text-transform: capitalize;
 }
+
 #date {
-    font-size: 2em;
+    font-size: 1.5em;
 }
-#date + label {
+
+#date+label {
     position: relative;
-    bottom: 20px;
+    position: relative;
+    bottom: 50px;
     text-transform: capitalize;
     letter-spacing: 1.6;
     font-size: 2em;
 }
+
 .form-p {
+    position: relative;
+    bottom: 50px;
+}
+
+.form-p>span {
+    position: relative;
+    bottom: 20px;
+}
+
+.form-p,
+.guest-container {
     font-size: 1.4em;
     line-height: 1.3;
+}
+
+.guest-container {
+    position: relative;
+    bottom: 20px;
+}
+
+form> :last-child {
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    padding: 10px 30px;
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    border: 1px solid #000;
+}
+
+/* product suits */
+
+#product-video {
+    width: 60vw;
+    display: block;
+    margin: auto;
+}
+
+@media (max-width: 960px) {
+    .company-logo {
+        width: 100vw;
+        /* background-color: red; */
+    }
+    #company-logo {
+        position: relative;
+        /* background-color: rebeccapurple; */
+       right: 40px;
+    }
+    h1 {
+        font-size: 1.4em;
+    }
+    .input-search {
+        width: 450px;
+    }
+    .input-search > input[type="text"] {
+        width: 250px;
+    }
+    .input-search > ::placeholder {
+        position: relative;
+        right: 15px;
+        font-size: 0.7em;
+       
+    }
+    input[type="text"]+label {
+        width: 100px;
+        font-size: 1.3em;
+        text-align: center;
+        padding: 13px 15px;
+    }
+        .nav-bar-2 :first-child>a{
+            position: relative;
+            left: 0px;
+        }
+        .nav-bar-2 :last-child > a {
+            position: relative;
+            right: 0px;
+        }
+        .nav-bar-1,
+        .nav-bar-2 {
+            font-size: 0.95em;
+        }
+
 }
