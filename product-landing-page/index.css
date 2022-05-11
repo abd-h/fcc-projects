@@ -263,14 +263,58 @@ label>a {
     right: 20px;
 }
 
-/* catalogue */
-.catalogue {
-    margin-top: 80px;
+/*++++++++++ +
+    +   slider       +
+    ++++++++++*/
+
+.slider{
+    margin-top: 20px;
+    width: 100vw;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
+.div-slide {
+    /* width: 300px; */
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    font-size: 1.3em;
+
+}
+.div-slide > img,
+p > img {
+    width: 120px;
+    margin: 10px;  
+}
+.btn-next  {
+    position: relative;
+    top: 30px;
+    left: 50px;
+    font-size: 2em;
+}
+.btn-previous {
+    position: relative;
+    right: 50px;
+    font-size: 2.5em;
+    bottom: 30px;
+}
+
 
 /* main product */
 #main-banner {
     z-index: -3;
+}
+.landing-img>img {
+    width: 722px;
+}
+.landing-img >img {
+    max-width: 100%;
+    height: auto;
 }
 
 .landing-img {
@@ -291,14 +335,14 @@ label>a {
     z-index: -3;
 }
 
-.product>h2 {
+.product > h2 {
     font-size: 6em;
     letter-spacing: 1.6px;
     font-weight: 900;
     text-transform: capitalize;
 }
 
-.product>h2+p {
+.product > h2 + p {
     position: relative;
     bottom: 60px;
     font-size: 1.9em;
@@ -501,7 +545,21 @@ form> :last-child {
     margin: auto;
 }
 
+
+
+
+
+
+/*                                                 ++++++++++++++++++++++++
+                                                    +               Media Query                        +
+                                                    ++++++++++++++++++++++++
+*/
 @media (max-width: 960px) {
+    body {
+        width: 100vw;
+        margin: 0;
+        /* background-color: yellow; */
+    }
     .company-logo {
         width: 100vw;
         /* background-color: red; */
@@ -544,5 +602,105 @@ form> :last-child {
         .nav-bar-2 {
             font-size: 0.95em;
         }
+       
+        .landing-img {
+            max-width: 100vw;
+            display: grid;
+            grid-template-columns: 402px 402px;
+            grid-template-rows: 322px;
+            margin-bottom: 120px;
+            
+        }
+        .landing-img> img {
+            width: 472px;
+            height: 322px;
+            
+        }
+      
+        .landing-img>img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product {
+            /* background-color: rebeccapurple; */
+            width: 422px;
+            height: 290px;
+            align-items: center;
+            justify-items: center;
+        }
+        .product > h2 {
+            width: 300px;
+            position: relative;
+            top: 40px;
+            font-size: 3.5em;
+            left: 50px;
+        }
+        .product > p {
+            width: 300px;
+            position: relative;
+            top: 0px;
+            left: 50px;
+        }
+       #landing-page {
+           position: relative;
+           margin-top: -3px;
+       }
+          .weddings2022 {
+              cursor: pointer;
+              position: relative;
+              top: 100px;
+              left: 520px;
+              width: 220px;
+              height: 200px;
+              padding: 20px;
+              line-height: 1.1;
+          }
+        .mainbanner {
+            background-image: url("./images/mainbanner.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 100%;
+            height: 550px;
+        }
 
+.weddings2022 :first-child {
+    width: 175px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: var(--bkg);
+    text-transform: uppercase;
+    font-size: 1.3em;
+    word-spacing: 3px;
+    padding: 3px;
+    text-align: center;
+}
+
+.weddings2022 :first-child+span {
+    font-size: 3.5em;
+    font-weight: 900;
+    text-transform: lowercase;
+    text-align: left;
+    /* background-color: red; */
+    color: #fff;
+    line-height: 1;
+    padding: 20px 0;
+}
+
+.weddings2022 :first-child+span:first-letter {
+    text-transform: uppercase;
+}
+
+.weddings2022 :last-child {
+    font-size: 1.2em;
+    color: #fff;
+    text-decoration: underline;
+    word-spacing: 2px;
+    letter-spacing: 2px;
+}
+}
+@media (max-width: 850px) {
+    body {
+        display: grid;
+        grid-template-columns: auto;
+    }
 }
