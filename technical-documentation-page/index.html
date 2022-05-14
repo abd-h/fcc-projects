@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Abdalla Hussein">
+    <meta name="description" content="As part of the fourth project, Here I would be building A Technical Documentation Page using only html and pure css.">
+    <title>A Technical Documentation Page</title>
+</head>
+<body>
+    <main id="main-doc">
+        <header>
+            <nav id="nav-bar">
+                <h1>Destructuring Assignment</h1>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#try">try</a></li>
+                    <li><a href="#syntax">syntax</a></li>
+                    <li><a href="#description">description</a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="main-section" id="intruduction">
+            <h2>Introduction</h2>
+            <p>
+                The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+            </p>
+        </section>
+        <section class="main-section" id="try">
+            <h2>try</h2>
+            <code>
+                let a, b, rest; <br>
+                [a, b] = [10, 20]; <br>
+
+            </code>
+            <p>
+                console.log(a) <br>
+                <span class="expd-outcome"> //expected output: 10</span> <br>
+            </p>
+            <p>
+                console.log(b) <br>
+                <span class="expd-outcome"> //expected output: 20</span> <br>
+            </p>
+
+            <code>
+                [a, b, ...rest] = [10, 20, 30, 40, 50]
+            </code>
+            <p>
+                console.<span class="console-log">log</span>(rest)<br>
+                // expected output: Array[30, 40, 50];
+            </p>
+        </section>
+        
+        <section class="main-section" id="sytax">
+            <h2>syntax</h2>
+            <code>
+                let a, b, rest; <br>
+                [a, b] = [10, 20];
+            </code>
+
+            <p>
+                console.<span class="console-log">log</span>(a); // 10 <br>
+                console.<span class="console-log">log</span>(b); // 20 <br>
+                console.<span class="console-log">log</span>(rest); // [30, 40, 50]
+            </p>
+
+            <code>
+                ({a, b} = {a: 10,  b: 20}); <br>
+            </code>
+            <p>
+                console.<span class="console-log">log</span>(a); // 10 <br>
+                console.<span class="console-log">log</span>(b); // 20
+            </p>
+
+            <p>
+                // Stage 4(finished) proposal
+            </p>
+            <code>
+                ({a, b, ...rest = {a: 10, b: 20, c: 30, d: 40}});
+            </code>
+            <p>
+                console.<span class="console-log">log</span>(a); // 10 <br>
+                console.<span class="console-log">log</span>(b); // 20
+                console.<span class="console-log">log</span>(rest); // {d: 30, d: 40}
+            </p>
+
+        </section>
+
+        <section class="main-section" id="description">
+            <h2>description</h2>
+            <p>The object and array literal expression provide an easy way to create ad hoc packages of data.</p>
+            <code>
+                const x = [1, 2, 3, 4, 5];
+            </code>
+            <p>
+                The destructuring assaingment uses similar syntax, but on the left-hand side of the assignment to define what values to unpack from the sourced variable.
+            </p>
+            <code>
+                const x = [1, 2, 3, 4, 5]; <br>
+                const [y, z] = x; <br>
+            </code>
+            
+            <code>
+                const [firstElement, secondElement] = list;
+            </code>
+            <p>
+                // is equivalent to: <br>
+                // const firstElement = list[0]; <br>
+                // const secondElement = list[1]; <br>
+                This capability is similar to features present in languages such as Perl and Python.
+            </p>
+        </section>
+        <section class="main-section">
+            <h2></h2>
+        </section>
+        <section class="main-section" id="example">
+            <h2>Example</h2>
+            <h3>Array Destructuring</h3>
+            <p>Basic variable assignment</p>
+            <code>
+                const foo = ["one", "two", "three"]; <br>
+
+                const [red, yellow, green] = foo;
+            </code>
+            <p>console.<span class="console-log">log</span>(red); // "one"<br>
+            console.<span class="console-log">log</span>(yellow); // "two" <br>
+            console.<span class="console-log">log</span>(green); // "three"</p>
+
+            <p>
+                Assignment separate from declaration <br>
+                A variable can be assigned its value via destructuring, separate from the variable's declaration.
+            </p>
+            <code>
+                [a, b] = [1, 2];
+            </code>
+            <p>
+                console.<span class="console-log">log</span>(a); // 1 <br>
+                console.<span class="console-log">log</span>(a); // 2 <br>
+              In an array destructuring from an array of length N specified on the  right-hand side of the assignment, if the number of variables specified on the left-hand side of the assignment is greater than N, only the first N variables are assigned values. The values of the remaining variables will be undefined.
+            </p>
+            <code>const foo = ["one", "two"];</code> <br>
+            <code>const [red, yellow, green, blue] = foo; </code>
+            <p>
+                console.<span class="console-log">log</span>(red); // "one" <br>
+                console.<span class="console-log">log</span>(yellow); // "two" <br>
+                console.<span class="console-log">log</span>(green); // undefined <br>
+                console.<span class="console-log">log</span>(blue); // "undefined" <br>
+            </p>
+
+        </section>
+        <section class="main-section">
+            <h2></h2>
+        </section>
+        <section class="main-section">
+            <h2></h2>
+        </section>
+
+    </main>
+    
+</body>
+</html>
