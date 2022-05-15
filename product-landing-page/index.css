@@ -626,11 +626,12 @@ figure {
 }
 .tips-para > p {
     width: 75vw;
+    padding: 10px 40px;
     font-weight: 350;
     font-size: 1.2em;
     letter-spacing: 1.6px;
     line-height: 1.6;
-    word-spacing: 2px;
+    word-spacing: 3px;
     text-align: center;
 }
 
