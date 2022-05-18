@@ -1,0 +1,137 @@
+html {
+    box-sizing: border-box;
+}
+*, 
+*:before,
+*:after {
+    box-sizing: inherit;
+    --color: rgb(151, 155, 155);
+    --var-color: rgb(26, 26, 246);
+    --log-color: red;
+    
+}
+
+body {
+    margin: 0;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+#main-doc {
+    background-color: lightblue;
+    width: 80vw;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 100px repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid: 20px;
+    grid-template-areas:
+    "h h h h h h"
+    "n n c c c c"
+    "n n c c c c";
+}
+
+#h1-container {
+    width: 100%;
+    background-color: red;
+    grid-area: h;
+    height: 150px;
+    padding: 20px;
+    font-size: 2em;
+    justify-self: center;
+    align-self: center;
+    
+    position: sticky;
+    z-index: 3;
+    top: 0;
+}
+
+h1 {
+    display: block;
+    background-color: aliceblue;
+    /* padding: 20px; */
+    text-align: center;
+}
+
+/* Nav bar */
+
+#nav-bar {
+    background-color: wheat;
+    max-height: 100vh;
+    width: 100%;
+    font-size: 3em;
+}
+
+header {
+    background-color: green;
+    position: fixed;
+    top: 150px;
+    z-index: 3;
+    grid-area: n;
+}
+
+ul {
+    width: 100%;
+    padding: 30px;
+    /* background-color: red; */
+
+}
+
+ul > li {
+    width: 100%;
+    background-color: red;
+    height: 60px;
+    border: 2px black solid;
+    /* text-align: center; */
+    justify-content: left;
+    border-radius: 5px;
+    padding: 10px 50px;
+    margin: 10px 0px;
+    list-style: none;
+}
+ul > li > a {
+    display: block;
+    text-decoration: none;
+}
+
+
+
+.content {
+    width: 100%;
+    padding: 20px;
+    background-color: aliceblue;
+    
+    grid-area: c;
+}
+ 
+p,
+code {
+    font-size: 1.3em;
+    color: rgb(62, 61, 61);
+    line-height: 2;
+}
+h2 {
+    font-size: 1.6em;
+    line-height: 1.6;
+
+}
+
+
+/* code decoration */
+code > .variable {
+    color: var(--var-color);
+}
+.console-log {
+    color: var(--log-color);
+}
+.expd-outcome {
+    opacity: 0.6;
+}
+.arrays {
+    color: green;
+}
+
+
+section {
+    width: 100%;
+}

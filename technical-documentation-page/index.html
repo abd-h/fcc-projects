@@ -7,158 +7,564 @@
     <meta name="author" content="Abdalla Hussein">
     <meta name="description" content="As part of the fourth project, Here I would be building A Technical Documentation Page using only html and pure css.">
     <title>A Technical Documentation Page</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <main id="main-doc">
+       <div  id="h1-container">
+            <h1>Destructuring Assignment</h1>
+       </div>
         <header>
-            <nav id="nav-bar">
-                <h1>Destructuring Assignment</h1>
-                <ul>
-                    <li><a href="#introduction">Introduction</a></li>
-                    <li><a href="#try">try</a></li>
-                    <li><a href="#syntax">syntax</a></li>
-                    <li><a href="#description">description</a></li>
-                    <li><a href="#"></a></li>
-                </ul>
-            </nav>
+                <nav id="nav-bar">
+                    <ul class="navbar">
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#try">try</a></li>
+                        <li><a href="#syntax">syntax</a></li>
+                        <li><a href="#description">description</a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </nav>
         </header>
 
-        <section class="main-section" id="intruduction">
-            <h2>Introduction</h2>
-            <p>
-                The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
-            </p>
-        </section>
-        <section class="main-section" id="try">
-            <h2>try</h2>
-            <code>
-                let a, b, rest; <br>
-                [a, b] = [10, 20]; <br>
+        <div class="content">
+            <section class="main-section" id="introduction">
+                <h2>Introduction</h2>
+                <p>
+                    The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+                </p>
+            </section>
+            <section class="main-section" id="try">
+                <h2>try</h2>
+                <code>
+                    <span class="variable">let</span> a, b, rest; <br>
+                    [a, b] = [<span class="arrays">10, 20</span>]; <br>
 
-            </code>
-            <p>
-                console.log(a) <br>
-                <span class="expd-outcome"> //expected output: 10</span> <br>
-            </p>
-            <p>
-                console.log(b) <br>
-                <span class="expd-outcome"> //expected output: 20</span> <br>
-            </p>
+                </code>
+                <p>
+                    console.<span class="console-log">log</span>(a) <br>
+                    <span class="expd-outcome"> //expected output: 10</span> <br>
+                </p>
+                <p>
+                    console.<span class="console-log">log</span>(b) <br>
+                    <span class="expd-outcome"> //expected output: 20</span> <br>
+                </p>
 
-            <code>
-                [a, b, ...rest] = [10, 20, 30, 40, 50]
-            </code>
-            <p>
-                console.<span class="console-log">log</span>(rest)<br>
-                // expected output: Array[30, 40, 50];
-            </p>
-        </section>
-        
-        <section class="main-section" id="sytax">
-            <h2>syntax</h2>
-            <code>
-                let a, b, rest; <br>
-                [a, b] = [10, 20];
-            </code>
-
-            <p>
-                console.<span class="console-log">log</span>(a); // 10 <br>
-                console.<span class="console-log">log</span>(b); // 20 <br>
-                console.<span class="console-log">log</span>(rest); // [30, 40, 50]
-            </p>
-
-            <code>
-                ({a, b} = {a: 10,  b: 20}); <br>
-            </code>
-            <p>
-                console.<span class="console-log">log</span>(a); // 10 <br>
-                console.<span class="console-log">log</span>(b); // 20
-            </p>
-
-            <p>
-                // Stage 4(finished) proposal
-            </p>
-            <code>
-                ({a, b, ...rest = {a: 10, b: 20, c: 30, d: 40}});
-            </code>
-            <p>
-                console.<span class="console-log">log</span>(a); // 10 <br>
-                console.<span class="console-log">log</span>(b); // 20
-                console.<span class="console-log">log</span>(rest); // {d: 30, d: 40}
-            </p>
-
-        </section>
-
-        <section class="main-section" id="description">
-            <h2>description</h2>
-            <p>The object and array literal expression provide an easy way to create ad hoc packages of data.</p>
-            <code>
-                const x = [1, 2, 3, 4, 5];
-            </code>
-            <p>
-                The destructuring assaingment uses similar syntax, but on the left-hand side of the assignment to define what values to unpack from the sourced variable.
-            </p>
-            <code>
-                const x = [1, 2, 3, 4, 5]; <br>
-                const [y, z] = x; <br>
-            </code>
+                <code>
+                    [a, b, ...rest] = [<span class="arrays">10, 20, 30, 40, 50</span>]
+                </code>
+                <p>
+                    console.<span class="console-log">log</span>(rest)<br>
+                   <span class="expd-outcome">// expected output: Array[30, 40, 50];</span> 
+                </p>
+            </section>
             
-            <code>
-                const [firstElement, secondElement] = list;
-            </code>
-            <p>
-                // is equivalent to: <br>
-                // const firstElement = list[0]; <br>
-                // const secondElement = list[1]; <br>
-                This capability is similar to features present in languages such as Perl and Python.
-            </p>
-        </section>
-        <section class="main-section">
-            <h2></h2>
-        </section>
-        <section class="main-section" id="example">
-            <h2>Example</h2>
-            <h3>Array Destructuring</h3>
-            <p>Basic variable assignment</p>
-            <code>
-                const foo = ["one", "two", "three"]; <br>
+            <section class="main-section" id="sytax">
+                <h2>syntax</h2>
+                <code>
+                    <span class="variable">let</span> a, b, rest; <br>
+                    [a, b] = [<span class="arrays">10, 20</span>];
+                </code>
 
-                const [red, yellow, green] = foo;
-            </code>
-            <p>console.<span class="console-log">log</span>(red); // "one"<br>
-            console.<span class="console-log">log</span>(yellow); // "two" <br>
-            console.<span class="console-log">log</span>(green); // "three"</p>
+                <p>
+                    console.<span class="console-log">log</span>(a); 
+                    <span class="expd-outcome">// 10</span> <br>
+                    console.<span class="console-log">log</span>(b);
+                    <span class="expd-outcome">// 20</span><br>
+                    console.<span class="console-log">log</span>(rest);
+                    <span class="expd-outcome"> // [30, 40, 50]</span>
+                </p>
 
-            <p>
-                Assignment separate from declaration <br>
-                A variable can be assigned its value via destructuring, separate from the variable's declaration.
-            </p>
-            <code>
-                [a, b] = [1, 2];
-            </code>
-            <p>
-                console.<span class="console-log">log</span>(a); // 1 <br>
-                console.<span class="console-log">log</span>(a); // 2 <br>
-              In an array destructuring from an array of length N specified on the  right-hand side of the assignment, if the number of variables specified on the left-hand side of the assignment is greater than N, only the first N variables are assigned values. The values of the remaining variables will be undefined.
-            </p>
-            <code>const foo = ["one", "two"];</code> <br>
-            <code>const [red, yellow, green, blue] = foo; </code>
-            <p>
-                console.<span class="console-log">log</span>(red); // "one" <br>
+                <code>
+                    ({a, b} = {a: 10,  b: 20}); <br>
+                </code>
+                <p>
+                    console.<span class="console-log">log</span>(a); 
+                    <span class="expd-outcome">// 10</span><br>
+                    console.<span class="console-log">log</span>(b); 
+                    <span class="expd-outcome">// 20</span>
+                </p>
+
+                <p>
+                    
+                    <span class="expd-outcome">// Stage 4 (finished) proposal</span>
+                </p>
+                <code>
+                    ({a, b, ...rest = {<span class="console-log">a</span>: 10, <span class="console-log">b</span>: 20, <span class="console-log">c</span>: 30, <span class="console-log">d</span>: 40}});
+                </code>
+                <p>
+                    console.<span class="console-log">log</span>(a);
+                    <span class="expd-outcome">// 10</span><br>
+                    console.<span class="console-log">log</span>(b); 
+                    <span class="expd-outcome">// 20</span><br>
+                    console.<span class="console-log">log</span>(rest); // {<span class="console-log">d</span>: 30, <span class="console-log">d</span>: 40}
+                </p>
+
+            </section>
+
+            <section class="main-section" id="description">
+                <h2>description</h2>
+                <p>The object and array literal expression provide an easy way to create ad hoc packages of data.</p>
+                <code>
+                    <span class="variable">const</span> x = [<span class="arrays">1, 2, 3, 4, 5</span>];
+                </code>
+                <p>
+                    The destructuring assaingment uses similar syntax, but on the left-hand side of the assignment to define what values to unpack from the sourced variable.
+                </p>
+                <code>
+                    <span class="variable">const</span> x = [<span class="arrays">1, 2, 3, 4, 5</span>]; <br>
+                <span class="variable">const</span> [y, z] = x; <br>
+                </code>
+                
+                <code>
+                    const [firstElement, secondElement] = list;
+                </code>
+                <p>
+                    <span class="expd-outcome">// is equivalent to: <br>
+                            // const firstElement = list[0]; <br>
+                            // const secondElement = list[1]; <br>
+                    </span>
+                    
+                </p>
+                <p></p>    
+                    This capability is similar to features present in languages such as Perl and Python.
+                </p>
+            </section>
+            <section class="main-section">
+                <h2></h2>
+            </section>
+            <section class="main-section" id="example">
+                <h2>Example</h2>
+                <h3>Array Destructuring</h3>
+                <p>Basic variable assignment</p>
+                <code>
+                    const foo = ["one", "two", "three"]; <br>
+
+                    const [red, yellow, green] = foo;
+                </code>
+                <p>console.<span class="console-log">log</span>(red); // "one"<br>
                 console.<span class="console-log">log</span>(yellow); // "two" <br>
-                console.<span class="console-log">log</span>(green); // undefined <br>
-                console.<span class="console-log">log</span>(blue); // "undefined" <br>
+                console.<span class="console-log">log</span>(green); // "three"</p>
+
+                <p>
+                    Assignment separate from declaration <br>
+                    A variable can be assigned its value via destructuring, separate from the variable's declaration.
+                </p>
+                <code>
+                    [a, b] = [1, 2];
+                </code>
+                <p>
+                    console.<span class="console-log">log</span>(a); // 1 <br>
+                    console.<span class="console-log">log</span>(a); // 2 <br>
+                In an array destructuring from an array of length N specified on the  right-hand side of the assignment, if the number of variables specified on the left-hand side of the assignment is greater than N, only the first N variables are assigned values. The values of the remaining variables will be undefined.
+                </p>
+                <code>const foo = ["one", "two"];</code><br>
+                <code>const [red, yellow, green, blue] = foo; </code>
+                <p>
+                    console.<span class="console-log">log</span>(red); // "one" <br>
+                    console.<span class="console-log">log</span>(yellow); // "two" <br>
+                    console.<span class="console-log">log</span>(green); // undefined <br>
+                    console.<span class="console-log">log</span>(blue); // "undefined" <br>
+                </p>
+                <h3>Default values</h3>
+                <p>
+                    A variable can be assigned a default, in the case that the value unpacked from the array is undefined.
+                </p>
+                <code>
+                    let a, b;
+                    [a=5, b=7] = [1];
+                    console.<span class="console-log">log</span>(a); // 1<br>
+                    console.<span class="console-log">log</span>(b); // 7<br>
+                </code>
+                <h3>Swapping variables</h3>
+                <p>
+                    Two variable values can be swapped in one destructuring expression..
+                </p>
+                <p>
+                    Without destructuring assignment, swepping two values requires a temporary variable (or, in some low-level languages, the XOR-swap trick).
+                </p>
+                <code>
+                    let a = 1; <br>
+                    let b = 3; <br>
+                    [a, b] = [b, a]; <br>
+                    console.<span class="console-log">log</span>(a); // 3<br>
+                    console.<span class="console-log">log</span>(b); // 1<br>
+                    <br>
+                    const arr = [1, 2, 3]; <br>
+                    [arr[2], arr[1]] = [arr[1], arr[2]]; <br>
+                    console.<span class="console-log">log</span>(arr); // [1, 3, 2]<br>
+                </code>
+
+                <h3>Parsing an array returned from a function</h3>
+                <p>
+                    It's always been possible to return an array from a function. Destructuring can make woeking with an array return more concise.
+                </p>
+                <p>
+                    In this example, f() return the values [1, 2] as its output, which can be parsed in a single line with destrucuring.
+                </p>
+                <code>
+                    function f()  {<br>
+                        return [1, 2]; <br>
+                    }
+                </code>
+                
+                <code>
+                    <br>
+                    <br>
+                    let a, b; <br>
+                    [a, b] = f(); <br>
+                    console.<span class="console-log">log</span>(a); // 1<br>
+                    console.<span class="console-log">log</span>(b); // 2<br>
+                    <br>
+
+                    const [c] = f(); <br>
+                    console.<span class="console-log">log</span>(a); // 1<br>
+                </code>
+
+                <h3>Ignoring some returned values</h3>
+                <p>
+                    You can ignore return values that you're not interested in;
+                </p>
+                <code>
+                    function f() {<b> 
+                        return [1, 2, 3];    <br>
+                        <br>
+                        const [a,,b] = f();
+                        console.<span class="console-log">log</span>(a); // 1<br>
+                        console.<span class="console-log">log</span>(b); // 3<br>
+                        <br>
+                        const [c] = f(); <br>
+                        console.<span class="console-log">log</span>(c); // 1<br>
+                    }
+                </code>
+                <p>
+                    You can also ignore all the return values:
+                </p>
+                <code>
+                    [,,] = f();
+                </code>
+                <h3>Assigning the rest of the array to a variable</h3>
+                <p>
+                    When destructuring an array, youo can unpack and assign the remaining part of it to a variable using the rest pattern:
+                </p>
+                <code>
+                    const [a, ...b] = [1, 2, 3]; <br>
+                    console.<span class="console-log">log</span>(a); // 1<br>
+                    console.<span class="console-log">log</span>(b); // [2, 3]<br>
+                </code>
+                <p>
+                    Be aware that a SyntaxError will be thrown if a trailing comma is used on the right-hand side of a rest element:
+                </p>
+                <code>
+                    const [a, ...b, = [1, 2, 3];
+                </code>
+                <p>// SyntaxError: rest element may not have trailing comma</p>
+                <p>// Always consider using rest oerator as the last element</p>
+                <br>
+                <h3>Unpacking values from a regular expression match</h3>
+                <p>
+                When the regular expression exec() method finds a match, it returns an array containing first the entire matched
+                portion of the string and then the portions of the string that matched each parenthesized group in the regular
+                expression. Destructuring assignment allows you to unpack the parts out of this array easily, ignoring the full
+                matched if it is not needed.
+                </p>
+                <code>
+                function parseProtocol(url) {<br>
+                const parsedURL = /^(\w+)\:/\/\([^\/]+)\/(.*)$/.exec(url);<br>
+                if (!parsedURL) {<br>
+                return false;<br>
+                }
+                <br>
+                console.<span class="console-log">log</span>(parsedURL);<br>
+                //  ["https://developer.mozilla.org/en-US/docs/Web/JavaScript",<br>
+                // // "https", "developer.mozilla.org", "en-US/docs/Web/JavaScript"] <br>
+                <br>
+
+                const [, protocol, fullhost, fullpath] = parsedURL;
+                return protocol;
+                }
+                <br>
+                console.<span class="console-log">log</span>('https://developer.mozilla.org/en-US/docs/Web/JavaScript'));<br>
+                // "https"
+                </code>
+            </section>
+
+            <section class="main-section">
+                <h2>Object destructuring</h2>
+                <p>Basic assignment</p>
+                <code>
+                    const user = {<br>
+                        id: 42, 
+                        isVerifies: true
+                    };<br>
+                    <br>
+                    const {id, isVerified} = user; <br>
+                    <br>
+                    console.<span class="console-log">log</span>(id); // 42<br>
+                    console.<span class="console-log">log</span>(isVerified); // true <br>
+
+                    <p>Assignment seperate from declaration</p>
+                    <p>A variable can be assigned its value with destructuring separate from its delaration.</p>
+                    <code>let a, b;
+                    <br>
+                    ({a, b} = {a: 1, b: 2});
+                    </code>
+                    <p>
+                        Note: The parentheses ( ... ) around the assignment statement are required when using object literal destructuring assignment without a declaration.
+                    </p>
+                    <code>
+                        {a, b} = {a: 1, b: 2} is not valid stand-alone syntax, as the {a, b} on the left-hand side is considered a block and not an object leteral.
+                    </code>
+                    <p>
+                        However, <code>({a, b} = {a: 1, b: 2})</code> is valid, as const {a,b} = {a: 1, b: 2} 
+                    </p>
+                    <p>
+                        Your ( ... ) expression needs to be proceded by a semicolon or it may be used to execute a function on the previous line.
+                    </p>
+
+                    <h3>Assigning to new variable names</h3>
+                    <p>
+                        A property can be unpacked from an object and assigned to a variable with a different name than the object property.
+                    </p>
+                    <code>
+                        const o = {p: 42, q: bar};
+                    </code> <br>
+                    <code>
+                        const {p:foo, q: bar} = o;
+                    </code>
+                    
+                        <p>
+                            <code>
+                                console.<span class="console-log">log</span>(foo); // 42<br>
+                                console.<span class="console-log">log</span>(bar); // true
+                            </code>
+                        </p>
+                        <p>
+                            Here, for example, <cod> const {p: foo} = o </cod> takes from the object o the property naemd p and assigns it to a local variable name foo.
+                        </p>
+
+                        <h3>Default values</h3>
+                        <p>
+                            A variable can be assigned adefault, in the case that the value unpacked from the object is undefined.
+                        </p>
+                        <code>
+                            const {a = 10, b = 5} = {a: 3};
+                        </code>
+                        <p>
+                            <code>
+                                console.<span class="console-log">log</span>(a); // 3<br>
+                                console.<span class="console-log">log</span>(b); // 5
+                            </code>
+                        </p>
+                        <h3>Unpacking properties from objects passed as a function parameter</h3>
+                        <p>
+                            Objects passed into function parameters can also be unpacked into variables, which may then be accessed within the function body. As for object assignment, the destructuring syntax allows for the new variable to have the same name or a different name than the original property, and to assign default values for the case when the original object does not define the property.
+                        </p>
+                        <p>
+                            Consider this object, which contains information about a user.
+                        </p>
+                        <code>
+                            const user = {<br>
+                                id: 42, 
+                                displayName: "jdoe",
+                                fullName: {
+                                    firstName: "John",
+                                    lastName: "Doe"
+                                }
+                            }
+                        </code>
+                        <p>
+                            Here we show how to unpack a property of the passed object int a variable with the same name. The parameter value {id} indicates that the id property of the object  passed to the function should be unpacked into a variable with the same name, whisch can be used within the function.
+                        </p>
+                        <code>
+                            function userId({id}) {
+                                return id;
+                            }
+                        </code>
+                        console.log(userId(user)); // 42
+                        <p>
+                            You can define the name of the unpacked variable. Here we unpacked the property named displayName, and re rename it to dname for use within the function body. 
+                        </p>
+                    <code>
+                            functionDisplayName({displayName: dname}) {
+                            return dname
+                            }
+                    </code>
+                    <p>
+                        Nested objects can also be unpacked. The exampel below shows the property fullname being unpacked in to a variable called name.
+                    </p>
+                    <code>
+                        function whois({displayName, fullName:{firstName: name}}) {
+                            return `${dispalyName} is ${name}`;
+                        }
+                        <br>
+                        console.<span class="console-log">log</span>(whois(user)); // "jdoe is John"<br>
+                    </code>
+                    <h3>Setting a function parameter's default value</h3>
+                    <p>
+                        Default values can be specified using =, and will be used as variable values if a specified property does not exist in the passed object.
+                    </p>
+                    <p>
+                        Below we show a function where the default size is 'big', default co-ordinates are x: 0, y: 0 and default radius is 25;
+                    </p>
+
+                    <p>
+                            <code>
+                                function drawChart({size = "big", coords = {x: 0, y: 0}, radius = 25} = {}) { <br>
+                                console.<span class="console-log">log</span>(size, coords, radius);<br>
+                                    // do some chart drawing
+                                }
+                            </code>
+                    </p>
+                    <p>
+                        <code>
+                            drawChart({
+                                coords: {x: 18, y: 30},
+                                radius: 30
+                            });
+                        </code>
+                    </p>
+                    <p>
+                        Note: In the function signature for drawChart above,  the destructured left-hand side is assigned to an empty object literal on the right-hand side:
+                    </p>
+                    <code>
+                        {size = "big", coords = {x: 0, y: 0}, radius: 25} = {}
+                    </code>
+                    <p>
+                            You could have also written the function without the right-hand side assignment. However, if you leave out the right-hand side assignment, the function will look for atleat one argument to be suppliedwhen invoked, whereas in its current form, you can call <code>drawChart()</code> widthout supplying any parameters. The current approuch is useful if you want to be able to call an object is passed to the function
+                    </p>
+                    <h3>Nested object and array destructuring</h3>
+        <pre>
+            <code>
+            const metadata = {
+            title: "Scratchpad",
+            translation: [
+            locale: "de",
+            localization_tags[],
+            last-edit: "2014-04-04T08:43:37",
+            url: "/de/docs/Tools/Scratchpad",
+            title: "JavaScript-Umgebung"
+            ],
+            url:"/en/US/docs/Tools/Scrachpad"
+            };
+            </code>
+        </pre>
+
+        <pre>
+            <code>
+            let {
+                title: englishTitle, // rename
+                translations: [
+                    {
+                        title: localTitle, // rename
+                    },
+                    ],
+                } = metadata;
+            </code>
+            </pre>
+            <p>
+                console.<span class="console-log">log</span>(englishTitle); // Scratchpad<br>
+                console.<span class="console-log">log</span>(localeTitle); // "JavaScript-Umgebung"<br>
             </p>
+            <h3>For iteration and destructuring</h3>
+            <pre>
+                <code>
+                    const people = [
+                    {
+                        name: "Mike Smith"
+                    
+                            family: {
+                                mother: "Jane Smith",
+                                father: "Harry Smith",
+                                sister: "Samantha Smith"
+                    },
+                            age: 35,
+                    {
+                            name: "Tom Jones",
+                            family: "Norah Jones",
+                            father: "Richard Jones",
+                            brother: "Howard Jones"
+                    },
+                    age: 25
+                    }
+                    ];
+                </code>
+            </pre>
+            <pre>
+                <code>
+                    for(const{name: n, family: {father: f}} of peopel) {
+                        console.<span class="console-log">log</span>("Name: " + n +", Father:" + f);
+                    }
+                </code>
+                // "Name: Mike Smith, Father: Harry Smith"
+                // "Name: Tome Jones, Father: Richard Jones"
+            </pre>
 
-        </section>
-        <section class="main-section">
-            <h2></h2>
-        </section>
-        <section class="main-section">
-            <h2></h2>
-        </section>
+            <h3>Computed object propety naems and destructuring</h3>
+            <pre>
+                <code>
+                    let key = "z";
+                    let {[key]: foo} = {z: "bar"};
+                    console.<span class="console-log">log</span>(foo);
+                    // bar
+                </code>
+            </pre>
 
+            </section>
+            <section class="main-section">
+                <h2>Rest in Object Destructuring</h2>
+                <p>
+                    The Rest/Spread Properties for EXMAScript proposal (stage 4) adds the rest syntax to destructuring. Rest properties collect the remaining own enumerable property keys that are not already picked off by destructuring pattern. 
+                </p>
+            <pre>
+                <code>
+                        let {a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}
+                        a; // 10
+                        b; // 20
+                        rest; // {c: 30, d: 40}
+                </code>
+            </pre>
+            <h3> Invalid JavaScript identifier as a property name</h3>
+            <p>
+                Destructuring can be used with property names that are not valid JavaScript identifiers by providing an alternative identifier that is valid.
+            </p>
+            <pre>
+                <code>
+                    cont foo = {"fizz-buzz": true};
+                    const {"fizz-buzz": fizzbuzz} = foo;
+                    console.<span class="console-log">log</span>(fizzBuzz); // true;
+                </code>
+            </pre>
+            <pre>
+                    const props = [
+                    {id: 1, name: "fizz"}
+                    {id: 2, name: "Buzz"},
+                    {id: 3, name: "fizzBuzz"}
+                    ];
+
+                    const [,, {name}] = props;
+                    
+                    console.<span class="console-log">log</span>(name); // "FizzBuzz";
+            </pre>
+            <h3>
+                The prototype chain is looked up when the object is deconstructed .
+            </h3>
+            <p>
+                When deconstructing an object , if a property is not accesssed in itself, it eill continue to look up along the prototupe chain.
+            </p>
+            <pre>
+                <code>
+                    let obj = {self: "1,2,3"};
+                    obj.__proto__.prot = "456";
+                    // self "1, 2, 3"
+                    // prot "456" (Access to the prototype chain)
+                </code>
+            </pre>
+            </section>
+        </div>
     </main>
-    
+    <footer>
+        &copy; 2022 alrights reserved
+    </footer>
+    <script src="index.js"></script>
 </body>
 </html>
