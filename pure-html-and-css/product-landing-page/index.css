@@ -1,0 +1,800 @@
+/* General */
+html {
+    box-sizing: border-box;
+}
+
+*:after,
+*:before,
+* {
+    box-sizing: inherit;
+    --margin: 10px;
+    --font-size: 1.2em;
+    --light-grey: rgb(240, 240, 240);
+    --bkg: rgb(101, 140, 123);
+    --form-bkg: rgb(231, 229, 229);
+}
+
+body {
+    margin: 0;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-family: "Gill sans", serif;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 1.6;
+    font-weight: normal;
+    font-size: 2.9em;
+    margin-left: 15px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    letter-spacing: 1.6px;
+}
+
+/* #header container */
+/* #header {
+    background-color: red;
+    height: 230px;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(3, auto-fit);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "t t t"
+    "s s s"
+    "u u u";
+} */
+/* .container-1 {
+    grid-area: t;
+    width: 100vw;  
+} */
+
+/* container-1 is inside header element and sits at the very top of the page. contains union Jack image */
+.container-1 {
+    position: fixed;
+    font-size: 1.2em;
+    width: 100%;
+    height: 40px;
+    /* letter-spacing: 1.6px; */
+    background-color: var(--light-grey);
+    display: flex;
+    justify-content: space-between;
+    z-index: 3;
+}
+
+.container-1 ul>li>a:hover {
+    text-decoration: underline;
+}
+
+.union-jack {
+    width: 30px;
+    /* max-height: auto; */
+    height: 18px;
+}
+
+.mossbox {
+    word-spacing: 1px;
+}
+
+.service {
+    position: relative;
+    right: 30px;
+    width: 400px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 6
+}
+
+#company-logo {
+    /* background-color: rebeccapurple; */
+    width: 350px;
+    display: grid;
+    margin-left: 25px;
+    grid-template-columns: 60px auto;
+    gap: 10px;
+    align-items: center;
+}
+
+.company-logo {
+    position: fixed;
+    margin-top: 40px;
+    padding: 20px;
+    width: 100vw;
+    background-color: white;
+    z-index: 300;
+    top: 0;
+    left: 0;
+    right: 0;
+    grid-area: s;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: yellow; */
+}
+
+#header-img {
+    width: 65px;
+    max-height: 30px;
+}
+
+#header-img {
+    border-radius: 5px;
+}
+
+.input-search {
+    grid-area: w;
+}
+
+/* Search bar */
+input[type="text"] {
+    width: 350px;
+    padding: 13px 30px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border: 1px solid black;
+    padding: 14px 30px;
+}
+
+.input-search {
+    width: 550px;
+    border-style: none;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-items: center;
+}
+
+.input-search> ::placeholder {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+/* input search label */
+input[type="text"]+label {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    right: 40px;
+    font-size: 1.5em;
+    text-align: center;
+    letter-spacing: 1.6px;
+    width: 180px;
+    background-color: black;
+    padding: 12px 30px;
+    border: 2px solid black;
+}
+
+label>a {
+    color: white;
+}
+
+/* contains styling for favourite icon, sign-in icon and shopping basket */
+.personal>a>img {
+    width: 25px;
+    max-height: auto;
+}
+
+.personal {
+    width: 200px;
+    height: 40px;
+    margin: var(--margin);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+    justify-items: center;
+    align-items: center;
+}
+
+/* navbar */
+#nav-bar {
+    width: 100vw;
+    background-color: white;
+    height: 224px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* #nav-bar {
+    grid-area: u;
+} */
+
+.nav-bar-1 {
+    width: 100vw;
+    height: 60px;
+    background-color: #fff;
+    position: fixed;
+    padding: 0px 5px;
+    top: 140px;
+    left: 250;
+    font-size: var(--font-size);
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 3;
+}
+
+.nav-bar-1 :last-child>a {
+    color: red;
+}
+
+.nav-bar-1-container {
+    display: flex;
+    position: fixed;
+    z-index: 3;
+}
+
+.nav-link {
+    padding: 10px;
+}
+
+.nav-bar-2 {
+    position: fixed;
+    font-size: var(--font-size);
+    margin-top: 194px;
+    background-color: var(--light-grey);
+    padding: 12px 0;
+    height: 30px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 3;
+}
+
+.nav-bar-2 :first-child>a {
+    position: relative;
+    left: 95px;
+}
+
+.nav-bar-2 :last-child>a {
+    position: relative;
+    right: 20px;
+}
+
+/*++++++++++ +
+    +   slider       +
+    ++++++++++*/
+
+.slider{
+    margin-top: 20px;
+    width: 100vw;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.div-slide {
+    /* width: 300px; */
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    font-size: 1.3em;
+
+}
+.div-slide > img,
+p > img {
+    width: 120px;
+    margin: 10px;  
+}
+.btn-next  {
+    position: relative;
+    top: 30px;
+    left: 50px;
+    font-size: 2em;
+}
+.btn-previous {
+    position: relative;
+    right: 50px;
+    font-size: 2.5em;
+    bottom: 30px;
+}
+
+
+/* main product */
+#main-banner {
+    z-index: -3;
+}
+.landing-img>img {
+    width: 722px;
+}
+.landing-img >img {
+    max-width: 100%;
+    height: auto;
+}
+
+.landing-img {
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    z-index: -3;
+}
+
+.product {
+    width: 722px;
+    height: 518px;
+    background-color: rgb(180, 178, 178);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -3;
+}
+
+.product > h2 {
+    font-size: 6em;
+    letter-spacing: 1.6px;
+    font-weight: var(--font-size);
+    text-transform: capitalize;
+}
+
+.product > h2 + p {
+    position: relative;
+    bottom: 60px;
+    font-size: 1.9em;
+    text-transform: lowercase;
+}
+
+.product>h2+p::first-letter {
+    text-transform: uppercase;
+}
+
+.product :last-child {
+    position: relative;
+    bottom: 90px;
+    font-size: 1.9em;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+/* Second banner with the background image */
+.mainbanner {
+    background-image: url("./images/mainbanner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 650px;
+}
+
+.weddings2022 {
+    cursor: pointer;
+    position: relative;
+    top: 250px;
+    left: 950px;
+    width: 350px;
+    height: 300px;
+    padding: 40px;
+    background-color: var(--bkg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    line-height: 1.3;
+}
+
+.weddings2022 :first-child {
+    width: 175px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: var(--bkg);
+    text-transform: uppercase;
+    font-size: 1.7em;
+    word-spacing: 3px;
+    padding: 3px;
+    text-align: center;
+}
+
+.weddings2022 :first-child+span {
+    font-size: 5.5em;
+    font-weight: var(--font-size);
+    text-transform: lowercase;
+    text-align: left;
+    /* background-color: red; */
+    color: #fff;
+    line-height: 1;
+    padding: 20px 0;
+}
+
+.weddings2022 :first-child+span:first-letter {
+    text-transform: uppercase;
+}
+
+.weddings2022 :last-child {
+    font-size: 1.5em;
+    color: #fff;
+    text-decoration: underline;
+    word-spacing: 2px;
+    letter-spacing: 2px;
+}
+
+/* Subscription form */
+.subscribe {
+    background-color: var(--form-bkg);
+    width: 100vw;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding: 0 100px;
+}
+
+.heading {
+    width: 500px;
+    padding: 0 40px;
+    margin: auto;
+}
+
+.heading>h2 {
+    font-size: 4em;
+    font-weight: var(--font-size);
+    word-spacing: 1.5px;
+    text-transform: lowercase;
+}
+
+.heading>h2::first-letter,
+.heading>h2+p::first-letter {
+    text-transform: uppercase;
+}
+
+.heading>h2+p {
+    font-size: 1.5em;
+    font-weight: var(--font-size);
+    text-transform: lowercase;
+    word-spacing: 1.5px;
+}
+
+/* Form element */
+form {
+    width: 600px;
+    height: 400px;
+    margin: 0;
+    padding: 0;
+    line-height: 4;
+}
+
+#email,
+#date {
+    width: 100%;
+    line-height: 2;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    outline: 0;
+    border-bottom: 2px solid black;
+    background-color: var(--form-bkg);
+}
+
+#date {
+    position: relative;
+    bottom: 40px;
+}
+
+#email+label {
+    position: relative;
+    bottom: 20px;
+    font-size: 1.5em;
+    letter-spacing: 1.6;
+    text-transform: capitalize;
+}
+
+#date {
+    font-size: 1.5em;
+}
+
+#date+label {
+    position: relative;
+    position: relative;
+    bottom: 50px;
+    text-transform: capitalize;
+    letter-spacing: 1.6;
+    font-size: 2em;
+}
+
+.form-p {
+    position: relative;
+    bottom: 50px;
+}
+
+.form-p>span {
+    position: relative;
+    bottom: 20px;
+}
+
+.form-p,
+.guest-container {
+    font-size: 1.4em;
+    line-height: 1.3;
+}
+
+.guest-container {
+    position: relative;
+    bottom: 20px;
+}
+
+form> :last-child {
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    padding: 10px 30px;
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    border: 1px solid #000;
+}
+
+/* product suits */
+
+/* #product-video {
+    width: 60vw;
+    display: block;
+    /* margin: auto; */
+ 
+
+
+/* main video */
+
+
+video {
+    position: relative;
+    bottom: 35px;
+   max-width: 310px;
+    height: 540px;
+}
+
+figure {
+    margin-left: 0;
+}
+.item-and-price > figure > img {
+    width: 310px;
+    height: 500px;
+}
+.item-and-price > img {
+    /* display: block; */
+    max-width: 100%;
+    max-height: auto;
+}
+
+ .p-and-figcaption{
+     position: relative;
+     bottom: 40px;
+}
+
+/*+++++ suit prices +++++ */
+.product-container {
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: repeat(4, 310px);
+    grid-template-rows: 640px;
+    gap: 20px;
+    justify-content: center;
+    /* align-items: center; */
+    margin: 20px;
+}
+.item-and-price {
+    display: flex;
+    flex-direction: column;
+    /* margin-bottom: 10px; */
+    font-size: 1.25em;
+    font-weight: normal;
+    /* background-color: yellow; */
+}
+
+.item-and-price > figure > figcaption {
+    margin-top: 15px;
+}
+.item-and-price > figure > figcaption,
+.item-and-price > :last-child {
+    font-weight: 500;
+}
+.item-and-price > p {
+    margin-top: -5px;
+}
+
+/* Tips for the customer. last article just before  footer */
+
+.tips-para {
+    width: 90vw;
+    height: 350px;
+    background-color: var(--light-grey);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+.tips-para > h2 {
+    font-size: 1.3;
+    font-weight: 500;
+}
+.tips-para > p {
+    width: 75vw;
+    padding: 10px 40px;
+    font-weight: 350;
+    font-size: 1.2em;
+    letter-spacing: 1.6px;
+    line-height: 1.6;
+    word-spacing: 3px;
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    height: 200px;
+    font-size: 1.6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/*                                                 ++++++++++++++++++++++++
+                                                    +               Media Query                        +
+                                                    ++++++++++++++++++++++++
+*/
+@media (max-width: 960px) {
+    body {
+        width: 100vw;
+        margin: 0;
+        /* background-color: yellow; */
+    }
+    .company-logo {
+        width: 100vw;
+        /* background-color: red; */
+    }
+    #company-logo {
+        position: relative;
+        /* background-color: rebeccapurple; */
+       right: 40px;
+    }
+    h1 {
+        font-size: 1.2;
+    }
+    .input-search {
+        width: 450px;
+    }
+    .input-search > input[type="text"] {
+        width: 250px;
+    }
+    .input-search > ::placeholder {
+        position: relative;
+        right: 15px;
+        font-size: 0.7em;
+       
+    }
+    input[type="text"]+label {
+        width: 100px;
+        font-size: 1.3em;
+        text-align: center;
+        padding: 13px 15px;
+    }
+        .nav-bar-2 :first-child>a{
+            position: relative;
+            left: 0px;
+        }
+        .nav-bar-2 :last-child > a {
+            position: relative;
+            right: 0px;
+        }
+        .nav-bar-1,
+        .nav-bar-2 {
+            font-size: 0.95em;
+        }
+       
+        .landing-img {
+            max-width: 100vw;
+            display: grid;
+            grid-template-columns: 402px 402px;
+            grid-template-rows: 322px;
+            margin-bottom: 120px;
+            
+        }
+        .landing-img> img {
+            width: 472px;
+            height: 322px;
+            
+        }
+      
+        .landing-img>img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product {
+            /* background-color: rebeccapurple; */
+            width: 422px;
+            height: 290px;
+            align-items: center;
+            justify-items: center;
+        }
+        .product > h2 {
+            width: 300px;
+            position: relative;
+            top: 40px;
+            font-size: 3.5em;
+            left: 50px;
+        }
+        .product > p {
+            width: 300px;
+            position: relative;
+            top: 0px;
+            left: 50px;
+        }
+       #landing-page {
+           position: relative;
+           margin-top: -3px;
+       }
+          .weddings2022 {
+              cursor: pointer;
+              position: relative;
+              top: 100px;
+              left: 520px;
+              width: 220px;
+              height: 200px;
+              padding: 20px;
+              line-height: 1.1;
+          }
+        .mainbanner {
+            background-image: url("./images/mainbanner.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 100%;
+            height: 550px;
+        }
+
+.weddings2022 :first-child {
+    width: 175px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: var(--bkg);
+    text-transform: uppercase;
+    font-size: 1.3em;
+    word-spacing: 3px;
+    padding: 3px;
+    text-align: center;
+}
+
+.weddings2022 :first-child+span {
+    font-size: 3.5em;
+    font-weight: var(--font-size);
+    text-transform: lowercase;
+    text-align: left;
+    /* background-color: red; */
+    color: #fff;
+    line-height: 1;
+    padding: 20px 0;
+}
+
+.weddings2022 :first-child+span:first-letter {
+    text-transform: uppercase;
+}
+
+.weddings2022 :last-child {
+    font-size: 1.2em;
+    color: #fff;
+    text-decoration: underline;
+    word-spacing: 2px;
+    letter-spacing: 2px;
+}
+}
+@media (max-width: 850px) {
+    body {
+        display: grid;
+        grid-template-columns: auto;
+    }
+}
