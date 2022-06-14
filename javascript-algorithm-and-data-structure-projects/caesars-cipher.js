@@ -12,9 +12,9 @@
 
     function rot13(str) {
         let newStr = str.toUpperCase().split(" ").slice();   
-       console.log(str.length);
+       console.log(str);
         let alphabet = "0ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-        let s = newStr.reduce((acc, element) => {
+       newStr = newStr.reduce((acc, element) => {
             element.split("").concat(" ").forEach((a, i) => {
                 if(alphabet.indexOf(a) === -1) {
                     acc.push(a)
@@ -27,9 +27,9 @@
                 }
             });
             return acc;
-        }, [])
-        s.splice([s.length -1])
-         return s.join("");
+        }, []).join("").split(' ');
+        newStr.splice([newStr.length -1]);
+        return newStr.join(' ');
     }
 
     console.log(rot13("SERR PBQR PNZC")); // should decode to the string FREE CODE CAMP
@@ -39,3 +39,8 @@
     console.log(rot13("SERR YBIR?")); // should decode to the string FREE LOVE?
 
     console.log(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")); // should decode to the string THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
+
+
+    let d = [1, " "];
+    d.pop()
+    console.log(d);

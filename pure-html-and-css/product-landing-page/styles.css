@@ -1,0 +1,26 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+@media only screen and (max-width: 840px) {
+   #header-img {
+       display: none;
+   }
+   #company-logo > h1 {
+       font-size: 0.8rem;
+       width: 130px;
+       padding-left: 0.5px;
+       height: 15px;
+       text-align: center;
+   }
+   #company-logo {
+       width: 250px;
+        display: grid;
+        margin-left: 25px;;
+   }
+}

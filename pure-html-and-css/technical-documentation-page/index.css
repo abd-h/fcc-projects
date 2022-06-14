@@ -361,4 +361,7 @@ a > span {
         .nav-header {
             width: 180px;
         }
+        .code-bkg {
+            overflow: auto;
+        }
 }

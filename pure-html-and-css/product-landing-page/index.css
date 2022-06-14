@@ -41,8 +41,8 @@ a {
 }
 
 /* #header container */
-/* #header {
-    background-color: red;
+ #header {
+    /* background-color: red; */
     height: 230px;
     width: 100vw;
     display: grid;
@@ -52,11 +52,11 @@ a {
     "t t t"
     "s s s"
     "u u u";
-} */
-/* .container-1 {
+}
+.container-1 {
     grid-area: t;
     width: 100vw;  
-} */
+}
 
 /* container-1 is inside header element and sits at the very top of the page. contains union Jack image */
 .container-1 {
@@ -664,7 +664,7 @@ footer {
        right: 40px;
     }
     h1 {
-        font-size: 1.2;
+        font-size: 1rem;
     }
     .input-search {
         width: 450px;
