@@ -5,17 +5,17 @@ toggleBar = document.getElementsByClassName("menu")[0];
 
 // stops animation and transition during window resizing;
 
-// function stopsTransition(resizeTimer) {
-//     document.body.classList.add("resize-animation-stopper");
-//     clearTimeout(resizeTimer);
-//     resizeTimer = setTimeout(() => {
-//         document.body.classList.remove('resize-animation-stopper');
+function stopsTransition(resizeTimer) {
+    document.body.classList.add("resize-animation-stopper");
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        document.body.classList.remove('resize-animation-stopper');
         
-//     }, 400);
-// }
+    }, 400);
+}
 
 
-// window.addEventListener("resize", stopsTransition)
+window.addEventListener("resize", stopsTransition)
 
 
 
@@ -81,16 +81,15 @@ function clickOnWindow() {
 navbar.addEventListener("mouseleave",clickOnWindow)
 
 
-
-let resizeTimer;
-window.addEventListener("resize", () => {
-  document.body.classList.add("resize-animation-stopper");
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
-    document.body.classList.remove("resize-animation-stopper");
-  }, 400);
-});
-console.log(toggleBar.classList.contains("change"))
+// let resizeTimer;
+// window.addEventListener("resize", () => {
+//   document.body.classList.add("resize-animation-stopper");
+//   clearTimeout(resizeTimer);
+//   resizeTimer = setTimeout(() => {
+//     document.body.classList.remove("resize-animation-stopper");
+//   }, 400);
+// });
+// console.log(toggleBar.classList.contains("change"))
 
 /*
 
@@ -113,3 +112,5 @@ window.addEventListener("resize", () => {
 
 
 */
+
+console.log(window.innerWidth)

@@ -1,25 +1,30 @@
 @import url('/font-awesome-4.6.3/css/font-awesome.min.css');
 :root {
     /* font-size */
-    --font-size: 1.5em;
+    --font-size: 0.95rem;
     --nav-link-font-size: 1.2rem;
+    --h2-font-size: 1.5rem;
     
     /* color */
     --keyword: blue;
     --function: rgb(248, 2, 2);
     --obj-property: rgb(189, 1, 1);
-    --variables: bold;
+    
     --number: green;
     --puntuation: rgb(183, 183, 183);
     --comment: rgb(150, 150, 150);
     --expected-output: rgb(183, 183, 183);
     --line-height: 1.6;
-    --color: rgb(45, 43, 43);
-
+    --color: rgb(0, 0, 0);
+    --variables-color: black;
     /* background-color */
     --code-background: rgb(246, 245, 245);
     --not-valid-background: rgb(255, 233, 233);
     --code-container-background-color: rgb(241, 240, 240);
+    --h3-color: rgb(49, 49, 49);
+
+    /* font-weight */
+    --variables: 400;
 
     /* padding */
     --padding: 5px;
@@ -51,10 +56,8 @@
 *::after {
     box-sizing: inherit;
 } 
-/* Utilities */
-.code-el {
-    background-color: var(--code-el-background-color);
-}
+
+/* General */
 
 body {
     font-size: 10px;
@@ -71,10 +74,10 @@ body {
     "h h"
     "p content"
     "navbar content"
-    "footer footer";
+    "navbar footer";
 }
 
-header {
+.header-menu {
     position: fixed;
     background-color: var(--navBackground);
     width: 100%;
@@ -90,7 +93,11 @@ header {
     box-shadow: 3px 1px 1px black;
     
 }
+/* ******************************** */
 
+/*          heading element             */
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 h1 {
     padding-block: 20px;
     font-size: 2.5rem;
@@ -99,6 +106,34 @@ h1 {
     color: var(--accent);
     justify-self: center;
     /* flex-grow: 1; */
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+    text-transform: capitalize;
+    line-height: 1.6;
+    letter-spacing: 1.6px;
+    /* background-color: aliceblue; */
+    margin: 0;
+    padding-inline: var(--padding);
+    color: var(--accent);
+    font-weight: 200;
+}
+
+h3 {
+    padding-block: 10px;
+    padding-inline: var(--padding);
+    margin-block-start: 2rem;
+    font-weight: normal;
+    font-size: var(--font-size);
+    letter-spacing: var(--letter-spacing);
+    color: var(--h3-color);
+
+}
+
+p {
+    padding-inline: 10px;
+    margin-block: 20px;
 }
 
 .menu {
@@ -140,7 +175,7 @@ h1 {
 }
 
 
-#navbar > p {
+#navbar > header p {
     margin-block-start: 40px;
     /* padding-inline-start: 10px; */
     font-size: 1.3rem;
@@ -203,6 +238,7 @@ h1 {
     inset-inline-start: 30px;
     letter-spacing: 1.5px;
     font-weight: 100;
+    cursor: pointer;
 }
 
 #navbar a:hover::after {
@@ -238,37 +274,25 @@ h1 {
     overflow: hidden;
 }
 
+/* ******************************** */
 
-section {
-    /* background-color: rgb(97, 180, 252); */
-    padding: 5px;
-    margin-bottom: 50px;
-}
+/*          Section element             */
 
-section h2 {
-    font-size: 2.3em;
-    text-transform: capitalize;
-    line-height: 1.6;
-    letter-spacing: 1.6px;
-    /* background-color: aliceblue; */
-    margin: 0;
-    padding: var(--padding);
-    color: var(--accent);
-    font-weight: 200;
-}
-
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 #introduction {
-    max-width: 100%;
-} 
-#introduction article h2 {
-    margin-block-start: 0;
+    margin-block-start: 2rem;
 }
- 
-#introduction > article + p{
-    /* background-color: red; */
-    margin-block-start: 50px;
-    font-weight: 300;
+#introduction  .code-background {
+    margin-block: 0rem;
 }
+section {
+    padding-inline-start: var(--padding);
+}
+
+section:not(#introduction) {
+    margin-block: 1rem;
+}
+
 
 :is(#introduction, #description, ul.code-background, section ul) + p,  p {
     width: 100%;
@@ -293,28 +317,69 @@ p > code.code-background {
     
 }
 
-/* Utilities */
+/* ******************************** */
 
+/*          Code styling             */
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+
+
+div.code-background  {
+    position: relative;
+    overflow: hidden;
+}
+
+:is(div.code-background) p {
+    /* background-color: red; */
+    margin-block: 0.3rem;
+    padding-block: 0.2rem;
+    font-size: var(--font-size);
+}
+
+.pre1 {
+    position: absolute;
+    inset-inline-end: 19rem;
+    inset-block-end: 1.5rem;
+    line-height: 1.7rem;
+    font-size: 1rem;
+    inline-size: 30px;
+    block-size: 50px;
+    padding-block-end: 2rem;
+
+}
+
+.code-el {
+    background-color: var(--code-el-background-color);
+}
  
 .margin-block-end {
     margin-block-end: 20px;
 }
-
+/* div.code-background *{
+    outline: 1px solid red;
+} */
 .code-background p {
     font-size: var(--font-size);
     font-weight: 200;
-    padding: 10px;
+    /* padding: 10px; */
+}
+.code-background>span {
+    font-size: var(--font-size);
+    font-weight: 400;
+    letter-spacing: var(--letter-spacing);
 }
 .code-background > code,
 .code-background > code ~ span {
     padding-inline: 20px;
     padding-block: 10px;
+    font-size: var(--font-size);
     line-height: var(--line-height);
 }
 
 .variables {
-    color: black;
-    font-weight: 400;
+    color: var(--variables-color);
+    font-weight: var(--variables);
 }
 .colon,
 .console {
@@ -333,24 +398,34 @@ p > code.code-background {
 .punctuation {
     color: var(--puntuation);
     font-weight: 400;
+    font-size: var(--font-size);
 }
  
 .comment,
 .expected-output,
 .output {
     color: var(--comment);
-    font-weight: 600;
+    font-weight: 400;
     margin-block-end: 10px;
 }
 .obj-property {
     color: var(--obj-property)
 }
 p.code-background {
-    padding: 40px;
+    padding: 20px;
 }
 
-article { 
+
+
+/* article { 
     margin-top: 30px;
+} */
+
+#note {
+    /* background-color: blueviolet; */
+    padding-inline: 2rem;
+    padding-block-end: 2rem;
+
 }
 
 .dev {
@@ -366,23 +441,15 @@ article {
     border-radius: 50%;
 }
 .fa {
-    position: absolute;
-    top: -2px;
-    right: 1.5px;
     font-size: .7rem;
     color: white;
-    padding: 3px;
     font-weight: 800;
-    
 }
 
-.info {
-    width: 30px;
-    background-color: red;
-}
 
 
 .note-card {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -391,14 +458,16 @@ article {
     margin-block:50px;
     padding-inline-end: 30px;
     padding-block: 30px;
-    
+    /* border: 1px solid red; */
 }
+
 .note-card li:nth-child(2) {
     inline-size: 100%;
     background-color: var(--note-card-background);
     padding-inline-start: 15px;
 }
- #navbar ul > li {
+ ul.note-card,
+ ul.not-valid-container {
     list-style: none;
 }
 .note-card code {
@@ -406,10 +475,15 @@ article {
     color: var(--comment);
     display: inline;
 }
-.note-card p {
+.note-card p,
+.not-valid-container {
+    position: relative;
+    inset-inline-end: 0.8rem;
+    inset-block-end: 1rem;
+    margin-block-end: 0;
     line-height: var(--line-height);
     letter-spacing: var(--letter-spacing);
-    margin: 10px;
+    /* background-color: red; */
 }
 
 .description p {
@@ -424,6 +498,7 @@ article {
     background-color: var(--not-valid-background);
     padding-inline: var(--padding-inline);
     padding-block: var(--padding-block);
+    margin-block-end: 2rem;
     border-radius: 4px;
 }
 .fa-circle-xmark {
@@ -448,8 +523,9 @@ article {
 .not-valid-container {
     position: relative;
     background-color: var(--not-valid-background);
-    padding-block: 25px;
-    margin-block: 30px;
+    inset-block-start: 0.5rem;
+    inset-inline-start: 0rem;
+    height: fit-content;
 }
 .not-valid {
     position: absolute;
@@ -460,6 +536,11 @@ article {
 }
 .invalid-code .comment {
     font-weight: bolder;
+}
+
+.comment {
+    font-size: 15px;
+    font-weight: normal;
 }
 
 #description .not-valid > p {
@@ -478,8 +559,24 @@ article {
     background-color: transparent;
 }
 
-ul.not-valid-container > p {
-background-color: rgb(208, 2, 2);
+.not-valid-container li {
+    margin-block-end: 0.5rem;
+    inset-block-start: 0.2rem;
+    /* z-index: 1; */
+    /* inline-size: calc(100% - 2rem); */
+}
+
+ li > .expected-output:not(.first-child) {
+    /* border: 1px solid rebeccapurple; */
+    font-size: 1rem;
+    font-weight: 100;
+    line-height: 0.5;
+}
+
+ul.not-valid-container  p {
+    /* background-color: rgb(208, 2, 2); */
+    padding-block: 0;
+    margin-block: 0;
 }
 
 .not-valid-container li {
@@ -488,7 +585,7 @@ background-color: rgb(208, 2, 2);
 
 #destructuring_patterns ul {
     padding-inline-start: 40px;
-    margin-block: 20px;
+    margin-block: 2rem;
 }
 
 #destructuring_patterns li {
@@ -518,10 +615,74 @@ img {
 footer {
     grid-area: footer;
     inline-size: 100%;
-    block-size: 300px;
-    background-color: var(--navbar-li-bkgr-hover);
-    z-index: 6;
+    /* background-color: var(--navbar-li-bkgr-hover); */
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
+
+/* footer * {
+    outline: 1px solid red;
+} */
+
+footer .prostate-cancer {
+    position: relative;
+    background-color: var(--code-background);
+    inline-size: 80%;
+    block-size: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-block: 1rem;
+    margin-inline: 1rem;
+    padding-inline: 1rem;
+    padding-block: 2rem;
+    border-radius: 0.3rem;
+}
+
+.prostate-cancer img {
+    inline-size: 190px;
+    block-size: 100px;
+    margin-block-start: 1.5rem;
+}
+
+.prostate-cancer p,
+footer section p {
+    font-size: 1rem;
+    inline-size: auto;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 1.6px;
+}
+
+.prostate-cancer img + p {
+    color: rgb(0, 144, 184);
+}
+
+ .prostate-cancer a {
+    padding-block: 0px;
+    line-height: 1px;
+ }
+
+ .prostate-cancer a,
+ .prostate-cancer p:first-child {
+    color: var(--color);
+    font-weight: 500;
+ }
+ .prostate-cancer p:last-child {
+    margin-block-start: 0;
+    padding-block-end: 1rem;
+ }
+
+ footer section p {
+    text-align: center;
+    margin-block: 0.2rem;
+ }
+
+
 
 
 /* transition stopper */
@@ -531,21 +692,17 @@ footer {
     animation: none !important;
 }
 
-    /* ******************************** */
+                /* ******************************** */
 
-    /*          Media Query             */
+                /*          Media Query             */
 
-    /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+                /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 @media only screen and (max-width: 375px){
-   
-
     h1#title {
         margin-inline-end: 10px;
         padding-inline-end: 10px;
         margin-inline-start: 100px;
-    
-    
     }
 }    
 
@@ -555,24 +712,29 @@ footer {
         margin-inline-start: 0px;
         margin-inline-end: 0px;
     }
-    header {
+
+    .header-menu {
         justify-content: space-between;
         align-items: center;
     }
+
    h1#title {
     flex-grow: 1;
     transform: translateX(0%);
     margin-inline-end: 10px;
    }
+
    .menu {
     flex-shrink: 1;
    }
+  
 }
 
 @media screen and (max-width: 1120px) {
-    header {
+    .header-menu {
         gap: 10px;
     }
+
     h1 {
         align-self: center;
         justify-self: center;
@@ -585,6 +747,7 @@ footer {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
     }
+
     #navbar {
         display: none;
         inset-inline-start: -40px;
@@ -592,20 +755,18 @@ footer {
         inset-block-end: 7px;
         block-size: 100vh;
         background-color: var(--accent);
-        /* transform: translateX(-100%); */
         transition: 0.5s all ease-in-out;
     }
-
 
     #navbar {
         display: flex;
         transform: translateX(-101%);
-            -webkit-transform: translateX(-101%);
-            -moz-transform: translateX(-101%);
-            -o-transform: translateX(-101%);
-            -ms-transform: translateX(-101%);
+        -webkit-transform: translateX(-101%);
+        -moz-transform: translateX(-101%);
+        -o-transform: translateX(-101%);
+        -ms-transform: translateX(-101%);
     }
-    #navbar p {
+    #navbar header > p {
         display: none;
     }
     .navbar-ul {
@@ -622,13 +783,16 @@ footer {
         cursor: pointer;
         z-index: 10;
     }
+
     .menu:hover {
         background-color: var(--navbar-li-bkgr-hover);
         transition: var(--transition);
     }
+
     .bar {
         cursor: pointer;
     }
+
     .change {
         display: flex;
         cursor: pointer;
@@ -644,200 +808,10 @@ footer {
    }
 }    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* @media only screen and (min-width: 651px) and (max-width: 912px) {
-    body {
-            grid-template-areas:
-                "h h"
-                "content content"
-                "content content";
+@media screen and (min-width: 1122px) and (max-width: 1140px) {
+    #navbar {
+            inline-size: 370px;
+            /* background-color: red; */
         }
-     
-    #navbar {
-        font-size: 1;
-        inline-size: 60%;
-        background-color: rgb(234, 231, 231);
-        display: none;
-        margin-block-start: 0px;
-    }
-   
-    #navbar li {
-        inline-size: 100%;
-    }
+}
 
-    #navbar li:hover {
-        background-color: rgb(255, 253, 253);
-        transition: 2s;
-    }
-   
-    .menu {
-        display: flex;
-    }
-    h1 {
-        font-size: var(--font-size);
-    }
-    .change {
-        display: flex;
-    }
-   
-} */
-
- /* @media only screen and (max-width: 650px) { 
-    body {
-            grid-template-areas:
-                "h h"
-                "content content"
-                "content content";
-    }
-    #navbar {
-        flex-direction: column;
-        overflow: hidden;
-        /* transform: translateX(-100%); */
-        /* background-color: blue; */
-        /* margin-block-start: 100px;
-        transition: 0.3s all;
-        display: flex;
-
-    }
-    #navbar ul {
-        position: relative;
-        inline-size: 100%;
-        border: none;
-        overflow: hidden;
-        background-color: aquamarine;
-    }
-
-    #navbar li {
-        position: relative;
-        width: 100%;
-        margin-inline-start: -20Px;
-    }
-    #navbar li > a {
-        width: 100%;
-        font-size: 1.2rem;
-        line-height: 1.8;
-        inset-inline-start: 30px;
-        padding-inline-start: 20px;
-
-    }
-
-   h1 {
-    font-size: var(--font-size);
-   }
-
-   #main-doc {
-    margin-block-start: 30px;
-   }
-
-   .change {
-    display: flex;
-   }
-
-   .menu {
-    display: flex;
-    border: none;
-    padding-block: 5px;
-    padding-inline: 3px;
-   }
-
-   .bar {
-    display: block;
-   }
-
-   .menu:hover {
-    background-color: #eee;
-    cursor: pointer;
-    transition: 1.1s;
-   }
-
-  #navbar li:hover {
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-    
-   }
-
-   #navbar:checked {
-    display: none;
-   }
-   .navbar {
-    display: flex;
-   }
-} */
- 

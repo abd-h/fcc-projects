@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="header-menu">
         <div class="menu">
             <div class="bar bar1"></div>
             <div class="bar bar2"></div>
@@ -22,56 +22,51 @@
     </header>
 
     <nav id="navbar" class="navbar">
-        <p>In this article</p>
+        <header><p>In this article</p></header>
         <ul class="navbar-ul">
             <!-- <li class="a1">Blue</li> -->
             <li><a class="nav-link" href="#introduction">Introduction</a></li>
-            <li><a class="nav-link" href="#example">Example</a></li>
             <li><a class="nav-link" href="#syntax">Syntax</a></li>
             <li><a class="nav-link" href="#description">Description</a></li>
-            <li><a class="nav-link" href="#destructuring_patterns">Destructuring Patters</a></li>
-            <li><a class="nav-link" href="#Object_destructuring">Object Destructuring</a></li>
-            <li><a class="nav-link" href="#Rest in object destructuring">Rest in object Destructuring</a></li>
+            <li><a class="nav-link" href="#examples">Examples</a></li>
+            <li><a class="nav-link" href="#destructuring_patterns">Destructuring Patterns</a></li>
+            <li><a class="nav-link" href="#object_destructuring">Object Destructuring</a></li>
+            <li><a class="nav-link" href="#rest_in_object_destructuring">Rest in object Destructuring</a></li>
         </ul>
         <!-- <div class="show">show menu</div> -->
     </nav>
     <main id="main-doc">
         <section id="introduction" class="main-section">
-            <article>
+            <header>
                 <h2>introduction</h2>
-                <p>
-                    The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack
-                    values from arrays,
-                    or
-                    properties from objects, into distinct variables.
-                </p>
-            </article>
-
-            <p>JavaScript Demo: Expressions - Destructuring assignment</p>
-            <article class="code-background">
+            </header>
+            <p>
+                The <strong>destructuring assignment</strong> syntax is a JavaScript expression that makes it possible to unpack
+                values from arrays,
+                or
+                properties from objects, into distinct variables.
+            </p>
+            
+            <h3>JavaScript Demo: Expressions - Destructuring assignment</h3>
+            <div class="code-background">
                 <p>
                     <code>
                         <span class="keyword">let</span> 
                         a, b, rest;
-                    </code>
-                </p>
-                <p>
+                    </code><br>
                     <code>
                         [a, b] = [<span class="number">20</span><span class="punctuation">,</span><span class="number">10</span>];
-                    </code>
-                </p>
-
-                <p>
-                    console.<span class="function">log</span>(a);
-                </p>
-                <p class="comment">
-                    // expected output: 10
-                </p>
-                <p>
-                    console.<span class="function">log</span>(b);
-                </p>
-                <p class="comment">
+                    </code><br>
+                    <code>
+                        console.<span class="function">log</span>(a);
+                    </code><br>
+                    <span class="comment">
+                        // expected output: 10
+                    </span><br>
+                    <code>console<span class="function">log</span>(b);</code><br>
+                    <span class="comment">
                     // expected output: 20
+                    </span>
                 </p>
                 <p>
                     <code>
@@ -81,20 +76,22 @@
                         <span class="number">30</span>, 
                         <span class="number">40</span>,
                         <span class="number">50</span>];
-                    </code>
+                    </code><br>
+                
+                    <code>
+                        console.<span class="function">log</span>(rest);
+                    </code><br>
+                    <span class="comment">
+                        // expected output: Array [30, 40, 50]
+                    </sp>
                 </p>
-                <p>
-                    console.<span class="function">log</span>(rest);
-                </p>
-                <p class="comment">
-                    // expected output: Array [30, 40, 50]
-                </p>
-            </article>
-
+            </div>
         </section>
         <section id="syntax" class="main-section">
-            <h2>Syntax</h2>
-            <article class="example1 code-background">
+            <header>
+                <h2>Syntax</h2>
+            </header>
+            <div class="code-background">
                 <p>
                     <code>
                         <span class="keyword">const</span> 
@@ -243,54 +240,54 @@
                         class="obj-property">b</span>: b1<span class="punctuation">,</span> ...rest <span class="punctuation">}</span> = obj<span class="punctuation">);</span>
                     </code>
                 </p>
-            </article>
+            </div>
         </section>
         <section id="description" class="main-section">
-            <h2>Description</h2>
-
+            <header>
+                <h2>Description</h2>
+            </header>
             <p>
                 The object and array literal expression provide an easy way to create ad hoc packages of data.
             </p>
-
-            <p class="code-background">
+            <div class="code-background">
                 <code>
-                        <span class="keyword">const</span>
-                        <span class="variables">x</span> = <span class="punctuation">[</span>1<span class="punction">,</span> 2<span class="punction">,</span> 3<span class="punction">,</span> 4<span class="punction">,</span> 5<span class="punction">,</span> 6<span class="punction">];</span>
-                    </code>
-            </p>
+                    <span class="keyword">const</span>
+                    <span class="variables">x</span> = <span class="punctuation">[</span>1<span class="punction">,</span> 2<span class="punction">,</span> 3<span class="punction">,</span> 4<span class="punction">,</span> 5<span class="punction">,</span> 6<span class="punction">];</span>
+                </code>
+            </div>
             <p>
                 The destructuring assignment uses similar syntax, but on the left-hand side of the assignment to define
                 what values to unpack from the sourced variable.
             </p>
-            <article class="code-background">
+            <div class="code-background">
                 <p>
                     <code>
                             <span class="keyword">const</span>
                             <span class="variables">x</span> = <span class="punctuation">[</span>1<span class="punctuation">,</span> 2<span class="punctuation">,</span> 3<span class="punctuation">,</span> 4<span class="punctuation">,</span> 5<span class="punctuation">,</span> 6<span class="punctuation">];</span>
-                        </code>
+                    </code>
                 </p>
                 <p>
                     <code>
-                            <span class="keyword">const</span>
-                            <span class="punctuation">[</span>y<span class="punctuation">,</span> z<span class="punctuation">]</span> = x<span
-                                class="punctuation">;</span>
-                        </code>
+                        <span class="keyword">const</span>
+                        <span class="punctuation">[</span>y<span class="punctuation">,</span> z<span class="punctuation">]</span> = x<span
+                        class="punctuation">;</span>
+                    </code>
                 </p>
                 <p>
                     <code>
-                            console.<span class="function">log</span><span class="punctuation">(</span>y<span class="punctuation">)</span><span class="expected-output">; // 1</span>
-                        </code>
+                        console.<span class="function">log</span><span class="punctuation">(</span>y<span class="punctuation">)</span><span class="expected-output">; // 1</span>
+                    </code>
                 </p>
                 <p>
                     <code>
-                            console.<span class="function">log</span><span class="punctuation">(z</span><span class="punctuation">)</span><span class="expected-output">; // 2</span>
-                        </code>
+                        console.<span class="function">log</span><span class="punctuation">(z</span><span class="punctuation">)</span><span class="expected-output">; // 2</span>
+                    </code>
                 </p>
-            </article>
+            </div>
             <p>
                 Similarly, you can destructure objects on the left-hand side of the assignment.
             </p>
-            <article class="code-background">
+            <div class="code-background">
                 <p>
                     <code>
                         <span class="keyword">const</span> obj = <span class="punctuation">{</span> <span class="obj-property">a</span>: 1<span class="punctuation">,</span> <span class="obj-property">b</span>: 2 <span class="punctuation">};</span>
@@ -311,12 +308,12 @@
                 <p class="comment">
                     // <code> const b = obj.b;</code>
                 </p>
-            </article>
+            </div>
             <p>
                 This capability is similar to features present in languages such as Perl and Python.
             </p>
 
-            <article class="description">
+            <article>
                 <h2>Binding and Assignment</h2>
                 <p>
                     For both object and array destructuring, there are two kinds of destructuring patters: binding
@@ -331,65 +328,63 @@
                 <div class="code-background">
                     <p>
                         <code>
-                        <span class="keyword">const</span> <strong>obj = </strong>
-                        <span class="punctuation">{</span> 
-                        <span class="obj-property">a</span><span class="operator">:</span> 1<span class="punctuation">,</span>
-                        <span class="obj-property">b</span><span class="operator">:</span>
-                        <span class="punctuation">{</span>
-                        <span class="obj-property">c</span><span class="operator">:</span> 2
-                        <span class="punctuation">} };</span>
-                    </code>
+                            <span class="keyword">const</span> <strong>obj = </strong>
+                            <span class="punctuation">{</span> 
+                            <span class="obj-property">a</span><span class="operator">:</span> 1<span class="punctuation">,</span>
+                            <span class="obj-property">b</span><span class="operator">:</span>
+                            <span class="punctuation">{</span>
+                            <span class="obj-property">c</span><span class="operator">:</span> 2
+                            <span class="punctuation">} };</span>
+                        </code>
                     </p>
                     <p>
                         <code>
-                        <span class="keyword">const</span>
-                        <span class="punctuation">{</span> 
-                        <span class="bold">a</span><span class="punctuation">,</span>
-                        <span class="obj-property">b</span><span class="operator">:</span><span class="punctuation">{</span>
-                        <span class="obj-property">c</span><span class="punctuation">:</span>
-                        <span class="operator">d</span> 
-                        <span class="punctuation">} }</span>
-                        <span class="operator">= obj</span>
-                        <span class="punctuation">;</span>
-                    </code>
+                            <span class="keyword">const</span>
+                            <span class="punctuation">{</span> 
+                            <span class="bold">a</span><span class="punctuation">,</span>
+                            <span class="obj-property">b</span><span class="operator">:</span><span class="punctuation">{</span>
+                            <span class="obj-property">c</span><span class="punctuation">:</span>
+                            <span class="operator">d</span> 
+                            <span class="punctuation">} }</span>
+                            <span class="operator">= obj</span>
+                            <span class="punctuation">;</span>
+                        </code>
                     </p>
                     <p class="comment">
                         // Two variables are bound: `a` and `d`
                     </p>
                 </div>
                 <p>
-                    All variables share the same declaration, so if you want some variables to be re-assignable but
-                    others to be read-only, you may have to destructure twice - onece with <code
-                        class="keyword">let</code>, once with <code class="keyword">const</code>.
+                    All variables share the same declaration, so if you want some variables to be re-assignable but others to be read-only, you may have to destructure twice - onece with <code class="keyword">let</code>, once with <code class="keyword">const</code>.
                 </p>
                 <div class="code-background">
                     <p>
                         <code>
-                        <span class="keyword">const</span> <strong>obj = </strong>
-                        <span class="punctuation">{</span> 
-                        <span class="obj-property">a</span><span class="operator">:</span> 1<span class="punctuation">,</span>
-                        <span class="obj-property">b</span><span class="operator">:</span>
-                        <span class="punctuation">{</span>
-                        <span class="obj-property">c</span><span class="operator">:</span> 2
-                        <span class="punctuation">} };</span> = obj <span class="punctuation">;</span>
-                    </code>
+                            <span class="keyword">const</span> <strong>obj = </strong>
+                            <span class="punctuation">{</span> 
+                            <span class="obj-property">a</span><span class="operator">:</span> 1<span class="punctuation">,</span>
+                            <span class="obj-property">b</span><span class="operator">:</span>
+                            <span class="punctuation">{</span>
+                            <span class="obj-property">c</span><span class="operator">:</span> 2
+                            <span class="punctuation">} };</span> = obj <span class="punctuation">;</span>
+                        </code>
                     </p>
                     <p>
                         <code>
-                        <span class="keyword">const</span>
-                        obj = <span class="punctuation">{</span> a <span class="punctuation">}</span> = obj<span class="punctuation">; </span>
-                    <span class="comment">// a is constant</span>
-                    </code>
+                            <span class="keyword">const</span>
+                            obj = <span class="punctuation">{</span> a <span class="punctuation">}</span> = obj<span class="punctuation">; </span>
+                            <span class="comment">// a is constant</span>
+                        </code>
                     </p>
                     <p>
                         <code>
-                        <span class="keyword">let</span> 
-                        <span class="punctuation">{</span>
-                        <span class="obj-property">b</span>
-                        <span class="operator">:</span> d
-                        <span class="punctuation">} }</span> = obj<span class="punctuation">;</span>
-                        <span class="comment">// d is re-assignable</span>
-                    </code>
+                            <span class="keyword">let</span> 
+                            <span class="punctuation">{</span>
+                            <span class="obj-property">b</span>
+                            <span class="operator">:</span> d
+                            <span class="punctuation">} }</span> = obj<span class="punctuation">;</span>
+                            <span class="comment">// d is re-assignable</span>
+                        </code>
                     </p>
                 </div>
                 <p>
@@ -431,12 +426,10 @@
                 </p>
             </div>
 
-            <section>
+            <section id="note">
                 <ul class="note-card">
                     <li class="dev">
-                        <p>
-                            <i class="fa fa-solid fa-info"></i>
-                        </p>
+                        <i class="fa fa-solid fa-info"></i>
                     </li>
                     <li>
                         <p>
@@ -499,24 +492,17 @@
                         </p>
                     </li>
                     <li>
-                        <p class="comment">
-                            // This is equivalent to:
-                        </p>
+                        <span class="expected-output">// This is equivalent to:</span>
                     </li>
                     <li>
-                        <p class="comment">
-                            // const numbers[0] = obj.a;
-                        </p>
+                        <span class="expected-output">// const numbers[0] = obj.a;</span>
                     </li>
                     <li>
-                        <p class="comment">
-                            // const numbers[1] = obj.b;
-                        </p>
+                        <span class="expected-output"> // const numbers[1] = obj.b;</span>
                     </li>
                     <li>
-                        <p class="comment">
-                            // Which definitely is not valid.
-                        </p>
+                        <span class="expected-output">// Which definitely is not valid.</span>
+                        
                     </li>
                 </ul>
             </section>
@@ -526,58 +512,62 @@
                     Each destructured property can have a default value. The default value is used when the property is
                     not present, or has value undefined. It is not used if the property has value null.
                 </p>
-                <p class="code-background">
-                    <code>
-                        <span class="keyword">const</span>
-                        <span class="punctuation">[</span><span class="variables">a =</span>
-                        <span class="number">1</span><span class="punctuation">]</span>
-                        <span class="operator">=</span>
-                        <span class="punctuation">[]; // a is 1</span>
-                    </code><br>
-                    <code>
-                        <span class="keyword">const</span>
-                        <span class="punctuation">{</span>
-                        <span class="variables">b</span>
-                        <span class="operator">=</span>
-                        <span class="number">2</span>
-                        <span class="punctuation">}</span>
-                        <span class="operator">=</span>
-                        <span class="punctuation">{</span>
-                        <span class="obj-property">b</span><span class="colon">:</span>
-                        <span class="keyword">undefined</span>
-                        <span class="punctuation">}; // b is 2</span>
-                    </code><br>
-                    <code>
-                        <span class="keyword">const</span>
-                        <span class="punctuation">{</span>
-                        <span class="variables">c</span>
-                        <span class="operator">=</span>
-                        <span class="number">2</span>
-                        <span class="punctuation">}</span>
-                        <span class="operator">=</span>
-                        <span class="punctuation">{</span>
-                        <span class="obj-property">c</span><span class="colon">:</span>
-                        <span class="keyword">null</span>
-                        <span class="punctuation">}; // c is null</span>
-                    </code>
-                </p>
+                <div class="code-background">
+                    <p>
+                        <code>
+                            <span class="keyword">const</span>
+                            <span class="punctuation">[</span><span class="variables">a =</span>
+                            <span class="number">1</span><span class="punctuation">]</span>
+                            <span class="operator">=</span>
+                            <span class="punctuation">[]; // a is 1</span>
+                        </code><br>
+                        <code>
+                            <span class="keyword">const</span>
+                            <span class="punctuation">{</span>
+                            <span class="variables">b</span>
+                            <span class="operator">=</span>
+                            <span class="number">2</span>
+                            <span class="punctuation">}</span>
+                            <span class="operator">=</span>
+                            <span class="punctuation">{</span>
+                            <span class="obj-property">b</span><span class="colon">:</span>
+                            <span class="keyword">undefined</span>
+                            <span class="punctuation">}; // b is 2</span>
+                        </code><br>
+                        <code>
+                            <span class="keyword">const</span>
+                            <span class="punctuation">{</span>
+                            <span class="variables">c</span>
+                            <span class="operator">=</span>
+                            <span class="number">2</span>
+                            <span class="punctuation">}</span>
+                            <span class="operator">=</span>
+                            <span class="punctuation">{</span>
+                            <span class="obj-property">c</span><span class="colon">:</span>
+                            <span class="keyword">null</span>
+                            <span class="punctuation">}; // c is null</span>
+                        </code>
+                    </p>
+                </div>
                 <p>
                     The default value can be any expression. It will only be evaluated when necessary.
                 </p>
-                <p class="code-background">
-                    <code>
-                        <span class="keyword">const</span> 
-                        <span class="punctuation">{</span>
-                        <span class="variables">b</span> 
-                        <span class="operator">=</span> 
-                        <span class="variables">console</span><span class="puntuation">.</span><span class="function">log</span><span class="puntuation">(</span><span class="number">"hey"</span>) <span class="punctuation"></span>} = { b: 2 };
-                    </code><br>
-                    <span class="comment">
-                        // Does not log anything, because `b` is defined and there's no need
-                    </span><br>
-                    <span class="comment">// to evaluate the default value.</span>
+                <div class="code-background">
+                    <p>
+                        <code>
+                            <span class="keyword">const</span> 
+                            <span class="punctuation">{</span>
+                            <span class="variables">b</span> 
+                            <span class="operator">=</span> 
+                            <span class="variables">console</span><span class="puntuation">.</span><span class="function">log</span><span class="puntuation">(</span><span class="number">"hey"</span>) <span class="punctuation"></span>} = { b: 2 };
+                        </code><br>
+                        <span class="comment">
+                            // Does not log anything, because `b` is defined and there's no need
+                        </span><br>
+                        <span class="comment">// to evaluate the default value.</span>
 
-                </p>
+                    </p>
+                </div>
             </article>
             <article class="rest-property">
                 <h2>Rest Property</h2>
@@ -630,7 +620,7 @@
                 The rest property must be the last in the pattern, and must not have a trailing comma.
             </p>
 
-            <article class="invalid-code">
+            <div class="invalid-code">
                 <i class="fa fa-solid fa-circle-xmark"></i>
                 <p>
                     <code>
@@ -644,14 +634,17 @@
 
                     </code>
                 </p>
-                <p class="comment">
-                    // SyntaxError: rest element may not have a trailing comma
-                    // Always consider using rest operator as the last element
-                </p>
-            </article>
+                    <span class="comment">
+                     // SyntaxError: rest element may not have a trailing comma
+                    </span><br>
+                    <span class="comment">// Always consider using rest operator as the last element</span>
+                
+            </div>
         </section>
         <section id="destructuring_patterns" class="main-section">
-            <h2>Destructuring patterns with other syntax</h2>
+            <header>
+                <h2>Destructuring patterns</h2>
+            </header>
             <p>
                 In many syntaxes where the language binds a variable for you, you can use a destructuring patterns as well. These include:
             </p>
@@ -676,13 +669,13 @@
             </p>
         </section>
 
-        <section id="example">
-            
-            <hgroup>
+        <section id="examples" class="main-section">                
+            <header>
                 <h2>Examples</h2>
+            </header>
                 <p>Array Destructuring</p>
                 <p>Basic variable assignment</p>
-            </hgroup>
+            
             <article  class="code-background">
                 
                 <p>
@@ -693,7 +686,6 @@
                         <span class="punctuation">[</span><span class="number">'one'</span><span class="punctuation">,</span>
                         <span class="number">'two'</span><span class="punctuation">,</span>
                         <span class="number">'three'</span><span class="punctuation">];</span>
-
                     </code>
                 </p>
 
@@ -756,7 +748,7 @@
                         </code>
                     </p>
                 </article>
-                <section>
+                <article>
                     <h2>Swapping variables</h2>
                     <p>
                         Two variables values can be swapped in one destructuring expression.
@@ -764,7 +756,7 @@
                     <p>
                         Without destructuring assignment, swapping two values requires a temporary variable (or, in low-level languages, the <a href="https://en.wikipedia.org/wiki/XOR_swap_algorithm" target="_blank">XOR-swap</a> trick  <a href="https://en.wikipedia.org/wiki/XOR_swap_algorithm"><img class="xor" src="https://developer.mozilla.org/static/media/external.ad7e40a95bc765963433.svg" alt=""></a>).
                     </p>
-                </section>
+                </article>
                 <article class="code-background">
                     <p>
                         <code>
@@ -812,9 +804,9 @@
                             </span>
                             <span class="variables">arr</span><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">],</span>
                             </span>
-                            <span class="variables">arr</span><span class="punctuation">[</span><span class="number">2</span><span class="punctuation">]],</span>
+                            <span class="variables">arr</span><span class="punctuation">[</span><span class="number">2</span><span class="punctuation">]];</span>
                             </span>
-                        </code>   
+                        </code><br>  
                         <code>
                             <span class="console">console</span><span class="punctuation">.</span><span class="function">log</span><span
                                 class="expected-output">(</span><span class="variables">arr</span><span class="expected-output">); // [1, 3, 2]</span>
@@ -822,20 +814,101 @@
                         </code>
                     </p>
                 </article>
+                <article>
+                    <h2>Parsing an array returned from a function</h2>
+                    <p>
+                        It's alwways been possible to return an array from a function. Destructuring can make working with an array return value more concise.
+                    </p>
+                    <p>
+                        In this example, <code class="code-el">f()</code> returns the values <code class="code-el">[1, 2]</code> as the its output, which can be parsed in a single line with destructuring.
+                    </p>
+                    <!-- div contains function code layout boiler plate -->
+                    <div class="code-background">
+                        <pre class="pre1">
+                            <code>
+                                <span class="keyword">function</span> <span class="function">f</span><span class="punctuation">() {</span>
+                                    <span class="keyword">return <code></span><span class="punctuation">[<span><span class="number">1</span><span class="punctuation">,</span> <span
+                                                class="number">2</span><span class="punctuation">,</span> <span class="number">3</span><span
+                                                class="punctuation">];</span></code>
+                                }
+                            </code>
+                        </pre>
+                        <p>
+                            <code>
+                                <span class="keyword">const</span>
+                                <span class="punctuation">[</span><span class="variables">a</span><span class="punctuation">,</span>
+                                <span class="punctuation">,</span><span class="variables">b</span><span class="punctuation">]</span>
+                                <span class="operator">=</span>
+                                <span class="function">f</span><span class="punctuation">();</span>
+                            </code><br>
+                            <code>
+                                <span class="console">console</span><span class="punctuation">.</span><span class="function">log</span><span class="expected-output">(</span><span class="variables">a</span><span class="expected-output">); // 1</span>
+                            </code><br>
+                            <code>
+                                <span class="console">console</span><span class="punctuation">.</span><span class="function">log</span><span class="expected-output">(</span><span class="variables">b</span><span class="expected-output">); // 3</span>
+                            </code><br>
+                        </p>
+                        <p>
+                            <code>
+                                <span class="keyword">const</span>
+                                <span class="punctuation">[</span><span class="variables">a</span><span class="punctuation">]</span>
+                                <span class="operator">=</span>
+                                <span class="function">f</span><span class="punctuation">();</span>
+                            </code><br>
+                            <code>
+                                <span class="console">console</span><span class="punctuation">.</span><span class="function">log</span><span class="expected-output">(</span><span class="variables">b</span><span class="expected-output">); // 1</span>
+                            </code><br>
+                        </p>
+                    </div>
+                    <p>
+                        You can also ignore all returned values:
+                    </p>
+                    <p class="code-background">
+                        <code>
+                            <span class="keyword">const</span>
+                            <span class="punctuation">[</span><span class="variables">a</span><span class="punctuation">]</span>
+                            <span class="operator">=</span>
+                            <span class="function">f</span><span class="punctuation">();</span>
+                        </code><br>
+                    </p>
+                </article>
 
             </section>
-
         </section>
-        <section id="Object_destructuring" class="main-section">
-            <h2>Object Destructuring</h2>
+        <!-- Not added yet -->
+        <section id="object_destructuring" class="main-section">
+            <header>
+                <h2>Object Destructuring</h2>
+            </header>
+            <p>comming soon...</p>
+        </section>
+        <section id="rest_in_object_destructuring" class="main-section">
+            <header><h2>Rest in object destructuring</h2></header>
+            <p>comming soon...</p>
         </section>
     </main>
     <footer class="footer">
-        <p>
-            &copy; All Rights Reserved
-        </p>
+        <div class="prostate-cancer">
+            <p>We are proad to support</p>
+            <img src="/images/prostatecancer.webp" alt="Prostate Cancer charity logo">
+            <p>Most men with early prostate cancer don't have any symptoms.</p>   
+            <p>
+                <a
+                    href="https://prostatecanceruk.org/prostate-information/are-you-at-risk" target="_blank">
+                    Check your risk in 30 seconds here
+                </a>
+            </p>          
+        </div>
+        
+        <section>
+            <p>t&s</p>
+            <p>
+                &copy; All Rights Reserved
+            </p>
+        </section>
     </footer>
     <script src="index.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 
 </html>
