@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Source+Sans+Pro:ital,wght@1,300&display=swap');
+:root {
+    /* background-color */
+    --top-banner-background-color: rgb(1, 37, 61);
+    --color: rgb(1, 37, 61);
+    --body-background: #f4f9ff;
+}
+* {
+    box-sizing: border-box;
+    outline: 1px solid black;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 10px;
+    /* font-family: "Proxima Nova Medium", Helvetica, Arial, sans-serif; */
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-background);
+}
+
+a {
+    text-decoration: none;
+}
+ 
+li {
+    list-style: none;
+}
+
+ img{
+    inline-size: 163px;
+    block-size: 50px;
+    display: block;
+}
+img {
+    max-inline-size: 100%;
+    max-height: auto;
+    display: block;
+    /* background-color: black; */
+}
+
+.header-top-banner {
+    background-color: var(--top-banner-background-color);
+    inline-size: 100%;
+    block-size: 3rem;
+    color: white;
+    font-size: clamp(0.46rem, 0.6vw, .6rem);
+    font-weight: 50;
+    margin-block-start: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1.1px;
+}
+
+
+/* navbar */
+
+#navbar-container {
+    inline-size: 100%;
+    block-size: fit-content;
+    display: flex;
+    margin: block;
+    gap: 10px;
+    justify-content: space-between;
+}
+.navbar-links-left{
+    display: flex;
+    inline-size: 50%;
+    block-size: 70px;
+    overflow: hidden;
+    margin-block-start: 0;
+    padding-block: 0.5rem;
+    justify-content: flex-start;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.navbar-links-right {
+    inline-size: 30%;
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.navbar-links-right li em{
+    text-transform: capitalize;
+    margin-inline-start: 0.2rem;
+    font-family: sofia-pro, sans-serif;
+}
+
+.navbar-links-right li p {
+    font-size: var(--color);
+    font-weight: 400;
+    font-family: neuzeit-grotesk, sans-serif;
+    color: var(--color);
+    font-style: normal;
+}
+
+.navbar-links-right li:first-child {
+    font-size: 1.3rem;
+}
+
+li .links {
+    font-size: 1.2em;
+    font-family: neuzeit-grotesk, sans-serif;
+    color: var(--color);
+    font-style: normal;
+    font-weight: 600;
+    padding-inline: 1rem;
+    padding-block: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    line-height: 1.6;
+} 
+
+.fa {
+    font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    .navbar-links-left li:not(.images) {
+        position: relative;
+        display: none;
+        
+    }
+    .images {
+        position: absolute;
+        inset-inline-start: 0;
+        margin-inline-start: 60px;
+    }
+   
+}
