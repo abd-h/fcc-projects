@@ -3,11 +3,21 @@
     /* background-color */
     --top-banner-background-color: rgb(1, 37, 61);
     --color: rgb(1, 37, 61);
-    --body-background: #f4f9ff;
+
+    /* background-image */
+    --body-background-img: url("images/smartwatches-versa4-sense2-fall22.jpeg");
+
+    --body-background: rgb(244, 249, 255);
+/* background-color: rgb(244, 249, 255); */
+    /* font-family */
+    --header-fonts-family: neuzeit-grotesk, sans-serif;
+
+    /* border bottom */
+    --nav-border: rgba(0, 0, 0,0.3);
 }
 * {
     box-sizing: border-box;
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
 }
 *,
 *::before,
@@ -19,13 +29,20 @@ body {
     font-size: 10px;
     /* font-family: "Proxima Nova Medium", Helvetica, Arial, sans-serif; */
     font-family: 'Source Sans Pro', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--body-background);
+    margin-block: 0;
+    padding-block: 0;
+    margin-inline: 0;
+    padding-inline: 0;
+    /* background-color: var(--body-background); */
+    background: var(--body-background-img);
+    background-position: 0rem 4.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 a {
     text-decoration: none;
+    color: var(--color);
 }
  
 li {
@@ -44,30 +61,77 @@ img {
     /* background-color: black; */
 }
 
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
+ *              Top Banner                  *
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
+
 .header-top-banner {
     background-color: var(--top-banner-background-color);
     inline-size: 100%;
-    block-size: 3rem;
+    block-size: 4.6rem;
     color: white;
-    font-size: clamp(0.46rem, 0.6vw, .6rem);
-    font-weight: 50;
+    font-size: clamp(.8rem, 1.5vw, 1.05rem);
+    font-weight: lighter;
+    font-family: var(--header-fonts-family);
     margin-block-start: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    letter-spacing: 1.1px;
+    letter-spacing: 1.4px;
+    gap: 0.7rem;
 }
 
 
-/* navbar */
+header p > sup {
+    font-size: 0.6rem
+}
+
+header .fa {
+    font-size: 1.1rem;    
+}
+
+.get-offer-now-container {
+    overflow: hidden;
+    margin-inline: 0;
+    
+}
+
+.get-offer-now {
+    transform: translateX(-14%);
+    inline-size: 100%;
+    display: inline-flex;
+    gap: 0.3rem;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 0;
+    transition: 0.5s all ease-in-out;
+}
+
+.get-offer-now span {
+    text-transform: uppercase;
+    font-weight: 600;
+
+}
+
+.get-offer-now span,
+.get-offer-now .fa {
+    color: rgb(3, 213, 255);
+}
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
+ *              Navbar                      *
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
 
 #navbar-container {
+    /* background-color: bisque; */
     inline-size: 100%;
     block-size: fit-content;
+    padding-block: 1rem;
     display: flex;
-    margin: block;
+    margin-block-end: 1rem;
     gap: 10px;
     justify-content: space-between;
+    
+    
 }
 .navbar-links-left{
     display: flex;
@@ -75,9 +139,10 @@ img {
     block-size: 70px;
     overflow: hidden;
     margin-block-start: 0;
-    padding-block: 0.5rem;
+    padding-block: 0rem;
     justify-content: flex-start;
     justify-content: space-around;
+    justify-content: baseline;
     align-items: center;
 
 }
@@ -89,9 +154,12 @@ img {
     justify-content: center;
     align-items: center;
     gap: 3rem;
+    margin-block-start: 0;
+    margin-inline-end: 2rem;
+    padding-inline: 2rem;
 }
 
-.navbar-links-right li em{
+.navbar-links-right li span{
     text-transform: capitalize;
     margin-inline-start: 0.2rem;
     font-family: sofia-pro, sans-serif;
@@ -99,24 +167,25 @@ img {
 
 .navbar-links-right li p {
     font-size: var(--color);
-    font-weight: 400;
+    font-weight: 100;
     font-family: neuzeit-grotesk, sans-serif;
     color: var(--color);
     font-style: normal;
 }
 
 .navbar-links-right li:first-child {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    line-height: 1.6;
 }
 
 li .links {
-    font-size: 1.2em;
+    font-size: 0.88rem;
     font-family: neuzeit-grotesk, sans-serif;
     color: var(--color);
     font-style: normal;
     font-weight: 600;
     padding-inline: 1rem;
-    padding-block: 1rem;
+    padding-block: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1.6px;
     line-height: 1.6;
@@ -125,6 +194,189 @@ li .links {
 .fa {
     font-size: 1.5rem;
 }
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
+ *      Section-1 (with class of section-1  *
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
+
+.section-1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-inline-start: 3.5rem;
+    margin-block-start: 3rem;
+}
+
+.section-1 header {
+    font-size: 1.5rem;
+    font-family: neuzeit-grotesk, sans-serif;
+    margin-block-end: 0;
+    /* margin-inline-start: 3rem; */
+    
+}
+
+.section-1 header h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.6;
+    margin-block-end: 0;
+    padding-block: 1rem;
+}
+
+.section-1 header h2 + p {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    line-height: 1.6;
+    margin-block: 0;
+}
+
+.section-1 header + p {
+    inline-size: 30rem;
+    /* position: absolute; */
+    font-size: 1.15rem;
+    font-family: var(--header-fonts-family);
+    font-weight: 200;
+    letter-spacing: 1.6px;
+    margin-block-end: 0.5rem;
+    /* margin-inline-start: 3rem; */
+    padding-block: 1rem;
+    line-height: 1.6;
+    /* background-color: red; */
+}
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
+ *   shop now and get cashback container    *
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
+
+
+.shop-and-cashback-container {
+    position: relative;
+    inline-size: 24rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+}
+
+.shop-now-container {
+    inline-size: 8rem;
+    overflow-x: hidden;
+}
+.shop-now {
+    transform: translateX(-30%);
+    inline-size: 10.5rem;
+    block-size: 1.6rem;
+    padding-inline:0;
+    display: inline-flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    align-items: stretch;
+    overflow: hidden;
+    transition: 0.5s all ease-in-out;
+}
+
+
+
+.shop-now span {
+    position: absolute;
+    font-size: 1.2rem;
+    padding-inline: 1.2rem;
+    inset-inline-start: 2rem;
+    font-weight: 600;
+    font-family: var(--header-fonts-family);
+    z-index: 1;
+    text-align: center;
+}
+
+.shop-now .right {
+    position: absolute;
+    inset-inline-start: 9.5rem;
+    font-size: 1.2rem;
+    transition: 0.5s ease-in-out;
+    inset-inline-end: 0rem;
+}
+
+.shop-now .left {
+    position: absolute;
+    inset-inline-start: 1.5rem;
+    font-size: 1.2rem;
+    transform: translateX(0%);
+    margin-inline: 0;
+    
+}
+
+/* get cashback */
+.shop-and-cashback-container>div:last-child {
+    inline-size: 14rem;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.shop-and-cashback-container>div:last-child .shop-now {
+    inline-size: 15rem;
+    margin-inline-start: 2.5rem;
+}
+
+.shop-and-cashback-container>div:last-child .shop-now span {
+    inset-inline-start: 1.2rem;
+    text-transform: uppercase;
+}
+
+.shop-and-cashback-container>div:last-child .shop-now .right {
+    inset-inline-start: 13rem;
+}
+
+.shop-and-cashback-container>div:last-child .shop-now .left {
+    inset-inline-start: .5rem;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
+ *              on hover                    *
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
+
+#navbar-container:hover {
+    /* border-bottom: 0.5px solid var(--nav-border); */
+    box-shadow: 2px 2px 8px 0px var(--nav-border);
+    background-color: white;
+    transition: 0.2s all ease-in-out;
+}
+
+.links:hover {
+    border-bottom: 3px solid rgb(88, 179, 205);
+    padding-block-end:0.4rem;
+}
+
+
+
+.shop-now:hover {
+    transform: translateX(-9%);
+    z-index: 1;
+    /* background-color: var(--body-background); */
+    transition: 0.5s ease-in-out;
+}
+
+
+.get-offer-now:hover {
+    transform: translateX(15%);
+    transition: 0.5s;
+}
+
+
+
+
+
+
+
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
+ *              Media Quary!                   *
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
 
 @media only screen and (max-width: 1200px) {
     .navbar-links-left li:not(.images) {
@@ -139,3 +391,5 @@ li .links {
     }
    
 }
+
+
