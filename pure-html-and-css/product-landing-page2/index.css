@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Source+Sans+Pro:ital,wght@1,300&display=swap');
 :root {
+    /* font-size */
+    --navbar-font-size: 1.6em;
     /* background-color */
     --top-banner-background-color: rgb(1, 37, 61);
     --color: rgb(1, 37, 61);
@@ -7,7 +9,7 @@
     /* background-image */
     --body-background-img: url("images/smartwatches-versa4-sense2-fall22.jpeg");
 
-    --body-background: rgb(244, 249, 255);
+    --light-background: rgb(244, 249, 255);
 /* background-color: rgb(244, 249, 255); */
     /* font-family */
     --header-fonts-family: neuzeit-grotesk, sans-serif;
@@ -34,10 +36,14 @@ body {
     margin-inline: 0;
     padding-inline: 0;
     /* background-color: var(--body-background); */
+    
+}
+.hero-pannel {
     background: var(--body-background-img);
-    background-position: 0rem 4.5rem;
+    background-position: -0rem 4.6rem;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 90rem;
+    block-size: 55rem;
 }
 
 a {
@@ -179,7 +185,7 @@ header .fa {
 }
 
 li .links {
-    font-size: 0.88rem;
+    font-size: var(--navbar-font-size);
     font-family: neuzeit-grotesk, sans-serif;
     color: var(--color);
     font-style: normal;
@@ -187,7 +193,7 @@ li .links {
     padding-inline: 1rem;
     padding-block: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 1.6px;
+    letter-spacing: 1.3px;
     line-height: 1.6;
 } 
 
@@ -336,6 +342,92 @@ li .links {
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
+ *              product-selection                    *
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
+
+ .product-selection {
+    position: relative;
+    inset-block-start: -6.6rem;
+ }
+
+ .product-selection .navbar-product-selection {   
+    block-size: 4rem;
+    background-color: var(--light-background);
+    border-block-start: 1px solid var(--top-banner-background-color);
+   
+ }
+
+ .navbar-product-selection-links {
+    display: flex;
+    block-size: 100%;
+    inline-size: 75%;
+    gap: 0.5rem;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    /* margin-inline-start: 3rem; */
+    padding-inline-start: 0;
+    margin-block-start: 0;
+
+    
+ }
+
+ .navbar-product-selection-links li {
+    /* inline-size: 80%; */
+    text-align: center;
+    
+ }
+ .navbar-product-selection a,
+ .filters {
+    font-size: var(--navbar-font-size);
+    font-family: neuzeit-grotesk, sans-serif;
+    color: var(--color);
+    font-style: normal;
+    font-weight: 600;
+    text-transform: capitalize;
+    letter-spacing: 1.6px;
+ }
+
+ .filters {
+    position: relative;
+    background-color: var(--top-banner-background-color);
+    color: rgb(255, 255, 255);
+    inline-size: 20%;
+    padding-block: 1.5rem;
+    inset-inline: -1rem;
+ }
+
+ .navbar-product-selection a:not(.smartwatches) {
+    padding-block: 0.5rem;
+    inline-size: 50px;
+    opacity: 0.8;
+ }
+ .smartwatches {
+    border-bottom: 3px solid rgb(88, 179, 205);
+    padding-block-end: 0.4rem;
+ }
+
+/* slogan */
+
+aside.slogan {
+    inline-size: 100%;
+    block-size: 10rem;
+    background-color: rgb(176, 206, 255);
+    margin-block-start: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slogan p {
+    font-size: 1.5rem;
+    inline-size: 100vmin;
+    text-align: center;
+    font-family: var(--header-fonts-family);
+    letter-spacing: 1.5px;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
  *              on hover                    *
  * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
 
@@ -346,12 +438,12 @@ li .links {
     transition: 0.2s all ease-in-out;
 }
 
-.links:hover {
+.links:hover,
+.navbar-product-selection-links li a:not(.smartwatches):hover {
     border-bottom: 3px solid rgb(88, 179, 205);
     padding-block-end:0.4rem;
+    opacity: 1;
 }
-
-
 
 .shop-now:hover {
     transform: translateX(-9%);
@@ -360,11 +452,12 @@ li .links {
     transition: 0.5s ease-in-out;
 }
 
-
 .get-offer-now:hover {
     transform: translateX(15%);
     transition: 0.5s;
 }
+
+
 
 
 
