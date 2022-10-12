@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Source+Sans+Pro:ital,wght@1,300&display=swap');
 :root {
+    --secondary-color: rgb(88, 179, 205);
     /* font-size */
     --navbar-font-size: 1.6em;
     /* background-color */
-    --top-banner-background-color: rgb(1, 37, 61);
-    --color: rgb(1, 37, 61);
+    --white-color: rgb(255, 255, 255);
+    --dark-navy: rgb(1, 37, 61);
+    --light-background: rgb(244, 249, 255);
+    --light-grey-background: rgb(237, 237, 237);
 
     /* background-image */
     --body-background-img: url("images/smartwatches-versa4-sense2-fall22.jpeg");
 
-    --light-background: rgb(244, 249, 255);
 /* background-color: rgb(244, 249, 255); */
     /* font-family */
     --header-fonts-family: neuzeit-grotesk, sans-serif;
@@ -48,7 +50,7 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--color);
+    color: var(--dark-navy);
 }
  
 li {
@@ -72,10 +74,10 @@ img {
  * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
 
 .header-top-banner {
-    background-color: var(--top-banner-background-color);
+    background-color: var(--dark-navy);
     inline-size: 100%;
     block-size: 4.6rem;
-    color: white;
+    color: var(--white-color);
     font-size: clamp(.8rem, 1.5vw, 1.05rem);
     font-weight: lighter;
     font-family: var(--header-fonts-family);
@@ -99,7 +101,6 @@ header .fa {
 .get-offer-now-container {
     overflow: hidden;
     margin-inline: 0;
-    
 }
 
 .get-offer-now {
@@ -172,10 +173,10 @@ header .fa {
 }
 
 .navbar-links-right li p {
-    font-size: var(--color);
+    font-size: var(--dark-navy);
     font-weight: 100;
     font-family: neuzeit-grotesk, sans-serif;
-    color: var(--color);
+    color: var(--dark-navy);
     font-style: normal;
 }
 
@@ -187,7 +188,7 @@ header .fa {
 li .links {
     font-size: var(--navbar-font-size);
     font-family: neuzeit-grotesk, sans-serif;
-    color: var(--color);
+    color: var(--dark-navy);
     font-style: normal;
     font-weight: 600;
     padding-inline: 1rem;
@@ -353,7 +354,7 @@ li .links {
  .product-selection .navbar-product-selection {   
     block-size: 4rem;
     background-color: var(--light-background);
-    border-block-start: 1px solid var(--top-banner-background-color);
+    border-block-start: 1px solid var(--dark-navy);
    
  }
 
@@ -381,7 +382,7 @@ li .links {
  .filters {
     font-size: var(--navbar-font-size);
     font-family: neuzeit-grotesk, sans-serif;
-    color: var(--color);
+    color: var(--dark-navy);
     font-style: normal;
     font-weight: 600;
     text-transform: capitalize;
@@ -390,7 +391,7 @@ li .links {
 
  .filters {
     position: relative;
-    background-color: var(--top-banner-background-color);
+    background-color: var(--dark-navy);
     color: rgb(255, 255, 255);
     inline-size: 20%;
     padding-block: 1.5rem;
@@ -412,7 +413,7 @@ li .links {
 aside.slogan {
     inline-size: 100%;
     block-size: 10rem;
-    background-color: rgb(176, 206, 255);
+    background-color: rgb(200, 221, 255);
     margin-block-start: 0;
     display: flex;
     justify-content: center;
@@ -420,12 +421,94 @@ aside.slogan {
 }
 
 .slogan p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     inline-size: 100vmin;
     text-align: center;
     font-family: var(--header-fonts-family);
     letter-spacing: 1.5px;
+    font-weight: 600;
+    line-height: 1.6;
+    opacity: 0.9;
 }
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
+ *              Watch collection                   *
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
+
+.watch-collection h2 {
+    font-size: 5rem;
+    font-family: var(--header-fonts-family);
+    font-weight: 400;
+    text-transform: capitalize;
+    text-align: center;
+    letter-spacing: 1.6px;
+}
+figure {
+    inline-size: 22rem;
+    background-color: var(--light-grey-background);
+    block-size: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+figcaption {
+    position: relative;
+    color: var(--white-color);
+    font-size: 0.8rem;
+    font-weight: 400;
+    font-family: var(--header-fonts-family);
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    inline-size: 3.5rem;
+    padding-inline: 0.5rem;
+    padding-block: 0.5rem;
+    background-color: var(--secondary-color);
+    text-align: center;
+    justify-self: start;
+}
+
+figure img {
+    inline-size: 240px;
+    block-size: 240px;
+    display: block;
+    margin-block: 1.5rem;
+  
+}
+
+:is(figure > .name-and-price) h3, h3 + p, label{
+    font-size: 1rem;
+    color: var(--dark-navy);
+    font-weight: 600;
+    text-transform: capitalize;
+    font-family: var(--header-fonts-family);
+}
+
+
+figure .compare {
+    justify-self: flex-end;
+    margin-block-start: 2rem;
+    padding-inline: 1rem;
+    padding-block-start: 3rem;
+    border-top: 1px solid rgb(206, 206, 206);
+    inline-size: calc(100% - 2rem);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.compare > label {
+   align-self: center;
+   /* background-color: pink; */
+}
+
+
+
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
  *              on hover                    *
@@ -440,7 +523,7 @@ aside.slogan {
 
 .links:hover,
 .navbar-product-selection-links li a:not(.smartwatches):hover {
-    border-bottom: 3px solid rgb(88, 179, 205);
+    border-bottom: 3px solid var(--secondary-color);
     padding-block-end:0.4rem;
     opacity: 1;
 }
