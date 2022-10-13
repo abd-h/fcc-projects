@@ -8,6 +8,7 @@
     --dark-navy: rgb(1, 37, 61);
     --light-background: rgb(244, 249, 255);
     --light-grey-background: rgb(237, 237, 237);
+    --sale-red: rgba(159, 0, 0, 0.8);
 
     /* background-image */
     --body-background-img: url("images/smartwatches-versa4-sense2-fall22.jpeg");
@@ -437,15 +438,16 @@ aside.slogan {
  * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
 
 .watch-collection h2 {
-    font-size: 5rem;
+    font-size: 4rem;
     font-family: var(--header-fonts-family);
-    font-weight: 400;
+    font-weight: 500;
     text-transform: capitalize;
     text-align: center;
-    letter-spacing: 1.6px;
+    letter-spacing: 1.8px;
 }
 figure {
-    inline-size: 22rem;
+    position: relative;
+    inline-size: 20rem;
     background-color: var(--light-grey-background);
     block-size: 35rem;
     display: flex;
@@ -453,6 +455,7 @@ figure {
     justify-content: flex-start;
     /* justify-content: space-between; */
     align-items: center;
+    transition: 0.3s all ease-in-out;
 }
 
 figcaption {
@@ -489,25 +492,72 @@ figure img {
 
 
 figure .compare {
+    position: absolute;
     justify-self: flex-end;
     margin-block-start: 2rem;
     padding-inline: 1rem;
-    padding-block-start: 3rem;
+    padding-block: 1rem;
     border-top: 1px solid rgb(206, 206, 206);
     inline-size: calc(100% - 2rem);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-
+    /* background-color: aqua; */
+    text-align: center;
+    inset-block-end: 4rem;
 }
 
 .compare > label {
    align-self: center;
-   /* background-color: pink; */
+   text-transform: uppercase;
 }
 
 
+.shop-main-container1 {
+    position: absolute;
+    inset-block-end: 0;
+    inline-size: calc(100% - 2rem);
+    margin-inline: 1rem;
+    margin-block: 0.5rem;
+    block-size: 4rem;
+    background-color: var(--sale-red);
+    box-shadow: 2px 2px 2px  1px transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.shop-main-container2 {
+    inline-size: 5.5rem;
+    /* background-color: blue; */
+    overflow: hidden;
+}
+:is(.shop-main-container1) .shop-container3 {
+    display: flex;
+    inline-size: 6rem;
+    block-size: 1.5rem;
+    gap: 1.3rem;
+    justify-content: flex-start;
+    align-items: center;
+    /* background-color: aliceblue; */
+    transform: translateX(22%);
+    transition: 0.3s all ease-in-out;
+} 
+.shop-btn {
+    font-size: 1.1rem;
+    color: var(--white-color);
+}
+
+.shop-container3 p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: var(--header-fonts-family);
+    padding-block: 1rem;
+    margin-inline-start: 0.1rem;
+    color: var(--white-color);
+    letter-spacing: 1.6px;
+}
 
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
@@ -538,8 +588,19 @@ figure .compare {
 .get-offer-now:hover {
     transform: translateX(15%);
     transition: 0.5s;
+    
 }
 
+figure:hover {
+    transform: scale(1.2);
+    transition: 0.5s all ease-in-out;
+    box-shadow: 1px 1px 1px 2px rgba(4, 4, 4, 0.2);
+}
+
+:is(.shop-main-container1) .shop-container3:hover {
+    transform: translateX(0%);
+    transition: 0.3s all ease-in-out;
+}
 
 
 
