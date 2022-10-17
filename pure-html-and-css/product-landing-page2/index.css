@@ -350,18 +350,28 @@ li .links {
  .product-selection {
     position: relative;
     inset-block-start: -6.6rem;
+    
  }
 
- .product-selection .navbar-product-selection {   
-    block-size: 4rem;
+ .navbar-product-selection {
+    background-color: coral;
+ }
+
+.navbar-product-selection {   
+    position: relative;
+    inline-size: 100%;
+    max-block-size: 4rem;
     background-color: var(--light-background);
     border-block-start: 1px solid var(--dark-navy);
-   
+    
+    position: sticky;
+        inset-block-start: 0;
+        z-index: 2;
  }
 
  .navbar-product-selection-links {
     display: flex;
-    block-size: 100%;
+    /* block-size: 100%; */
     inline-size: 75%;
     gap: 0.5rem;
     justify-content: center;
@@ -371,7 +381,7 @@ li .links {
     padding-inline-start: 0;
     margin-block-start: 0;
 
-    
+
  }
 
  .navbar-product-selection-links li {
@@ -430,6 +440,7 @@ aside.slogan {
     font-weight: 600;
     line-height: 1.6;
     opacity: 0.9;
+    
 }
 
 
@@ -437,29 +448,69 @@ aside.slogan {
  *              Watch collection                   *
  * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
 
-.watch-collection h2 {
-    font-size: 4rem;
-    font-family: var(--header-fonts-family);
-    font-weight: 500;
-    text-transform: capitalize;
-    text-align: center;
-    letter-spacing: 1.8px;
-}
-figure {
+ .watch-collection-container {
+    margin-inline-start: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: 1fr;
+    gap: 1rem;
+    grid-template-areas: 
+    "slogan slogan slogan slogan"
+    "watch1 watch2 watch3 watch4";
+
+ }
+ 
+ .watch-1 {
+    grid-area: watch1;
+ }
+ .watch2 {
+    grid-area: watch2;
+ }
+
+.watch-collection-container h2 {
+     font-size: 4rem;
+     font-family: var(--header-fonts-family);
+     font-weight: 500;
+     text-transform: capitalize;
+     text-align: center;
+     letter-spacing: 1.8px;
+    grid-area: slogan;
+ }
+
+.watch-2,
+.watch-1 {
     position: relative;
     inline-size: 20rem;
+    /* padding-block: 2rem; */
+    block-size: 36rem;
     background-color: var(--light-grey-background);
-    block-size: 35rem;
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s;
+    border-radius: 0.5rem;
+    margin-block: 0;
+    padding-block: 0;
+    
+}
+
+figure {
+    /* position: relative; */
+    inline-size: 100%;
+    block-size: 100%;
+    /* background-color: rebeccapurple; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
-    transition: 0.3s all ease-in-out;
 }
 
 figcaption {
-    position: relative;
+    position: absolute;
+    inset-block-start: 0;
     color: var(--white-color);
     font-size: 0.8rem;
     font-weight: 400;
@@ -482,6 +533,56 @@ figure img {
   
 }
 
+.name-and-price {
+    inline-size: 100%;
+    block-size: 4rem;
+    position: relative;
+    inset-block-end: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+    /* padding-block: 2rem; */
+    /* outline: 1px solid black; */
+}
+
+.name-and-price  h3,
+.name-and-price p {
+    margin-block: 0;
+    line-height: 1.8em;
+    backface-visibility: hidden;
+    transform: scale(1.05) rotate(0.02deg);
+}
+.watch-options-1 {
+    inline-size: 6rem;
+    block-size: 2rem;
+    display: flex;
+    gap: 0.8rem;
+    margin-block: 0;
+    justify-content: center;
+    align-items: center;
+    padding-block: 0;
+}
+/* :is(.name-and-price) h3, h3 + p  {
+    outline: 1px solid palevioletred;
+} */
+
+.watch-options-1 img {
+    inline-size: 1rem;
+    block-size: 1rem;
+    border: 2px solid rgb(255, 255, 255);
+    /* outline: 3px solid rgb(193, 192, 192); */
+    border-radius: 50%;
+    align-items: center;
+    margin-block: 0.1rem;
+}
+
+
+
+
 :is(figure > .name-and-price) h3, h3 + p, label{
     font-size: 1rem;
     color: var(--dark-navy);
@@ -492,12 +593,13 @@ figure img {
 
 
 figure .compare {
-    position: absolute;
+    /* position: absolute; */
     justify-self: flex-end;
-    margin-block-start: 2rem;
+    block-size: 1rem;
+    /* margin-block-start: 2rem; */
     padding-inline: 1rem;
     padding-block: 1rem;
-    border-top: 1px solid rgb(206, 206, 206);
+    border-top: 1px solid rgb(212, 212, 212);
     inline-size: calc(100% - 2rem);
     display: inline-flex;
     align-items: center;
@@ -512,28 +614,36 @@ figure .compare {
    text-transform: uppercase;
 }
 
-
-.shop-main-container1 {
-    position: absolute;
-    inset-block-end: 0;
-    inline-size: calc(100% - 2rem);
-    margin-inline: 1rem;
+.shop-outerst-main-container {
+    inline-size: calc(100% - 1rem);
     margin-block: 0.5rem;
-    block-size: 4rem;
+    padding-inline: 0.5rem;
+    display: none;
+}
+
+.shop-main-container-1 {
+    position: relative;
+    inset-block-end: 0.5rem;
+    inline-size: 100%;
+    /* margin-inline: 1rem; */
+
+    padding-block: 0.5rem;
+    block-size: 3rem;
     background-color: var(--sale-red);
-    box-shadow: 2px 2px 2px  1px transparent;
+    box-shadow: 2px 2px 2px 2px rgb(206, 206, 206);
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    border-radius: 0.3rem;
 }
 
-.shop-main-container2 {
+.shop-main-container-2 {
     inline-size: 5.5rem;
     /* background-color: blue; */
     overflow: hidden;
 }
-:is(.shop-main-container1) .shop-container3 {
+:is(.shop-main-container-1) .shop-container-3 {
     display: flex;
     inline-size: 6rem;
     block-size: 1.5rem;
@@ -549,7 +659,7 @@ figure .compare {
     color: var(--white-color);
 }
 
-.shop-container3 p {
+.shop-container-3 p {
     font-size: 1.1rem;
     font-weight: 600;
     font-family: var(--header-fonts-family);
@@ -560,13 +670,24 @@ figure .compare {
 }
 
 
+
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 50%;
+} 
+::-webkit-scrollbar-track {
+    background-color: var(--nav-border);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+}
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
  *              on hover                    *
  * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
 
 #navbar-container:hover {
     /* border-bottom: 0.5px solid var(--nav-border); */
-    box-shadow: 2px 2px 8px 0px var(--nav-border);
+    box-shadow: 2px 2px 1px 1px var(--nav-border);
     background-color: white;
     transition: 0.2s all ease-in-out;
 }
@@ -580,7 +701,7 @@ figure .compare {
 
 .shop-now:hover {
     transform: translateX(-9%);
-    z-index: 1;
+    /* z-index: 1; */
     /* background-color: var(--body-background); */
     transition: 0.5s ease-in-out;
 }
@@ -591,22 +712,23 @@ figure .compare {
     
 }
 
-figure:hover {
-    transform: scale(1.2);
-    transition: 0.5s all ease-in-out;
-    box-shadow: 1px 1px 1px 2px rgba(4, 4, 4, 0.2);
+.watch-1:hover,
+.watch-2:hover {
+    block-size: 40rem;
+    transform:  scale(1.2);
+    box-shadow: 2px 2px 10px rgba(4, 4, 4, 0.2);
+    transition: 0.6s transform ease-in-out;
+    z-index: 1;
 }
 
-:is(.shop-main-container1) .shop-container3:hover {
+:is(.shop-main-container-1) .shop-container-3:hover {
     transform: translateX(0%);
     transition: 0.3s all ease-in-out;
 }
 
-
-
-
-
-
+.shop-main-container-1:hover {
+    box-shadow: 1px 1px 1px 2px rgba(4, 4, 4, 0.2);
+}
 
 
 
