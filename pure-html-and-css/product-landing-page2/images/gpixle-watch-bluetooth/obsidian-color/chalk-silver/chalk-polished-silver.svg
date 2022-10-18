@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>chalk-polished-silver</title>
+    <defs>
+        <circle id="path-1" cx="25" cy="25" r="25"></circle>
+        <circle id="path-3" cx="25" cy="25" r="25"></circle>
+        <linearGradient x1="0%" y1="-2.22044605e-14%" x2="100%" y2="2.22044605e-14%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#92959B" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-6" cx="25" cy="25" r="25"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="chalk-polished-silver">
+            <g id="Clipped">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Oval"></g>
+                <g id="Group" mask="url(#mask-2)" fill="#FFFFFF" fill-rule="nonzero">
+                    <polygon id="Path" points="0 0 50 0 50 50 0 50"></polygon>
+                </g>
+            </g>
+            <g id="Group-Clipped">
+                <mask id="mask-4" fill="white">
+                    <use xlink:href="#path-3"></use>
+                </mask>
+                <g id="path-1"></g>
+                <g id="Group" mask="url(#mask-4)" fill-rule="nonzero">
+                    <g id="Rectangle">
+                        <g id="Group" fill="#F4F0EC">
+                            <rect id="Rectangle" x="0" y="0" width="55" height="55"></rect>
+                        </g>
+                        <rect fill="url(#linearGradient-5)" x="0" y="27" width="55" height="28"></rect>
+                    </g>
+                </g>
+            </g>
+            <g id="Clipped">
+                <mask id="mask-7" fill="white">
+                    <use xlink:href="#path-6"></use>
+                </mask>
+                <g id="Oval"></g>
+                <path d="M25,0 C38.8071429,0 50,11.1928571 50,25 C50,38.8071429 38.8071429,50 25,50 C11.1928571,50 0,38.8071429 0,25 C0,11.1928571 11.1928571,0 25,0 Z" id="Path" stroke="#9B9B9B" mask="url(#mask-7)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
