@@ -39,7 +39,7 @@ body {
     margin-inline: 0;
     padding-inline: 0;
     /* background-color: var(--body-background); */
-    
+    scrollbar-width: thick;
 }
 .hero-pannel {
     background: var(--body-background-img);
@@ -459,7 +459,8 @@ aside.slogan {
     grid-auto-flow: 1fr;
     grid-template-areas: 
     "slogan slogan slogan slogan"
-    "watch1 watch2 watch3 watch4";
+    "watch1 watch2 watch3 watch4"
+    "iframe iframe iframe iframe";
     /* background-color: red; */
     
  }
@@ -483,6 +484,10 @@ aside.slogan {
     grid-area: slogan;
  }
 
+iframe {
+    grid-area: iframe;
+    margin-block-start: 3rem;
+}
 
 .watches {
     position: relative;
@@ -558,9 +563,13 @@ figure img {
 .name-and-price  h3,
 .name-and-price p {
     margin-block: 0;
+    inline-size: calc(100% - 20%);
     line-height: 1.8em;
-    backface-visibility: hidden;
-    transform: scale(1.05) rotate(0.02deg);
+    /* backface-visibility: hidden; */
+    /* transform: scale(1.05) rotate(0.02deg); */
+    /* outline: 1px solid red; */
+    text-align: center;
+    padding-inline: 0.5rem;
 }
 .watch-options-1 {
     inline-size: 6rem;
@@ -677,9 +686,9 @@ figure .compare {
 
 
 
+
 ::-webkit-scrollbar {
-    width: 10px;
- 
+    width: 5px;
 } 
 ::-webkit-scrollbar-track {
     background-color: var(--nav-border);
@@ -687,11 +696,49 @@ figure .compare {
 ::-webkit-scrollbar-thumb {
     background-color: var(--secondary-color);
     border-radius: 50px;
-        height: 10px;
+        height: 5px;
 }
 
 ::-webkit-scrollbar-button {
-    height: 5px;
+    height: 10px;
+   
+}
+
+footer {
+    inline-size: 100%;
+    block-size: 10rem;
+    /* background-color: var(--dark-navy); */
+}
+
+form {
+    margin-block: 1rem;
+    block-size: 3rem;
+    padding-block: 1rem;
+    background-color: aliceblue;
+    margin-inline-start: 1rem;
+}
+
+p > label{
+    position: relative;
+    inset-block-start: 2.5rem;
+    transition: 0.5s all ease-in-out;
+    color: red;
+}
+form input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding-block: 1rem;
+    inline-size: 30rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+form input::placeholder {
+    text-align: right;
+    font-size: 1rem;
 }
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
  *              on hover                    *

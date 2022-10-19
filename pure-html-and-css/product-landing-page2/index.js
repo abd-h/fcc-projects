@@ -128,7 +128,7 @@ let watch3Options = document.querySelector(".watch-1-option-1"),
 });
 
 let watchCollection3 = document.querySelector(".watch-3"),
-    shopNow3 = document.querySelector(".shop3");
+    shopNow3 = document.querySelector(".shop-3");
 
 watchCollection3.addEventListener("mouseenter", () => {
     shopNow3.style.display = "flex";
@@ -142,4 +142,81 @@ watchCollection3.addEventListener("mouseleave", () => {
 })   
 
 
-                           
+            /*++++++++++++++++++++++++++++++++++++++++
+                            Watch 4
+            *++++++++++++++++++++++++++++++++++++++++*/                           
+
+    let watch4Options = document.querySelector(".watch-4-option-1"),
+        watch4Option1 = document.querySelector(".watch4-charcoal-option"),
+        watch4Option2 = document.querySelector(".watch4-obsidian-matte-black"),
+        watch4Option3 = document.querySelector(".watch4-hazel-champagne-gold"),
+        watch4Option4 = document.querySelector(".watch4-chalk-polished-silver");
+        console.log(watch4Option1);
+
+    watch4Option1.addEventListener("click", () => {
+    watch4Options.src = `images/gpixle-watch-bluetooth/charcoal/google-pixel-watch-charcoal-device-3qt.png`;
+    watch4Option1.alt = `Obsidian color option`
+    watch4Option1.style.outline = outline;
+    watch4Option2.style.outline = `none`;
+    watch4Option3.style.outline = `none`;
+    console.log("clicked");
+}); 
+
+    watch4Option2.addEventListener("click", () => {
+    watch4Options.src = `images/gpixle-watch-bluetooth/obsidian-color/google-pixel-watch-obsidian-device-3qt.png`;
+    watch4Option2.style.outline = outline;
+    watch4Option1.style.outline = `none`;
+    watch4Option3.style.outline = `none`;
+    watch4Option4.style.outline = `none`;
+}); 
+   
+    watch4Option3.addEventListener("click", () => {
+    watch4Options.src = `images/gpixle-watch-bluetooth/hazel-champagne-gold/google-pixel-watch-hazel-device-3qt.png`;
+    watch4Option3.style.outline = outline;
+    watch4Option1.style.outline = `none`;
+    watch4Option2.style.outline = `none`;
+    watch4Option4.style.outline = `none`;
+});
+
+    watch4Option4.addEventListener("click", () => {
+    watch4Options.src = `images/gpixle-watch-bluetooth/chalk-polished-silver/google-pixel-watch-chalk-device-3qt.png`;
+    watch4Option4.style.outline = outline;
+    watch4Option1.style.outline = `none`;
+    watch4Option2.style.outline = `none`;
+    watch4Option3.style.outline = `none`;
+}); 
+
+let watchCollection4 = document.querySelector(".watch-4"),
+    shopNow4 = document.querySelector(".shop-4");
+
+watchCollection4.addEventListener("mouseenter", () => {
+    shopNow4.style.display = "flex";
+    shopNow4.style.fontSize = "0.5rem";
+})
+watchCollection4.addEventListener("mouseleave", () => {
+    shopNow4.style.display = "none";
+    watch4Option1.style.outline = `none`;
+    watch4Option2.style.outline = `none`;
+    watch4Option3.style.outline = `none`;
+    watch4Option4.style.outline = `none`;
+})       
+
+
+
+            /*++++++++++++++++++++++++++++++++++++++++
+                            Watch 4
+            *++++++++++++++++++++++++++++++++++++++++*/
+
+let input = document.getElementById("email"),
+    label = document.querySelectorAll(".label")[0];
+console.log(label);                            
+
+
+input.addEventListener("click", () => {
+    label.style.top = "0";
+    console.log("mouseenter");
+})
+input.addEventListener("mouseleave", () => {
+    label.style.top = "2.5rem";
+    console.log("mouseenter");
+})
