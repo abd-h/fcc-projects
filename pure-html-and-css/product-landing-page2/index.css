@@ -1,19 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Source+Sans+Pro:ital,wght@1,300&display=swap');
 :root {
     --secondary-color: rgb(88, 179, 205);
+    /* font-color */
+    --color-mid-grey: rgb(180, 180, 180);
     /* font-size */
     --navbar-font-size: 1.6em;
     /* background-color */
     --white-color: rgb(255, 255, 255);
     --dark-navy: rgb(1, 37, 61);
     --light-background: rgb(244, 249, 255);
+    --medium-background: rgb(230, 227, 227);
     --light-grey-background: rgb(237, 237, 237);
+    --dark-grey: rgb(156, 155, 155);
     --sale-red: rgba(159, 0, 0, 0.8);
 
     /* background-image */
     --body-background-img: url("images/smartwatches-versa4-sense2-fall22.jpeg");
 
-/* background-color: rgb(244, 249, 255); */
     /* font-family */
     --header-fonts-family: neuzeit-grotesk, sans-serif;
 
@@ -31,7 +34,9 @@
 }
 
 body {
+    position: relative;
     font-size: 10px;
+    block-size: 100vh;
     /* font-family: "Proxima Nova Medium", Helvetica, Arial, sans-serif; */
     font-family: 'Source Sans Pro', sans-serif;
     margin-block: 0;
@@ -347,9 +352,13 @@ li .links {
  *              product-selection                    *
  * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
 
+ .main-doc {
+    z-index: 1;
+ }
  .product-selection {
     position: relative;
     inset-block-start: -6.6rem;
+    z-index: 11;
     
  }
 
@@ -363,10 +372,10 @@ li .links {
     max-block-size: 4rem;
     background-color: var(--light-background);
     border-block-start: 1px solid var(--dark-navy);
-    
     position: sticky;
-        inset-block-start: 0;
-        z-index: 2;
+    inset-block-start: 0;
+    z-index: 10;
+    isolation: isolate;
  }
 
  .navbar-product-selection-links {
@@ -485,9 +494,42 @@ aside.slogan {
  }
 
 iframe {
+    inline-size: calc(100% - 4rem);
     grid-area: iframe;
-    margin-block-start: 3rem;
+    margin-block-start: 4rem;
+    /* margin-inline-end: 3rem; */
 }
+
+.video-player-background {
+    position: relative;
+    top: 3rem;
+    inline-size: 100%;
+    block-size: 39rem;
+    background: 
+        url("./images/videos/video-player-image.jpeg")
+        top right / 100% 100% 
+        no-repeat
+        padding-box
+        content-box;
+        grid-area: iframe;
+        z-index: 1;
+}
+.video-play {
+    position: absolute;
+    inset-inline: 50%;
+    inset-block: 50%;
+    inline-size: 3rem;
+    block-size: 3rem;
+    background-color: rgb(255, 66, 129);
+    border: none;
+    border-radius: 50%;
+    
+}
+.fa-play {
+    font-size: 1.4rem;
+    color: var(--white-color);
+}
+
 
 .watches {
     position: relative;
@@ -598,7 +640,7 @@ figure img {
 
 
 
-:is(figure > .name-and-price) h3, h3 + p, label{
+:is(figure > .name-and-price) h3, h3 + p, label[for="compare"]{
     font-size: 1rem;
     color: var(--dark-navy);
     font-weight: 600;
@@ -704,32 +746,104 @@ figure .compare {
    
 }
 
-footer {
-    inline-size: 100%;
-    block-size: 10rem;
-    /* background-color: var(--dark-navy); */
-}
 
-form {
-    margin-block: 1rem;
-    block-size: 3rem;
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
+ *              footer                      *
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
+ footer {
+    position: relative;
+    inset-block-end: 0;
+    z-index: -3;
+ }
+
+.footer-container {
+    padding-block-start: 2rem;
+    inline-size: calc(100% - 4rem);
+    background-color: var(--medium-background);
     padding-block: 1rem;
-    background-color: aliceblue;
-    margin-inline-start: 1rem;
+    padding-inline: 2rem;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-flow: 1fr;
+    gap: 1rem;
+    grid-template-areas: 
+    "email email email social-media social-media social-media"
+    "support-and-community legal partners company health ."
+    "countries countries countries countries countries countries";
+    z-index: 0;
 }
 
-p > label{
+.toplayer {
+    block-size: 6rem;
+    background-color: var(--dark-grey);
+    z-index: 0;
+}
+.marketing-container {
+    display: flex;
+    flex-direction: column;
+    inline-size: 70%;
+    background-color: var(--medium-background);
+    grid-area: email;
+}
+
+.email  .fas{
+    position: absolute;
+    inset-block-end: 1.2rem;
+    inset-inline-end: 0;
+    font-size: 0.8rem;
+    z-index: 1;
+    color: var(--color-mid-grey);
+}
+
+
+ .footer-slogan {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-block-start: 1;
+    letter-spacing: 1.1px;
+    font-family: var(--header-fonts-family);
+    text-transform: lowercase;
+    padding-block: 0.5rem;
+} 
+
+.footer-slogan::first-letter {
+    text-transform: capitalize;
+}
+
+ .footer-slogan {
+    margin-block-end: 0;
+
+}
+ 
+.email {
+    position: relative;
+}
+
+.email > .label{
     position: relative;
     inset-block-start: 2.5rem;
     transition: 0.5s all ease-in-out;
-    color: red;
+    color:  var(--color-mid-grey);
+    padding-block: 0.5rem;
+    font-family: var(--header-fonts-family);
+    font-size: 1.1rem;
+    text-transform: none;
+    letter-spacing: 1.2px;
+    line-height: 1.6;
+    
 }
+
+
 form input {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    padding-block: 1rem;
-    inline-size: 30rem;
+    inline-size: calc(100% - 1.1rem);
+    border: none;
+    border-bottom: 1px solid black;
+    font-weight: 100;
+    padding-block-start: 1rem;
+    padding-block-end: 1.5rem;
+    padding-inline-start: 1rem;
+    background-color: var(--medium-background);
 }
 
 input:focus {
@@ -740,12 +854,123 @@ form input::placeholder {
     text-align: right;
     font-size: 1rem;
 }
+
+/* footer social media */
+
+.social-media {
+    inline-size: 35%;
+    display: flex;
+    flex-direction: column;
+    grid-area: social-media;
+}
+
+.social-media h2 {
+    font-size: 1.6rem;
+    font-family: var(--header-fonts-family);
+    letter-spacing: 1.2px;
+}
+
+.social-media h2::first-letter {
+    text-transform: capitalize;
+}
+.social-media-links {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 3rem;
+    padding-inline-start: 0;
+}
+
+.social-media-links li:not(:first-child) {
+    padding-inline-start: 2rem;
+}
+
+footer ul a {
+    font-weight: 500;
+}
+
+.support-and-community-container h2 {
+    inline-size: 60%;
+    line-height: 1.6;
+}
+
+.footer-links {
+    /* inline-size: 6rem; */
+    padding-inline-start: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-block-start: 2rem;
+}
+
+footer section h2,
+.footer-links {
+    font-family: var(--header-fonts-family);
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    letter-spacing: 1.2px;
+}
+
+footer section h2:not(.social-media > h2) {
+    color: var(--color-mid-grey);
+}
+
+.support-and-community-container {
+    grid-area: support-and-community;
+}
+
+.legal-container {
+    grid-area: legal;
+}
+
+
+.partners-container {
+    grid-area: partners;
+}
+
+.company-container {
+    grid-area: company;
+}
+
+.health-solutions-container {
+    grid-area: health;
+}
+
+
+.countries {
+
+    padding-inline: 1rem;
+    block-size: 3rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    font-family: var(--header-fonts-family);
+    text-transform: capitalize;
+    grid-area: countries;
+    justify-self: end;
+
+}
+
+.countries p {
+    letter-spacing: 1px;
+    font-size: 1rem;
+    border-bottom: 2px solid black;
+    padding-block-end: 0.2rem;
+
+}
+
+.countries img {
+    inline-size: 3rem;
+    max-block-size: 2.5rem;
+}
+
+
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
  *              on hover                    *
  * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
 
 #navbar-container:hover {
-    /* border-bottom: 0.5px solid var(--nav-border); */
     box-shadow: 2px 2px 1px 1px var(--nav-border);
     background-color: white;
     transition: 0.2s all ease-in-out;
@@ -766,7 +991,6 @@ form input::placeholder {
 .get-offer-now:hover {
     transform: translateX(15%);
     transition: 0.5s;
-    
 }
 
 
@@ -785,6 +1009,18 @@ form input::placeholder {
 
 .shop-main-container-1:hover {
     box-shadow: 1px 1px 1px 2px rgba(4, 4, 4, 0.2);
+}
+
+/* footer hover */
+
+.social-media-links .fa-brands:hover {
+    color: rgb(7, 247, 255);
+    transition: 0.5s all ease-in-out;
+}
+
+footer ul a:hover:not(.social-media a) {
+    padding-block-end: 0.2rem;
+    border-bottom: 2px solid var(--dark-navy);
 }
 
 

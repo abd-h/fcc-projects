@@ -73,7 +73,7 @@
             </section>
         </div>
     </div>
-    <main>
+    <main class="main-doc">
         <section class="product-selection">
             <nav class="navbar-product-selection">
                 <ul class="navbar-product-selection-links">
@@ -268,27 +268,95 @@
 
                  <!-- youtube video -->
                 
-                <!-- <iframe width="100%" height="515" src="https://www.youtube.com/embed/qCNEEH4e2To" title="YouTube video player"
+                <iframe id="myvid" width="100%" height="515" src="https://www.youtube.com/embed/qCNEEH4e2To" title="YouTube video player"
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe> -->
+                    allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true">
+                </iframe>
+                <div class="video-player-background">
+                <button class="video-play">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+            </div>
             </article>
+            
             
         </section>
         
     </main>
     <footer>
-        <header>
-            <p>
-                Get the inside scoop on all things Fitbit.
-            </p>
-        </header>
-       <form action="#">
-        <p class="email">
-            <label class="label" for="email">Enter your email addredss</label><br>
-            <input type="email" id="email" name="email"><i class="fa-solid fa-arrow-right"></i>
-        </p>
-       </form>
+        <div class="toplayer"></div>
+        <section class="footer-container">
+        <section class="marketing-container">
+                <p class="footer-slogan">
+                    get the inside scoop on all things Fitbit.
+                </p>
+                <form>
+                    <p class="email">
+                        <label class="label" for="email">Enter your email address</label><br>
+                        <input type="email" id="email" name="email"><i class="fa-solid fa-arrow-right fas"></i>
+                    </p>
+                </form>
+        </section>
+        <section class="social-media">
+            <h2>follow us</h2>
+            <ul class="social-media-links">
+                <li><a href="https://www.facebook.com/fitbit"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://instagram.com/fitbit"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://www.twitter.com/fitbit"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://www.pinterest.com/fitbit/"><i class="fa-brands fa-pinterest"></i></a></li>
+                <li><a href="https://www.youtube.com/user/FitbitOfficialSite"><i class="fa-brands fa-youtube"></i></a></li>
+            </ul>
+        </section>
+        <section class="support-and-community-container">
+                <h2>Support and community</h2>
+                <ul class="support-and-community-links footer-links">
+                    <li><a href="#">product help</a></li>
+                    <li><a href="#">wear & care</a></li>
+                    <li><a href="#">community</a></li>
+                    <li><a href="#">blogs</a></li>
+                </ul>
+            </section>
+            <section class="legal-container">
+                <h2>legal</h2>
+                <ul class="legal-container-links footer-links">
+                    <li><a href="#">terms of service</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">cookies</a></li>
+                    <li><a href="#">ad choices</a></li>
+                </ul>
+            </section>
+            <section class="partners-container">
+                <h2>partners</h2>
+                <ul class="partners-container-links footer-links">
+                    <li><a href="#">retailers</a></li>
+                    <li><a href="#">developers</a></li>
+                </ul>
+            </section>
+            <section class="company-container">
+                <h2>company</h2>
+                <ul class="company-container-links footer-links">
+                    <li><a href="#">contact us</a></li>
+                    <li><a href="#">careers</a></li>
+                    <li><a href="#">sustianability</a></li>
+                    <li><a href="#">press relations</a></li>
+                </ul>
+            </section>
+            <section class="health-solutions-container">
+                <h2>health solutions</h2>
+                <ul class="health-solutions-container-links footer-links">
+                    <li><a href="#">employers</a></li>
+                    <li><a href="#">health plans</a></li>
+                    <li><a href="#">workforce health</a></li>
+                    <li><a href="#">health systems</a></li>
+                    <li><a href="#">researchers</a></li>
+                    <li><a href="#">partners</a></li>
+                </ul>
+            </section>
+            <aside class="countries">
+                <a href="#"><img src="images/EME - United Kingdom.png" alt=""></a>
+                <p>united Kingdom</p>
+            </aside>
+        </section>
     </footer>
     <script src="index.js"></script>
 </body>

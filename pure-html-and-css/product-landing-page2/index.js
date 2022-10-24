@@ -6,49 +6,13 @@ let mainImage = document.getElementsByClassName("chosen-watch")[0],
     watch1Option1 = document.getElementsByClassName("shadow-grey")[0],
     watch1Option2 = document.getElementsByClassName("lunar-white")[0],
     watch1Option3 = document.getElementsByClassName("blue-mist")[0],
+    shopNow1 = document.querySelectorAll(".shop-outerst-main-container")[0],
     outline = `2px solid rgb(193, 192, 192)`;
-
-// watch1Option1.addEventListener("click", () => {
-//     mainImage.src = `images/sense2/shadow-grey/sense2-black-device-3qt.png`;   
-//     watch1Option1.style.outline = outline;
-//     watch1Option2.style.outline = `none`;
-//     watch1Option3.style.outline = `none`;
-
-// });
-// watch1Option2.addEventListener("click", () => {
-//     mainImage.src = `images/sense2/lunar/sense2-lunarwhite-device-3qt.png`;
-//     watch1Option2.style.outline = outline;
-//     watch1Option1.style.outline = `none`;
-//     watch1Option3.style.outline = `none`;
-// });
-// watch1Option3.addEventListener("click", () => {
-//     mainImage.src = `images/sense2/blue/sense2-bluemist-device-3qt.png`;
-//     watch1Option3.style.outline = outline;
-//     watch1Option1.style.outline = `none`;
-//     watch1Option2.style.outline = `none`;
-// });
-
-
-
-// to make the p element that contains shop visible on mouseover;
-
-let watchCollection1 = document.querySelector(".watch-1"),
-    shopNow1 = document.querySelectorAll(".shop-outerst-main-container")[0];
 
 function shopNowVisibility() {
         (shopNow1.className.match("shop-outerst-main-container"))? shopNow1.style.display = "flex"
         :shopNow1.style.display = "none"
 }
-
-// watchCollection1.addEventListener("mouseenter", shopNowVisibility)
-watchCollection1.addEventListener("mouseleave", () => {
-    shopNow1.style.display = "none";
-    watch1Option1.style.outline = `none`;
-    watch1Option2.style.outline = `none`;
-    watch1Option3.style.outline = `none`;
-})
-
-
 
             /*++++++++++++++++++++++++++++++++++++++++
                             Watch 2
@@ -57,42 +21,10 @@ watchCollection1.addEventListener("mouseleave", () => {
 let watch2Options = document.querySelector(".watch-2-option-1"),
     watch2Option1 = document.querySelector(".graphite-stainless-steel"),                           
     watch2Option2 = document.querySelector(".sage-grey-silver"),
-    watch2Option3 = document.querySelector(".blue-mist-soft-gold");   
-    
-// watch2Option1.addEventListener("click", () => {
-//     watch2Options.src = `images/fitbit-sense/carbon-graphite-stainless-steel/sense-HeroStatic-carbon-side.png`;
-//     watch2Option1.style.outline = outline;
-//     watch2Option2.style.outline = `none`;
-//     watch2Option3.style.outline = `none`;
-// });
-
-// watch2Option2.addEventListener("click", () => {
-//     watch2Options.src = `images/fitbit-sense/sage-grey-silver/sense-sage-gray-device-3qt.png`;
-//     watch2Option2.style.outline =outline;
-//     watch2Option1.style.outline = `none`;
-//     watch2Option3.style.outline = `none`;
-// });
-
-// watch2Option3.addEventListener("click", () => {
-//     watch2Options.src = `images/fitbit-sense/lunar-white-soft-gold/sense-lunarwhite-HeroStatic-Side.png`;
-//     watch2Option3.style.outline = outline;
-//     watch2Option1.style.outline = `none`;
-//     watch2Option2.style.outline = `none`;
-// })
-
-let watchCollection2 = document.querySelector(".watch-2"),
+    watch2Option3 = document.querySelector(".blue-mist-soft-gold"),
     shopNow2 = document.querySelector(".shop2");
 
-// watchCollection2.addEventListener("mouseenter", () => {
-//     shopNow2.style.display = "flex";
-//     shopNow2.style.fontSize = "0.5rem";
-// })
-watchCollection2.addEventListener("mouseleave", () => {
-    document.querySelector(".shop2").style.display = "none";
-    watch2Option3.style.outline = `none`;
-    watch2Option1.style.outline = `none`;
-    watch2Option2.style.outline = `none`;
-})    
+   
 
             /*++++++++++++++++++++++++++++++++++++++++
                             Watch 3
@@ -101,45 +33,8 @@ watchCollection2.addEventListener("mouseleave", () => {
 let watch3Options = document.querySelector(".watch-1-option-1"),
     watch3Option1 = document.querySelector(".obsidian-matte-black"),
     watch3Option2 = document.querySelector(".hazel-champagne-gold"),
-    watch3Option3 = document.querySelector(".chalk-polished-silver");
-
-
-
-//     watch3Option1.addEventListener("click", () => {
-//     watch3Options.src = 'images/gpixle-watch-4g-lite/obsidian/pixel-watch-obsidian.png';
-//     watch3Option1.alt = `Obsidian color option`
-//     watch3Option1.style.outline = outline;
-//     watch3Option2.style.outline = `none`;
-//     watch3Option3.style.outline = `none`;
-// });
-
-//     watch3Option2.addEventListener("click", () => {
-//     watch3Options.src = `images/gpixle-watch-4g-lite/gg-pixel-hazel/google-pixel-watch-hazel-device-3qt.png`;
-//     watch3Option2.style.outline = outline;
-//     watch3Option1.style.outline = `none`;
-//     watch3Option3.style.outline = `none`;
-// });
-
-//     watch3Option3.addEventListener("click", () => {
-//     watch3Options.src = `images/gpixle-watch-4g-lite/silver-polish/pixel-watch-charcoal.png`;
-//     watch3Option3.style.outline = outline;
-//     watch3Option1.style.outline = `none`;
-//     watch3Option2.style.outline = `none`;
-// });
-
-let watchCollection3 = document.querySelector(".watch-3"),
+    watch3Option3 = document.querySelector(".chalk-polished-silver"),
     shopNow3 = document.querySelector(".shop-3");
-
-watchCollection3.addEventListener("mouseenter", () => {
-    shopNow3.style.display = "flex";
-    shopNow3.style.fontSize = "0.5rem";
-})
-watchCollection3.addEventListener("mouseleave", () => {
-    shopNow3.style.display = "none";
-    watch3Option3.style.outline = `none`;
-    watch3Option1.style.outline = `none`;
-    watch3Option2.style.outline = `none`;
-})   
 
 
             /*++++++++++++++++++++++++++++++++++++++++
@@ -150,56 +45,10 @@ watchCollection3.addEventListener("mouseleave", () => {
         watch4Option1 = document.querySelector(".watch4-charcoal-option"),
         watch4Option2 = document.querySelector(".watch4-obsidian-matte-black"),
         watch4Option3 = document.querySelector(".watch4-hazel-champagne-gold"),
-        watch4Option4 = document.querySelector(".watch4-chalk-polished-silver");
-        console.log(watch4Option1);
+        watch4Option4 = document.querySelector(".watch4-chalk-polished-silver"),
+        shopNow4 = document.querySelector(".shop-4");
 
-//     watch4Option1.addEventListener("click", () => {
-//     watch4Options.src = `images/gpixle-watch-bluetooth/charcoal/google-pixel-watch-charcoal-device-3qt.png`;
-//     watch4Option1.alt = `Obsidian color option`
-//     watch4Option1.style.outline = outline;
-//     watch4Option2.style.outline = `none`;
-//     watch4Option3.style.outline = `none`;
-//     console.log("clicked");
-// }); 
-
-//     watch4Option2.addEventListener("click", () => {
-//     watch4Options.src = `images/gpixle-watch-bluetooth/obsidian-color/google-pixel-watch-obsidian-device-3qt.png`;
-//     watch4Option2.style.outline = outline;
-//     watch4Option1.style.outline = `none`;
-//     watch4Option3.style.outline = `none`;
-//     watch4Option4.style.outline = `none`;
-// }); 
    
-//     watch4Option3.addEventListener("click", () => {
-//     watch4Options.src = `images/gpixle-watch-bluetooth/hazel-champagne-gold/google-pixel-watch-hazel-device-3qt.png`;
-//     watch4Option3.style.outline = outline;
-//     watch4Option1.style.outline = `none`;
-//     watch4Option2.style.outline = `none`;
-//     watch4Option4.style.outline = `none`;
-// });
-
-//     watch4Option4.addEventListener("click", () => {
-//     watch4Options.src = `images/gpixle-watch-bluetooth/chalk-polished-silver/google-pixel-watch-chalk-device-3qt.png`;
-//     watch4Option4.style.outline = outline;
-//     watch4Option1.style.outline = `none`;
-//     watch4Option2.style.outline = `none`;
-//     watch4Option3.style.outline = `none`;
-// }); 
-
-let watchCollection4 = document.querySelector(".watch-4"),
-    shopNow4 = document.querySelector(".shop-4");
-
-watchCollection4.addEventListener("mouseenter", () => {
-    shopNow4.style.display = "flex";
-    shopNow4.style.fontSize = "0.5rem";
-})
-watchCollection4.addEventListener("mouseleave", () => {
-    shopNow4.style.display = "none";
-    watch4Option1.style.outline = `none`;
-    watch4Option2.style.outline = `none`;
-    watch4Option3.style.outline = `none`;
-    watch4Option4.style.outline = `none`;
-})       
 
 
 // Optimised Eventlistener
@@ -212,10 +61,22 @@ watchCards.forEach(options => {
     let target = e.target;
     (target.classList.contains("watch-1"))? shopNow1.style.display = "flex"
     :(target.classList.contains("watch-2"))? shopNow2.style.display = "flex"
-    :"";
-   
+    :(target.classList.contains("watch-3"))? shopNow3.style.display = "flex"
+    :(target.classList.contains("watch-4"))? shopNow4.style.display = "flex"
+    : false;
 })
 })
+watchCards.forEach(options => {
+    options.addEventListener("mouseleave", function(e) {
+    let target = e.target;
+    (target.classList.contains("watch-1"))? shopNow1.style.display = "none"
+    :(target.classList.contains("watch-2"))? shopNow2.style.display = "none"
+    :(target.classList.contains("watch-3"))? shopNow3.style.display = "none"
+    :(target.classList.contains("watch-4"))? shopNow4.style.display = "none"
+    : false;
+})
+})
+
 
 
 
@@ -310,7 +171,8 @@ watches.forEach(options => {
             *++++++++++++++++++++++++++++++++++++++++*/
 
 let input = document.getElementById("email"),
-    label = document.querySelectorAll(".label")[0];
+    label = document.querySelector(".label"),
+    footer = document.querySelector("footer");
 console.log(label);                            
 
 
@@ -318,10 +180,63 @@ input.addEventListener("click", () => {
     label.style.top = "0";
     console.log("mouseenter");
 })
-input.addEventListener("mouseleave", () => {
+footer.addEventListener("mouseleave", () => {
     label.style.top = "2.5rem";
     console.log("mouseenter");
 });
+
+
+
+
+// sticky navbar
+
+// let element = document.querySelector(".navbar-product-selection"),
+//     topPos = element.getBoundingClientRect().top + window.scrollY,
+//     leftPos = element.getBoundingClientRect().left + window.scrollX,
+//     lastKnownScrollPosition = 0,
+//     ticking = false;
+
+   
+    
+ let playThis = document.getElementById("myvid"),
+     playButton = document.getElementsByClassName("video-play")[0];
+ console.log(playThis);
+
+
+function playMyVideo() {
+    playThis.play();
+}
+ 
+function pauseVideo() {
+    playThis.pause();
+}
+    
+const player = document.getElementById('myvid');
+const playBtn = document.querySelector('.video-play');
+// const stopBtn = document.querySelector('.video-play');
+let times = 0, playY;
+const playVideo = playBtn.addEventListener( 'click' , () => {
+    if(times == 0){
+      playY = player.src += '?autoplay=1';
+      playY = player.
+      times = 2;
+    }
+    openFullscreen();
+});
+
+
+function openFullscreen() {
+  if (player.requestFullscreen) {
+    player.requestFullscreen();
+  } else if (player.webkitRequestFullscreen) { /* Safari */
+    player.webkitRequestFullscreen();
+  } else if (player.msRequestFullscreen) { /* IE11 */
+    player.msRequestFullscreen();
+  }
+}
+
+
+
 
 
 
