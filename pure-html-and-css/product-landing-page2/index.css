@@ -25,7 +25,7 @@
 }
 * {
     box-sizing: border-box;
-    /* outline: 1px solid black; */
+    outline: 1px solid black;
 }
 *,
 *::before,
@@ -497,7 +497,8 @@ iframe {
     inline-size: calc(100% - 4rem);
     grid-area: iframe;
     margin-block-start: 4rem;
-    /* margin-inline-end: 3rem; */
+    margin-inline-end: 3rem;
+    display: none;
 }
 
 .video-player-background {
@@ -513,6 +514,7 @@ iframe {
         content-box;
         grid-area: iframe;
         z-index: 1;
+        margin-block-end: 2rem;
 }
 .video-play {
     position: absolute;
@@ -535,7 +537,7 @@ iframe {
     position: relative;
     inline-size: 18rem;
     padding-block: 2rem;
-    block-size: 36rem;
+    block-size: 37rem;
     background-color: var(--light-grey-background);
     display: flex;
     gap: 0;
@@ -588,7 +590,7 @@ figure img {
 
 .name-and-price {
     inline-size: 100%;
-    block-size: 4rem;
+    /* block-size: 4rem; */
     position: relative;
     inset-block-end: 1rem;
     display: flex;
@@ -607,38 +609,28 @@ figure img {
     margin-block: 0;
     inline-size: calc(100% - 20%);
     line-height: 1.8em;
-    /* backface-visibility: hidden; */
-    /* transform: scale(1.05) rotate(0.02deg); */
-    /* outline: 1px solid red; */
+    outline: 1px solid red;
     text-align: center;
-    padding-inline: 0.5rem;
+    /* padding-inline: 0.5rem; */
 }
-.watch-options-1 {
-    inline-size: 6rem;
+.watch-options {
+    inline-size: fit-content;
     block-size: 2rem;
     display: flex;
     gap: 0.8rem;
     margin-block: 0;
     justify-content: center;
     align-items: center;
-    padding-block: 0;
 }
-/* :is(.name-and-price) h3, h3 + p  {
-    outline: 1px solid palevioletred;
-} */
 
-.watch-options-1 img {
+.watch-options img {
     inline-size: 1rem;
     block-size: 1rem;
     border: 2px solid rgb(255, 255, 255);
-    /* outline: 3px solid rgb(193, 192, 192); */
     border-radius: 50%;
     align-items: center;
-    margin-block: 0.1rem;
+    margin-block: 0rem;   
 }
-
-
-
 
 :is(figure > .name-and-price) h3, h3 + p, label[for="compare"]{
     font-size: 1rem;
@@ -680,10 +672,8 @@ figure .compare {
 
 .shop-main-container-1 {
     position: relative;
-    inset-block-end: 0.5rem;
+    /* inset-block-end: 0.5rem; */
     inline-size: 100%;
-    /* margin-inline: 1rem; */
-
     padding-block: 0.5rem;
     block-size: 3rem;
     background-color: var(--sale-red);
@@ -858,7 +848,7 @@ form input::placeholder {
 /* footer social media */
 
 .social-media {
-    inline-size: 35%;
+    inline-size: 65%;
     display: flex;
     flex-direction: column;
     grid-area: social-media;

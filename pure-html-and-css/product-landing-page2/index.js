@@ -83,7 +83,7 @@ watchCards.forEach(options => {
 
 
 
-let watches = document.querySelectorAll(".watch-options-1");
+let watches = document.querySelectorAll(".watch-options");
 watches.forEach(options => {
     for(let i = 0; i < options.children.length; i++) {
         options.children[i].addEventListener('click', function(e) {
@@ -221,6 +221,7 @@ const playVideo = playBtn.addEventListener( 'click' , () => {
       playY = player.
       times = 2;
     }
+    playThis.style.display = "block";
     openFullscreen();
 });
 
