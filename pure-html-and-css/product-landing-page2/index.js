@@ -222,8 +222,11 @@ const playVideo = playBtn.addEventListener( 'click' , () => {
       times = 2;
     }
     playThis.style.display = "block";
+    playThis.style.zIndex = "2";
     openFullscreen();
 });
+console.log(playThis);
+
 
 
 function openFullscreen() {
@@ -237,7 +240,9 @@ function openFullscreen() {
 }
 
 
+// Media query
 
+console.log(window.innerWidth);
 
 
 
