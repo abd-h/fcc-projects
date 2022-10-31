@@ -101,6 +101,11 @@ img {
     gap: 0.7rem;
 }
 
+header.header-top-banner p {
+    line-height: 1.8;
+    margin-block: 0;
+    padding-block: 0.5rem;
+}
 
 header p > sup {
     font-size: 0.6rem
@@ -1120,14 +1125,17 @@ hr {
     background-color: var(--dark-navy);
 }
 
+
+
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
  *              Media Quary!                   *
  * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
 
 @media only screen and (max-width: 950px) {
-    /* .hero-pannel * {
-         outline: 1px solid black; 
-    } */
+    body {
+        max-inline-size: 100%;
+        overflow-x: hidden;
+    }
 
     .hero-pannel {
         max-inline-size: 100%;
@@ -1238,6 +1246,7 @@ hr {
             "watch1 watch2" 
             "watch3 watch4"
             "iframe iframe";
+        justify-items: center;
     }
 
     figure img {
@@ -1253,6 +1262,11 @@ hr {
     .watches:hover {
         transform: scale(1);
         box-shadow: none;
+    }
+
+    .watches figure {
+        margin-inline-start: 0;
+        margin-inline-end: 0;
     }
 
     div.compare {
@@ -1344,7 +1358,7 @@ hr {
    .accordian-header::before {
     content: "\02795";
     position: absolute;
-    inset-inline-end: 3rem;
+    inset-inline-end: 1rem;
     inset-block-start: 50%;
     font-size: 1.5rem;
     transform: translateY(-50%);
@@ -1439,9 +1453,7 @@ hr {
 }
 
 @media only screen and (max-width: 675px) {
-    body {
-        max-inline-size: 100vw;
-    }
+   
     .product-selection {
         max-inline-size: 100vw;
     }
@@ -1450,8 +1462,10 @@ hr {
         display: flex;
         flex-direction: column;
         block-size: fit-content;
-        padding-inline: 1rem;
+        /* padding-inline: 1rem; */
         padding-block: 1rem;
+        text-align: center;
+        overflow-x: hidden;
     } 
 
     .hero-pannel {
@@ -1554,13 +1568,24 @@ hr {
     }
     .watches {
         inline-size: 10rem;
-        block-size: 24rem;
+        block-size: 22.5rem;
         margin-inline: 0;
+    }
+
+    .watches .name-and-price h3,
+        .watches .name-and-price h3 + p {
+        color: red;
+        font-size: 0.8rem;
     }
 
     figure img {
         inline-size: 150px;
         block-size: 150px;
+    }
+
+    .watch-collection-container .watcheds figure {
+        margin-inline-start: 0;
+        margin-inline-end: 0;
     }
 }
 
