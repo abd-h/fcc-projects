@@ -59,11 +59,16 @@ console.log(watchCards);
 watchCards.forEach(options => {
     options.addEventListener("mouseenter", function(e) {
     let target = e.target;
-    (target.classList.contains("watch-1"))? shopNow1.style.display = "flex"
+    (window.matchMedia("(min-width: 778px)").matches)?
+    (target.classList.contains("watch-1")? shopNow1.style.display =   "flex"
     :(target.classList.contains("watch-2"))? shopNow2.style.display = "flex"
     :(target.classList.contains("watch-3"))? shopNow3.style.display = "flex"
     :(target.classList.contains("watch-4"))? shopNow4.style.display = "flex"
-    : false;
+    : false)
+    :(shopNow1.style.display = "none",
+      shopNow2.style.display = "none",
+      shopNow3.style.display = "none",
+      shopNow4.style.display = "none");
 })
 })
 watchCards.forEach(options => {
@@ -240,7 +245,37 @@ function openFullscreen() {
 }
 
 
-// Media query
+/* +++++++++++++++++++++++++++++++++++++++++++++
+ *                    Media query              *
+ * +++++++++++++++++++++++++++++++++++++++++++*/
+
+let accordianContainer = document.getElementsByClassName("accordian-container"),
+    accordianHeader = document.getElementsByClassName("accordian-header"),
+    accordianContent = document.getElementsByClassName("accordian-content"),
+    hr = document.getElementsByTagName('hr');
+console.log(accordianContainer);
+
+
+function acc() {
+    for(let i = 0; i < accordianHeader.length; i++) {
+        accordianHeader[i].addEventListener("click", function(e) {
+            let target = e.target;
+            accordianContent[i].classList.toggle("active")
+            if(window.matchMedia("(max-width: 950px)").matches && accordianContent[i].classList.contains("active")) {
+                target.classList.add("active");
+                accordianContent[i].style.opacity = "1";
+                accordianContainer[i].classList.add("active");
+            } else {
+                accordianContent[i].style.opacity = "0";
+                 target.classList.remove("active");
+                 accordianContainer[i].classList.remove("active");
+            }
+        })
+        console.log(accordianContainer[i].children[i]);
+    }
+}
+acc();
+
 
 console.log(window.innerWidth);
 

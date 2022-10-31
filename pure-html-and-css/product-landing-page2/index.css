@@ -12,6 +12,7 @@
     --medium-background: rgb(230, 227, 227);
     --light-grey-background: rgb(237, 237, 237);
     --dark-grey: rgb(156, 155, 155);
+    --darkest-grey: rgb(116, 116, 116);
     --sale-red: rgba(159, 0, 0, 0.8);
 
     /* background-image */
@@ -52,9 +53,9 @@ body {
 .hero-pannel {
     background: var(--body-background-img);
     /* background-position: -11rem -4rem; */
-    background-position: right 35% bottom 55%;
+    background-position: 100% 2rem;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     block-size: 52rem;
 
 }
@@ -223,14 +224,14 @@ i.fa.fa-cart-plus {
 .hamburger-menu {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: "menu";
+    grid-template-areas: "menu-1";
     /* display: none; */
 }
 
 .hamburger-menu i.fa-bars {
-    grid-area: menu;
+    grid-area: menu-1;
     z-index: 1;
-    display: none;
+    /* display: none; */
     transition: display 0.5s ease-in-out;
 }
 
@@ -244,27 +245,24 @@ i.fa.fa-cart-plus {
 
 .navbar-links-right .fa-x {
     color: red;
-    grid-area: menu;
+    grid-area: menu-1;
     z-index: 0;
-    display: none;
+    /* display: none; */
     transition: display 0.5s ease-in-out;
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
  *      Section-1 (with class of section-1  *
  * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
+
 .section-1-container {
     position: relative;
-   
-    /* inset-block-start: 0.5rem; */
-    /* background-color: red; */
-    
- 
     block-size: 50rem;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
 }
+
 .section-1 {
     block-size: 40%;
     position: relative;
@@ -387,7 +385,7 @@ i.fa.fa-cart-plus {
 }
 
 .shop-and-cashback-container>div:last-child .shop-now {
-    inline-size: 15rem;
+    inline-size: 14rem;
     margin-inline-start: 2.5rem;
 }
 
@@ -671,7 +669,6 @@ figure img {
     margin-block: 0;
     inline-size: calc(100% - 20%);
     line-height: 1.8em;
-    outline: 1px solid red;
     text-align: center;
     /* padding-inline: 0.5rem; */
 }
@@ -824,6 +821,7 @@ figure .compare {
     "support-and-community legal partners company health ."
     "countries countries countries countries countries countries";
     z-index: 0;
+    
 }
 
 .toplayer {
@@ -846,6 +844,7 @@ figure .compare {
     letter-spacing: 1px;
 }
 
+
 .toplayer p a,
 .toplayer p a:visited {
     color: black;
@@ -863,7 +862,7 @@ figure .compare {
     grid-area: email;
 }
 
-.email  .fas{
+.email .fas{
     position: absolute;
     inset-block-end: 1.2rem;
     inset-inline-end: 0;
@@ -951,6 +950,8 @@ form input::placeholder {
 .social-media h2::first-letter {
     text-transform: capitalize;
 }
+
+/* container for fa-brands */
 .social-media-links {
     display: flex;
     justify-content: flex-start;
@@ -990,6 +991,7 @@ footer section h2,
 
 footer section h2:not(.social-media > h2) {
     color: var(--color-mid-grey);
+
 }
 
 .support-and-community-container {
@@ -1107,20 +1109,28 @@ footer ul a:hover:not(.social-media a) {
     border-bottom: 2px solid var(--dark-navy);
 }
 
+hr {
+    display: none;
+}
 
 
+.footer-background {
+    display: none;
+    block-size: 10rem;
+    background-color: var(--dark-navy);
+}
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
  *              Media Quary!                   *
  * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
 
-@media only screen and (max-width: 777px) {
-    .hero-pannel * {
-        /* outline: 1px solid black; */
-
-    }
+@media only screen and (max-width: 950px) {
+    /* .hero-pannel * {
+         outline: 1px solid black; 
+    } */
 
     .hero-pannel {
+        max-inline-size: 100%;
         background-size: 90%;
         block-size: 50rem;
         background-position: left -5rem top 5rem;
@@ -1215,7 +1225,342 @@ footer ul a:hover:not(.social-media a) {
     .navbar-product-selection-links > li:nth-last-of-type(-n+2) {
         display: none;
     }
+    .filters {
+        inset-inline-start: -1.6rem;
+    }
+
+    /* Watches grid reduced to two columns  */
+    
+    .watch-collection-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "slogan slogan"
+            "watch1 watch2" 
+            "watch3 watch4"
+            "iframe iframe";
+    }
+
+    figure img {
+        inline-size: 180px;
+        block-size: 180px;
+        margin-block: 0.5rem;
+
+    }
+    
+    .watches {
+        block-size: 25rem;
+    }
+    .watches:hover {
+        transform: scale(1);
+        box-shadow: none;
+    }
+
+    div.compare {
+        padding-block-start: 8px;
+        padding-block-end: 0px;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .compare label[for="compare"] {
+        color: var(--darkest-grey);
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+    }
+
+    /* footer */
+
+    .toplayer p {
+        inline-size: 90vw;
+        line-height: 1.6;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-inline-size: 100%;
+        background-color: var(--medium-background);
+    }
+
+    input#email {
+        padding-block: 0.9rem;
+    }
+    .email .fas {
+        inset-block-end: 0.7rem;
+    }
+
+
+    /* Accordian set up */
+
+    
+   .footer-container {
+    display: flex;
+    flex-direction: column;
+   inline-size: 100%;
+    padding-inline: 0;
+    gap: 0;
+   }
+
+   .social-media {
+    margin-block: 2.5rem;
+   }
+   .social-media li a {
+    font-size: 3rem;
+   }
+
+   section.accordian-container  {
+    margin-block: 0px;
+    line-height: 0;
+    align-items: center;
+    max-inline-size: 100%;
+    gap: 0;
+    border-bottom: 1px solid rgb(208, 208, 208);
+   }
+
+    section.accordian-container > :not(hr) {
+    padding-inline: 1rem;
+    max-inline-size: 100%;
+   }
+
+   .support-and-community-container h2.accordian-header {
+    inline-size: calc(100% - 2rem);
+   }
+
+   .accordian-container h2.accordian-header {
+    position: relative;
+    color: var(--dark-navy);
+    padding-block: 2rem;
+    margin-block: 0;
+    margin-block-end: -3rem;
+    margin-inline: 0;
+    font-size: 1.005rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    
+    
+   }
+
+   .accordian-header::before {
+    content: "\02795";
+    position: absolute;
+    inset-inline-end: 3rem;
+    inset-block-start: 50%;
+    font-size: 1.5rem;
+    transform: translateY(-50%);
+    color: var(--dark-navy);
+   }
+
+   .accordian-container.active {
+    background-color: white;
+   }
+   
+   .accordian-content{
+    max-block-size: 0;
+    inline-size: 100%;
+    overflow: hidden;
+    opacity: 0;
+   }
+  
+   .accordian-content.active{
+    max-block-size: 30%;
+    inline-size: 100%;
+    background-color: white;
+    opacity: 1;
+    gap: 0;
+   padding-block-start: 1rem;
+   }
+    .accordian-header.active::before {
+    content: "➖";
+    font-size: 1.5rem;
+    font-weight: 800;
 }
 
+   
 
+   .accordian-content.active li a {
+    inline-size: 100%;
+    font-weight: 550;
+    margin-inline-start: 1rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+   }
+
+   .accordian-content.active li {
+    padding-block: 0.5rem;
+   }
+
+   .accordian-content.active li a:hover {
+    max-inline-size: 50%;
+    /* border-bottom: none; */
+   }
+
+   .accordian.content.active {
+    background-color: white;
+    
+   }
+
+   .footer-container > section {
+    max-inline-size: 100%;
+    position: relative;
+    padding-inline-start: 1.5rem;
+    
+   }
+
+    .countries {
+        position: relative;
+        justify-content: flex-start;
+        margin-block: 1rem;
+        inset-inline-start: 1rem;
+    }
+
+    .countries p {
+        font-size: 0.8rem;
+        font-weight: 600;
+        /* opacity: 0.7/; */
+    }
+    .social-media-links {
+        margin-block: 1rem;
+        font-size: 2.5rem;
+    }
+
+    .social-media h2 {
+        margin-block: 1rem;
+        font-size: 1.25rem;
+    }
+
+    .social-media-links li:not(:first-child) {
+        padding-inline-start: 1rem;
+    }
+
+    .footer-background {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 675px) {
+    body {
+        max-inline-size: 100vw;
+    }
+    .product-selection {
+        max-inline-size: 100vw;
+    }
+
+    .header-top-banner {
+        display: flex;
+        flex-direction: column;
+        block-size: fit-content;
+        padding-inline: 1rem;
+        padding-block: 1rem;
+    } 
+
+    .hero-pannel {
+        background-position: left 0rem top 12rem;
+    }
+
+    .navbar-links-right {
+        gap: 1.5rem;
+    }
+    .images img {
+        inline-size: 110px;
+        block-size: 40px;
+    }
+
+    i.fa.fa-cart-plus {
+        font-size: 1.1rem;
+        margin-inline: 0.5rem;
+    }
+
+    .navbar-links-right li p {
+        position: relative;
+        font-size: 0.9rem;
+        inset-inline-start: 2.5rem;
+        inset-block-start: 0rem;
+    }
+
+    .navbar-links-right .fa-solid {
+        font-size: 1.6rem;
+        border: none;
+        z-index: -3;
+    }
+
+    .section-1-container {
+        max-inline-size: 100%;
+        margin-block-end: 1rem;
+    }
+    
+    .section-1 {
+        inset-block-start: -2rem;
+        max-inline-size: 100%;
+        margin-inline-start: 1rem;
+        justify-content: center;
+        align-items: flex-start;
+        font-size: 2rem;
+    }
+
+    .section-1 p {
+        max-inline-size: 100vmin;
+        font-size: 1rem;
+    }
+    
+    .section-1 header h2 {
+        font-size: 1rem;
+    }
+
+    .section-1 header h2 + p {
+        font-size: 1rem;
+    }
+    .shop-and-cashback-container>div:last-child {
+        inline-size: 13rem;
+    }
+
+    .shop-and-cashback-container>div:last-child .shop-now {
+        inset-inline-start: 10rem;
+    }
+
+    .shop-and-cashback-container>div:last-child .shop-now .right {
+        inset-inline-start: 12rem;
+    }
+
+    .navbar-product-selection-links li:not(li:nth-child(-n + 2)) {
+        display: none;
+    }
+
+    .filters {
+        inline-size: 50%;
+        margin-inline-start: -1rem;
+    }
+
+    .video-player-background {
+        block-size: 20rem;
+    }
+    .watch-collection-container {
+        max-inline-size: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "slogan slogan"
+            "watch1 watch2"
+            "watch3 watch4"
+            "iframe iframe";
+        justify-items: center;    
+        align-items: center;
+        margin-inline: 1rem;
+        padding-inline: 0;
+        gap: 2rem 1rem;
+    }
+
+    .watch-collection-container h2 {
+        font-size: 1.5rem;
+    }
+    .watches {
+        inline-size: 10rem;
+        block-size: 24rem;
+        margin-inline: 0;
+    }
+
+    figure img {
+        inline-size: 150px;
+        block-size: 150px;
+    }
+}
 
