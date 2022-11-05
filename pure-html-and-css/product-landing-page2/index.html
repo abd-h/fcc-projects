@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, minimum-scale=1.0"> -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <title>Product Landing Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
     <link rel="stylesheet" href="index.css">
@@ -24,9 +26,13 @@
         </header>
         
         <nav id="navbar-container">
+            <header class="logo">
+                <a href="#" class="images">
+                    <img src="images/fitbit-logo-png-transparent.png"
+                        alt="Fitbit Company logo">
+                </a>
+            </header>
             <ul class="navbar-links-left">
-                <li class="images"><a href="links" class="logo"><img src="images/fitbit-logo-png-transparent.png"
-                            alt="Fitbit Company logo"></a></li>
                 <li><a href="#" class="links">products</a></li>
                 <li><a href="#" class="links">technology</a></li>
                 <li><a href="#" class="links">premium</a></li>
@@ -35,12 +41,12 @@
                 <li>
                     <p>by <span>google</span></p>
                 </li>
-                <li><a href=""><i class="fa fa-light fa-cart-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-light fa-cart-plus"></i></a></li>
                 <li id="fa-user"><a href=""><i class="fa fa-regular fa-user"></i></a></li>
-                <div class="hamburger-menu">
+                <li class="hamburger-menu">
                     <i class="fa-solid fa-bars"></i>
                     <i class="fa fa-solid fa-x"></i>
-                </div>
+                </li>
             </ul>
         </nav>
         <div class="section-1-container">
@@ -82,14 +88,30 @@
             <nav class="navbar-product-selection">
                 <ul class="navbar-product-selection-links">
                     <li class="filters">Filters</li>
-                    <li><a href="#" class="product-links">all products</a></li>
+                    <li>
+                        <a href="#" class="product-links all-products-links">
+                            <label>all products</label>
+                            <span class="fa-angles">
+                                <i class="fa-solid fa-angle-up"></i>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </span>
+                        </a>
+                    </li>
                     <li><a href="#" class="product-links smartwatches">smartwatches</a></li>
-                    <li><a href="#" class="product-links">trackers</a></li>
-                    <li><a href="#" class="product-links">services</a></li>
-                    <li><a href="#" class="product-links">smart scales</a></li>
-                    <li><a href="#" class="product-links">accessories</a></li>
+                    <li><a href="#" class="product-links trackers">trackers</a></li>
+                    <li><a href="#" class="product-links services">services</a></li>
+                    <li><a href="#" class="product-links smart-scale">smart scales</a></li>
+                    <li><a href="#" class="product-links accessories">accessories</a></li>
+                </ul>
+                <ul class="dropdown-content">
+                    <li><a href="#" class="dropdown-content-links">smartwatches</a></li>
+                    <li><a href="#" class="dropdown-content-links">trackers</a></li>
+                    <li><a href="#" class="dropdown-content-links">service</a></li>
+                    <li><a href="#" class="dropdown-content-links">smart scales</a></li>
+                    <li><a href="#" class="dropdown-content-links">accessories</a></li>
                 </ul>
             </nav>
+            
             <aside class="slogan">
                 <p>
                     Explore a stylish lineup of smartwatches designed with every fitness level and goal in mind.

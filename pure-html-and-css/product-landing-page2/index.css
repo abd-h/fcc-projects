@@ -29,7 +29,7 @@
 }
 * {
     box-sizing: border-box;
-    list-style: none;
+    list-style-type: none;
     /* outline: 1px solid black; */
 }
 *,
@@ -42,31 +42,53 @@ body {
     position: relative;
     font-size: 10px;
     block-size: 100vh;
-    /* font-family: "Proxima Nova Medium", Helvetica, Arial, sans-serif; */
     font-family: 'Source Sans Pro', sans-serif;
     margin-block: 0;
     padding-block: 0;
     margin-inline: 0;
     padding-inline: 0;
-    scrollbar-width: thick;
+    overflow: overlay;
+}
+
+.onscrollbar::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+}
+
+.onscrollbar::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+    z-index: 5;
+}
+
+.onscrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border: 5px solid rgb(46, 210, 255);
+    border-radius: 50px;
+    height: 5px;
+    width: 5px
+        /*or any height and color you want*/
+    ;
+}
+
+.onscrollbar::-webkit-scrollbar-button {
+    width: 5px;
+    height: 5px;
 }
 .hero-pannel {
     background: var(--body-background-img);
-    /* background-position: -11rem -4rem; */
     background-position: 100% 2rem;
     background-repeat: no-repeat;
     background-size: contain;
     block-size: 52rem;
-
 }
 
 a {
     text-decoration: none;
     color: var(--dark-navy);
-}
- 
-li {
-    list-style: none;
 }
 
  img{
@@ -78,7 +100,6 @@ img {
     max-inline-size: 100%;
     max-height: auto;
     display: block;
-    /* background-color: black; */
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
@@ -134,53 +155,62 @@ header .fa {
 .get-offer-now span {
     text-transform: uppercase;
     font-weight: 600;
-
 }
 
 .get-offer-now span,
 .get-offer-now .fa {
     color: rgb(3, 213, 255);
 }
+
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
  *              Navbar                      *
  * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
 
 #navbar-container {
-    /* background-color: bisque; */
-    inline-size: 100%;
-    block-size: fit-content;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-areas: 
+    "logo links-left links-left links-left links-right links-right links-right";
+    align-items: center;
+    gap: 1rem;
+    padding-inline: 1rem;
     padding-block: 1rem;
-    display: flex;
-    margin-block-end: 1rem;
-    gap: 10px;
-    justify-content: space-between;
-    
-    
 }
+
+.logo {
+    grid-area: logo;
+    justify-self: start;
+}
+
+ul {
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-block-start: 0;
+    padding-block-end: 0;
+    padding-inline-start: 0;
+}
+
 .navbar-links-left{
+    grid-area: links-left;
+    justify-self: end;
     display: flex;
-    inline-size: 50%;
+    inline-size: 100%;
     block-size: 70px;
     overflow: hidden;
-    margin-block-start: 0;
-    padding-block: 0rem;
     justify-content: flex-start;
     justify-content: space-around;
     justify-content: baseline;
     align-items: center;
-
 }
 
 .navbar-links-right {
-    inline-size: 30%;
+    grid-area: links-right;
+    justify-self: end;
     display: flex;
-    justify-content: space-around;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     gap: 3rem;
-    margin-block-start: 0;
-    margin-inline-end: 2rem;
-    padding-inline: 2rem;
 }
 
 .navbar-links-right li span{
@@ -190,7 +220,7 @@ header .fa {
 }
 
 .navbar-links-right li p {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 5vw, 1.5rem);
     font-weight: 100;
     font-weight: 400;
     font-family: neuzeit-grotesk, sans-serif;
@@ -211,17 +241,15 @@ li .links {
     font-style: normal;
     font-weight: 600;
     padding-inline: 1rem;
-    padding-block: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1.3px;
     line-height: 1.6;
 } 
-
 .fa {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 i.fa.fa-cart-plus {
-    font-size: 1.8rem;
+    color: var(--dark-navy);
 }
 
 /* Mobile menu bars */
@@ -230,29 +258,27 @@ i.fa.fa-cart-plus {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: "menu-1";
-    /* display: none; */
+   
 }
 
-.hamburger-menu i.fa-bars {
+
+
+.hamburger-menu > i.fa-bars {
     grid-area: menu-1;
-    z-index: 1;
-    /* display: none; */
     transition: display 0.5s ease-in-out;
 }
 
 .navbar-links-right .fa-solid {
+    display: none;
     font-size: 2rem;
-    border: 2px solid blue;
-    padding-block: 0.1rem;
-    padding-inline: 0.4rem;
+    padding-block: 0.5rem;
+    padding-inline: 0.5rem;
     border-radius: 10px;
 }
 
 .navbar-links-right .fa-x {
     color: red;
     grid-area: menu-1;
-    z-index: 0;
-    /* display: none; */
     transition: display 0.5s ease-in-out;
 }
 
@@ -277,15 +303,12 @@ i.fa.fa-cart-plus {
     justify-content: space-around;
     margin-inline-start: 3.5rem;
     margin-block-start: 3rem;
-   
 }
 
 .section-1 header {
     font-size: 1.5rem;
     font-family: neuzeit-grotesk, sans-serif;
     margin-block-end: 0;
-    /* margin-inline-start: 3rem; */
-    
 }
 
 .section-1 header h2 {
@@ -307,23 +330,18 @@ i.fa.fa-cart-plus {
 
 .section-1 header + p {
     inline-size: 30rem;
-    /* position: absolute; */
     font-size: 1.15rem;
     font-family: var(--header-fonts-family);
     font-weight: 200;
     letter-spacing: 1.6px;
     margin-block-end: 0.5rem;
-    /* margin-inline-start: 3rem; */
     padding-block: 1rem;
     line-height: 1.6;
-    /* background-color: red; */
 }
-
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
  *   shop now and get cashback container    *
  * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
-
 
 .shop-and-cashback-container {
     position: relative;
@@ -351,8 +369,6 @@ i.fa.fa-cart-plus {
     overflow: hidden;
     transition: 0.5s all ease-in-out;
 }
-
-
 
 .shop-now span {
     position: absolute;
@@ -414,6 +430,7 @@ i.fa.fa-cart-plus {
  .main-doc {
     z-index: 1;
  }
+
  .product-selection {
     position: relative;
     inset-block-start: -6.6rem;
@@ -429,8 +446,8 @@ i.fa.fa-cart-plus {
     position: relative;
     inline-size: 100%;
     max-block-size: 4rem;
-    background-color: var(--light-background);
-    border-block-start: 1px solid var(--dark-navy);
+    background-color: var(--light-grey-background);
+    border-block-start: 1px solid transparent;
     position: sticky;
     inset-block-start: 0;
     z-index: 10;
@@ -439,24 +456,19 @@ i.fa.fa-cart-plus {
 
  .navbar-product-selection-links {
     display: flex;
-    /* block-size: 100%; */
     inline-size: 75%;
     gap: 0.5rem;
     justify-content: center;
     justify-content: space-around;
     align-items: center;
-    /* margin-inline-start: 3rem; */
     padding-inline-start: 0;
     margin-block-start: 0;
-
-
  }
 
  .navbar-product-selection-links li {
-    /* inline-size: 80%; */
     text-align: center;
-    
  }
+
  .navbar-product-selection a,
  .filters {
     font-size: var(--navbar-font-size);
@@ -511,7 +523,6 @@ aside.slogan {
     
 }
 
-
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
  *              Watch collection                   *
  * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
@@ -529,12 +540,8 @@ aside.slogan {
     "slogan slogan slogan slogan"
     "watch1 watch2 watch3 watch4"
     "iframe iframe iframe iframe";
-    /* background-color: red; */
-    
  }
- /* .watch-collection-container * {
-    outline: 1px solid black;
- } */
+
  .watch-1 {
     grid-area: watch1;
  }
@@ -597,7 +604,6 @@ iframe {
     grid-template-areas: "iframe";
 }
 
-
 .watches {
     position: relative;
     inline-size: 18rem;
@@ -612,15 +618,12 @@ iframe {
     transition: transform 0.5s;
     border-radius: 0.5rem;
     margin-block: 0;
-    padding-block: 0;
-    
+    padding-block: 0;  
 }
 
 figure {
-    /* position: relative; */
     inline-size: 100%;
     block-size: 100%;
-    /* background-color: rebeccapurple; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -655,7 +658,6 @@ figure img {
 
 .name-and-price {
     inline-size: 100%;
-    /* block-size: 4rem; */
     position: relative;
     inset-block-end: 1rem;
     display: flex;
@@ -664,9 +666,6 @@ figure img {
     justify-content: flex-end;
     justify-content: center;
     align-items: center;
-    /* background-color: aqua; */
-    /* padding-block: 2rem; */
-    /* outline: 1px solid black; */
 }
 
 .name-and-price  h3,
@@ -675,7 +674,6 @@ figure img {
     inline-size: calc(100% - 20%);
     line-height: 1.8em;
     text-align: center;
-    /* padding-inline: 0.5rem; */
 }
 .watch-options {
     inline-size: fit-content;
@@ -704,12 +702,9 @@ figure img {
     font-family: var(--header-fonts-family);
 }
 
-
 figure .compare {
-    /* position: absolute; */
     justify-self: flex-end;
     block-size: 1rem;
-    /* margin-block-start: 2rem; */
     padding-inline: 1rem;
     padding-block: 1rem;
     border-top: 1px solid rgb(212, 212, 212);
@@ -717,7 +712,6 @@ figure .compare {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    /* background-color: aqua; */
     text-align: center;
     inset-block-end: 4rem;
 }
@@ -736,7 +730,6 @@ figure .compare {
 
 .shop-main-container-1 {
     position: relative;
-    /* inset-block-end: 0.5rem; */
     inline-size: 100%;
     padding-block: 0.5rem;
     block-size: 3rem;
@@ -751,9 +744,9 @@ figure .compare {
 
 .shop-main-container-2 {
     inline-size: 5.5rem;
-    /* background-color: blue; */
     overflow: hidden;
 }
+
 :is(.shop-main-container-1) .shop-container-3 {
     display: flex;
     inline-size: 6rem;
@@ -761,7 +754,6 @@ figure .compare {
     gap: 1.3rem;
     justify-content: flex-start;
     align-items: center;
-    /* background-color: aliceblue; */
     transform: translateX(22%);
     transition: 0.3s all ease-in-out;
 } 
@@ -780,30 +772,10 @@ figure .compare {
     letter-spacing: 1.6px;
 }
 
-
-
-
-::-webkit-scrollbar {
-    width: 5px;
-} 
-::-webkit-scrollbar-track {
-    background-color: var(--nav-border);
-}
-::-webkit-scrollbar-thumb {
-    background-color: var(--secondary-color);
-    border-radius: 50px;
-        height: 5px;
-}
-
-::-webkit-scrollbar-button {
-    height: 10px;
-   
-}
-
-
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
  *              footer                      *
  * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
+
  footer {
     position: relative;
     inset-block-end: 0;
@@ -826,7 +798,6 @@ figure .compare {
     "support-and-community legal partners company health ."
     "countries countries countries countries countries countries";
     z-index: 0;
-    
 }
 
 .toplayer {
@@ -844,11 +815,11 @@ figure .compare {
     text-align: left;
     opacity: 0.8;
 }
+
 .toplayer span {
     font-weight: 500;
     letter-spacing: 1px;
 }
-
 
 .toplayer p a,
 .toplayer p a:visited {
@@ -876,8 +847,7 @@ figure .compare {
     color: var(--color-mid-grey);
 }
 
-
- .footer-slogan {
+.footer-slogan {
     font-size: 1.3rem;
     font-weight: 600;
     margin-block-start: 1;
@@ -892,7 +862,7 @@ figure .compare {
     text-transform: capitalize;
 }
 
- .footer-slogan {
+.footer-slogan {
     margin-block-end: 0;
 
 }
@@ -912,9 +882,7 @@ figure .compare {
     text-transform: none;
     letter-spacing: 1.2px;
     line-height: 1.6;
-    
 }
-
 
 form input {
     inline-size: calc(100% - 1.1rem);
@@ -978,7 +946,6 @@ footer ul a {
 }
 
 .footer-links {
-    /* inline-size: 6rem; */
     padding-inline-start: 0;
     display: flex;
     flex-direction: column;
@@ -996,7 +963,6 @@ footer section h2,
 
 footer section h2:not(.social-media > h2) {
     color: var(--color-mid-grey);
-
 }
 
 .support-and-community-container {
@@ -1006,7 +972,6 @@ footer section h2:not(.social-media > h2) {
 .legal-container {
     grid-area: legal;
 }
-
 
 .partners-container {
     grid-area: partners;
@@ -1020,9 +985,7 @@ footer section h2:not(.social-media > h2) {
     grid-area: health;
 }
 
-
 .countries {
-
     padding-inline: 1rem;
     block-size: 3rem;
     display: flex;
@@ -1034,7 +997,6 @@ footer section h2:not(.social-media > h2) {
     text-transform: capitalize;
     grid-area: countries;
     justify-self: end;
-
 }
 
 .countries p {
@@ -1042,7 +1004,6 @@ footer section h2:not(.social-media > h2) {
     font-size: 1rem;
     border-bottom: 2px solid black;
     padding-block-end: 0.2rem;
-
 }
 
 .countries img {
@@ -1080,7 +1041,6 @@ footer section h2:not(.social-media > h2) {
 
 
 .watches:hover {
-    /* inline-size: 18rem; */
     transform:  scale(1.2);
     box-shadow: 2px 2px 10px rgba(4, 4, 4, 0.2);
     transition: 0.6s all ease-in-out;
@@ -1098,11 +1058,11 @@ footer section h2:not(.social-media > h2) {
 
 /* footer hover */
 
-
 .social-media-links .fa-brands:hover {
     color: var(--hover-primary-color);
     transition: 0.5s all ease-in-out;
 }
+
 .toplayer  p a:hover {
     color: var(--hover-primary-color);
     transition: 0.5s all ease-in-out;
@@ -1114,18 +1074,19 @@ footer ul a:hover:not(.social-media a) {
     border-bottom: 2px solid var(--dark-navy);
 }
 
-hr {
-    display: none;
-}
-
-
 .footer-background {
     display: none;
     block-size: 10rem;
     background-color: var(--dark-navy);
 }
 
+.dropdown-content {
+    display: none;
+}
 
+.fa-angles {
+    display: none;
+}
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
  *              Media Quary!                   *
@@ -1144,29 +1105,67 @@ hr {
         background-position: left -5rem top 5rem;
         background-repeat: no-repeat;
         background-color: rgb(240, 247, 251);
-        /* object-fit: scale-down; */
         box-shadow: 0px 0px 5px 12px #282a2d;
         -moz-box-shadow: 0px 0px 5px 12px #282a2d;
         -webkit-box-shadow: 0px 0px 5px 2px #282a2d;
     }
-    .navbar-links-left {
-        inline-size: 30%;
-        /* background-color: red; */
-    }
-    .navbar-links-left li:not(.images) {
+
+    #navbar-container {
         position: relative;
-        display: none;
-        
+        inline-size: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "logo links-right links-right"
+            "links-left links-left links-left"
+            "links-left links-left links-left";
+        justify-items: center;
+        align-items: start;
+        gap: 0;
+        padding-inline-start: 0;
+            
     }
 
+    .logo,
+    .navbar-links-left {
+        inset-inline-start: 1rem;
+    }
+
+    .logo,
     .navbar-links-right {
-        
-        inline-size: 25%;
-        /* justify-content: flex-end; */
+        position: relative;
+        inset-block: 1rem;
+    }
+
+    .navbar-links-left {
+        display: none;
+        position: absolute;
+        inset-block-end: 0rem;
+        margin-block-start: 0;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        padding-block: 1.5rem;
+        block-size: 100%;
+    }
+
+    .navbar-links-left li{
+        padding-block: 0.5rem;
+        inline-size: 100%;
+    }
+     
+    .navbar-links-left li .links {
+        padding-inline: 0;
+    }
+    
+
+
+    .navbar-links-right {
+        position: relative;
         justify-content: flex-end;
         align-items: center;
-        margin-inline-end: 1rem;
-        padding-inline-end: 0;
+        margin-inline-end: 1.5rem;
+        padding-inline: 0.5rem;
     }
     
     .navbar-links-right li {
@@ -1177,7 +1176,7 @@ hr {
 
     }
 
-    .navbar-links-right li p {
+    .navbar-links-right > li p {
         position: absolute;
         inset-block-start: -1rem;
         inset-inline-start: -4rem;
@@ -1188,12 +1187,6 @@ hr {
     .navbar-links-right #fa-user,
     .navbar-links-right #fa-user .fa {
         display: none;
-    }
-    
-
-    .images {
-        position: absolute;
-        inset-inline-start: 1rem;
     }
 
     .hamburger-menu {
@@ -1209,7 +1202,6 @@ hr {
     }
     .section-1 {
         align-self: flex-end;
-        /* background-color: red; */
     }
 
     .section-1  header h2 {
@@ -1218,7 +1210,6 @@ hr {
 
     .section-1 header p:first-of-type {
         font-size: 1.7rem;
-        
     }
 
     .shop-and-cashback-container .middle {
@@ -1228,13 +1219,18 @@ hr {
     .navbar-product-selection-links {
         inline-size: 100%;
         font-size: 0.5rem;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+        justify-content: space-around;
     }
     
     .navbar-product-selection-links > li:nth-last-of-type(-n+2) {
         display: none;
     }
     .filters {
-        inset-inline-start: -1.6rem;
+        justify-self: flex-start;
+        inset-inline: -3rem;
+        inline-size: 30%;
     }
 
     /* Watches grid reduced to two columns  */
@@ -1259,6 +1255,7 @@ hr {
     .watches {
         block-size: 25rem;
     }
+
     .watches:hover {
         transform: scale(1);
         box-shadow: none;
@@ -1307,117 +1304,115 @@ hr {
 
     /* Accordian set up */
 
-    
    .footer-container {
-    display: flex;
-    flex-direction: column;
-   inline-size: 100%;
-    padding-inline: 0;
-    gap: 0;
+        display: flex;
+        flex-direction: column;
+        inline-size: 100%;
+        padding-inline: 0;
+        gap: 0;
    }
 
    .social-media {
-    margin-block: 2.5rem;
+        margin-block: 2.5rem;
    }
+
    .social-media li a {
-    font-size: 3rem;
+     font-size: 3rem;
    }
 
    section.accordian-container  {
-    margin-block: 0px;
-    line-height: 0;
-    align-items: center;
-    max-inline-size: 100%;
-    gap: 0;
-    border-bottom: 1px solid rgb(208, 208, 208);
+        margin-block: 0px;
+        line-height: 0;
+        align-items: center;
+        max-inline-size: 100%;
+        gap: 0;
+        border-bottom: 1px solid rgb(208, 208, 208);
    }
 
     section.accordian-container > :not(hr) {
-    padding-inline: 1rem;
-    max-inline-size: 100%;
+        padding-inline: 1rem;
+        max-inline-size: 100%;
    }
 
    .support-and-community-container h2.accordian-header {
-    inline-size: calc(100% - 2rem);
+        inline-size: calc(100% - 2rem);
    }
 
    .accordian-container h2.accordian-header {
-    position: relative;
-    color: var(--dark-navy);
-    padding-block: 2rem;
-    margin-block: 0;
-    margin-block-end: -3rem;
-    margin-inline: 0;
-    font-size: 1.005rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    
-    
+        position: relative;
+        color: var(--dark-navy);
+        padding-block: 2rem;
+        margin-block: 0;
+        margin-block-end: -3rem;
+        margin-inline: 0;
+        font-size: 1.005rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;   
    }
 
    .accordian-header::before {
-    content: "\02795";
-    position: absolute;
-    inset-inline-end: 1rem;
-    inset-block-start: 50%;
-    font-size: 1.5rem;
-    transform: translateY(-50%);
-    color: var(--dark-navy);
+        content: "\02795";
+        position: absolute;
+        inset-inline-end: 1rem;
+        inset-block-start: 50%;
+        font-size: 1.5rem;
+        transform: translateY(-50%);
+        color: var(--dark-navy);
    }
 
    .accordian-container.active {
-    background-color: white;
+        background-color: white;
    }
-   
+
    .accordian-content{
-    max-block-size: 0;
-    inline-size: 100%;
-    overflow: hidden;
-    opacity: 0;
+        max-block-size: 0;
+        inline-size: 100%;
+        overflow: hidden;
+        opacity: 0;
    }
   
    .accordian-content.active{
-    max-block-size: 30%;
-    inline-size: 100%;
-    background-color: white;
-    opacity: 1;
-    gap: 0;
-   padding-block-start: 1rem;
+        max-block-size: 30%;
+        inline-size: 100%;
+        background-color: white;
+        opacity: 1;
+        gap: 0;
+        padding-block-start: 1rem;
    }
+
     .accordian-header.active::before {
-    content: "➖";
-    font-size: 1.5rem;
-    font-weight: 800;
-}
+        content: "➖";
+        font-size: 1.5rem;
+        font-weight: 800;
+    }
 
    
 
    .accordian-content.active li a {
-    inline-size: 100%;
-    font-weight: 550;
-    margin-inline-start: 1rem;
-    line-height: 1.8;
-    font-size: 1.1rem;
+        inline-size: 100%;
+        font-weight: 550;
+        margin-inline-start: 1rem;
+        line-height: 1.8;
+        font-size: 1.1rem;
    }
 
    .accordian-content.active li {
-    padding-block: 0.5rem;
+        padding-block: 0.5rem;
    }
 
    .accordian-content.active li a:hover {
-    max-inline-size: 50%;
+        max-inline-size: 50%;
     /* border-bottom: none; */
    }
 
    .accordian.content.active {
-    background-color: white;
-    
+        background-color: white;
    }
 
    .footer-container > section {
-    max-inline-size: 100%;
-    position: relative;
-    padding-inline-start: 1.5rem;
+        max-inline-size: 100%;
+        position: relative;
+        padding-inline-start: 1.5rem;
     
    }
 
@@ -1449,11 +1444,15 @@ hr {
 
     .footer-background {
         display: block;
-    }
+    } 
 }
 
 @media only screen and (max-width: 675px) {
-   
+    
+    .hamburger-menu i.fa-bars {
+            display: inline;
+    }
+
     .product-selection {
         max-inline-size: 100vw;
     }
@@ -1473,29 +1472,28 @@ hr {
     }
 
     .navbar-links-right {
-        gap: 1.5rem;
+        gap: 1rem;
+        gap: 0.8rem;
     }
+
     .images img {
         inline-size: 110px;
         block-size: 40px;
     }
 
     i.fa.fa-cart-plus {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
         margin-inline: 0.5rem;
     }
 
     .navbar-links-right li p {
         position: relative;
-        font-size: 0.9rem;
-        inset-inline-start: 2.5rem;
+        inset-inline-start: 1.5rem;
         inset-block-start: 0rem;
     }
 
     .navbar-links-right .fa-solid {
         font-size: 1.6rem;
-        border: none;
-        z-index: -3;
     }
 
     .section-1-container {
@@ -1524,6 +1522,7 @@ hr {
     .section-1 header h2 + p {
         font-size: 1rem;
     }
+
     .shop-and-cashback-container>div:last-child {
         inline-size: 13rem;
     }
@@ -1543,6 +1542,18 @@ hr {
     .filters {
         inline-size: 50%;
         margin-inline-start: -1rem;
+        /* padding-block: 1rem; */
+    }
+
+    a.all-products-links {
+        position: relative; 
+        inset-inline-end: 1.5rem;
+        justify-self: center;
+        padding-block: 2rem;
+    }
+
+    .navbar-product-selection-links li a:not(.smartwatches):hover {
+        border: none;
     }
 
     .video-player-background {
@@ -1574,7 +1585,6 @@ hr {
 
     .watches .name-and-price h3,
         .watches .name-and-price h3 + p {
-        color: red;
         font-size: 0.8rem;
     }
 
@@ -1587,5 +1597,97 @@ hr {
         margin-inline-start: 0;
         margin-inline-end: 0;
     }
-}
 
+    .dropdown-content {
+        position: relative;
+        inset-block-end: 0.5rem;
+        display: block;
+        margin-block-start: 0;
+        padding-block: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: white;
+        display: none;
+    }
+
+    .dropdown-content li {
+        block-size: 2rem;
+        padding-block: 1rem;
+        margin-block: 0.5rem;
+        font-weight: 600;
+    }
+
+    .dropdown-content li .dropdown-content-links {
+        font-size: 1rem;
+        padding-block: 0.2rem;
+        font-family: var(--header-fonts-family);
+        text-transform: capitalize;
+        opacity: 0.75;
+    }
+
+    .all-products-links label {
+        position: relative;
+        margin-inline-end: 0.5rem;
+        inset-block-end: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .dropdown-content li .dropdown-content-links:hover {
+        opacity: 1;
+        border-bottom: 2px solid var(--secondary-color);
+    }
+
+    .all-products-links .fa-solid {
+        color: red;
+        font-size: 1.5rem;
+    }
+
+    .fa-angles {
+        position: relative;
+        display: inline-flex;
+        inset-block-end: 0.2rem;
+    }
+
+    .fa-angle-down {
+        display: none;
+    }
+
+    .all-products-links .fa-angle-down.show {
+        display: inline;
+    }
+
+    .dropdown-content.show {
+        display: block;
+    }
+
+    .fa-x.show-2 {
+        display: block;
+    }
+    
+}
+/* last */
+@media only screen and (max-width: 375px) {
+    
+    .navbar-links-right {
+        gap: 0.5rem;
+        justify-content: end;
+    }
+
+    .navbar-links-right >li p{
+        justify-self: flex-start;
+        margin-inline-end: 1rem;
+    }
+    
+    .hero-pannel {
+        background-position: left 0rem top 14rem;
+    }
+
+    .shop-and-cashback-container>div:last-child {
+        inline-size: 14rem;
+    }
+
+    .shop-and-cashback-container>div:last-child .shop-now .right {
+        inset-inline-start: 11.5rem;
+    }
+}            
