@@ -1092,6 +1092,44 @@ footer ul a:hover:not(.social-media a) {
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
  *              Media Quary!                   *
  * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
+@media only screen and (min-width: 951px) and (max-width: 1300px) {
+    .navbar-product-selection-links {
+        inline-size: 100%;
+        font-size: clamp(0.8rem);
+    }
+
+    .watch-collection-container {
+        max-inline-size: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        background-color: red;
+        grid-template-areas:
+            "slogan slogan slogan"
+            "watch1 watch2 watch3"
+            "watch4 . ."
+            "iframe iframe iframe";
+    }
+
+    .footer-container {
+        justify-items: center;
+    }
+
+    .countries {
+        justify-self: start;
+        padding-inline: 0;
+    }
+
+    .marketing-container {
+        justify-self: start;
+        inline-size: 100%;
+        margin-inline: 0;
+    }
+
+    
+
+    .social-media {
+        justify-self: start;
+    }
+}
 
 @media only screen and (max-width: 950px) {
     body {
@@ -1464,6 +1502,8 @@ footer ul a:hover:not(.social-media a) {
     }
 
     #navbar-container.show-2 {
+        position: absolute;
+        inset-block: 0;
         block-size: 18rem;
         background-color: white;
         position: sticky;

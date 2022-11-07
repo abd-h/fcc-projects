@@ -225,30 +225,56 @@ function openFullscreen() {
  * +++++++++++++++++++++++++++++++++++++++++++*/
 
 
-let accordianContainer = document.getElementsByClassName("accordian-container"),
+let accordianContainer = document.querySelectorAll(".accordian-container"),
     accordianHeader = document.getElementsByClassName("accordian-header"),
-    accordianContent = document.getElementsByClassName("accordian-content");
-console.log(accordianContainer);
+    accordianContent = document.querySelectorAll(".accordian-content"),
+    footerContainer = document.querySelectorAll(".footer-container")[0];
+console.log(accordianContent);
 
 
-function acc() {
-    for(let i = 0; i < accordianHeader.length; i++) {
-        accordianHeader[i].addEventListener("click", function(e) {
-            let target = e.target;
-            accordianContent[i].classList.toggle("active")
-            if(window.matchMedia("(max-width: 950px)").matches && accordianContent[i].classList.contains("active")) {
-                target.classList.add("active");
-                accordianContent[i].style.opacity = "1";
-                accordianContainer[i].classList.add("active");
-            } else {
-                accordianContent[i].style.opacity = "0";
-                 target.classList.remove("active");
-                 accordianContainer[i].classList.remove("active");
-            }
-        })
-    }
-}
-acc();
+    footerContainer.addEventListener("click", function(e)  {
+        let target = e.target;
+        if(target.classList.contains("accordian-header")) {
+            console.log("its clicked");
+            target.classList.toggle("active");
+            accordianContent.forEach(element => element.style.opacity = "1");
+            accordianContainer.forEach(element => {
+             
+               
+            });
+        } else {
+            accordianContent.forEach(element => element.style.opacity = "0");
+            accordianContainer.forEach(element => element.classList.remove("active"));
+        }
+    })
+
+
+
+
+
+
+
+
+
+// function acc() {
+//     for(let i = 0; i < accordianHeader.length; i++) {
+//         accordianHeader[i].addEventListener("click", function(e) {
+//             let target = e.target;
+//             accordianContent[i].classList.toggle("active")
+//             if(window.matchMedia("(max-width: 950px)").matches && accordianContent[i].classList.contains("active")) {
+//                 target.classList.add("active");
+//                 accordianContent[i].style.opacity = "1";
+//                 accordianContainer[i].classList.add("active");
+//             } else {
+//                 accordianContent[i].style.opacity = "0";
+//                  target.classList.remove("active");
+//                  accordianContainer[i].classList.remove("active");
+//             }
+           
+//         })
+//     }
+// }
+// acc();
 
 
 console.log(window.innerWidth);
@@ -263,8 +289,9 @@ let navbarContainer = document.getElementById("navbar-container"),
 
     console.log(navbarContainer);
 
-    navbarContainer.addEventListener('click', (e) => {
-       
+    navbarContainer.addEventListener('click', (e) => { 
+        // e.stopPropagation();
+        e.preventDefault();
         let target = e.target;
         if(target.classList.contains("fa-bars") && target.classList.contains("fa-solid")) {
             console.log("target found");
@@ -286,7 +313,6 @@ let navbarContainer = document.getElementById("navbar-container"),
             faBars.style.border = "none"
             faX.style.border = "none"
         } 
-      
     });
 
 // Dropdown menu-2
