@@ -1109,6 +1109,11 @@ footer ul a:hover:not(.social-media a) {
             "iframe iframe iframe";
     }
 
+        /* .watches:hover {
+            transform: scale(1);
+            box-shadow: none;
+        }
+         */
     .footer-container {
         justify-items: center;
     }
@@ -1368,7 +1373,7 @@ footer ul a:hover:not(.social-media a) {
         border-bottom: 1px solid rgb(208, 208, 208);
    }
 
-    section.accordian-container > :not(hr) {
+    section.accordian-container > :not(ul) {
         padding-inline: 1rem;
         max-inline-size: 100%;
    }
@@ -1417,6 +1422,7 @@ footer ul a:hover:not(.social-media a) {
         opacity: 1;
         gap: 0;
         padding-block-start: 1rem;
+        
    }
 
     .accordian-header.active::before {
@@ -1664,7 +1670,7 @@ footer ul a:hover:not(.social-media a) {
         block-size: 150px;
     }
 
-    .watch-collection-container .watcheds figure {
+    .watch-collection-container .watches figure {
         margin-inline-start: 0;
         margin-inline-end: 0;
     }

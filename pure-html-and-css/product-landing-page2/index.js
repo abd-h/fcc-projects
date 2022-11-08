@@ -48,14 +48,14 @@ let watch3Options = document.querySelector(".watch-1-option-1"),
         watch4Option4 = document.querySelector(".watch4-chalk-polished-silver"),
         shopNow4 = document.querySelector(".shop-4");
 
-// Optimised Eventlistener
+// addEventListener for watches card.
 
 let watchCards = document.querySelectorAll(".watches");
 console.log(watchCards);
 watchCards.forEach(options => {
     options.addEventListener("mouseenter", function(e) {
     let target = e.target;
-    (window.matchMedia("(min-width: 778px)").matches)?
+    (window.matchMedia("(min-width: 951px)").matches)?
     (target.classList.contains("watch-1")? shopNow1.style.display =   "flex"
     :(target.classList.contains("watch-2"))? shopNow2.style.display = "flex"
     :(target.classList.contains("watch-3"))? shopNow3.style.display = "flex"
@@ -66,7 +66,8 @@ watchCards.forEach(options => {
       shopNow3.style.display = "none",
       shopNow4.style.display = "none");
 })
-})
+});
+
 watchCards.forEach(options => {
     options.addEventListener("mouseleave", function(e) {
     let target = e.target;
@@ -158,7 +159,9 @@ watches.forEach(options => {
             : undefined;
         })
     }
-})
+});
+
+
             /*++++++++++++++++++++++++++++++++++++++++
                             footer
             *++++++++++++++++++++++++++++++++++++++++*/
@@ -232,29 +235,82 @@ let accordianContainer = document.querySelectorAll(".accordian-container"),
 console.log(accordianContent);
 
 
-    footerContainer.addEventListener("click", function(e)  {
+accordianContainer.forEach(element => {
+    element.addEventListener("click", (e) => {
         let target = e.target;
-        if(target.classList.contains("accordian-header")) {
+        if(window.matchMedia("(max-width: 950px)").matches){
+            if(target.classList.contains("acc-h1")) {
+            console.log("this is true:", target);
+            target.classList.toggle("active")
+            accordianContent.forEach(content => {
+                if(content.classList.contains("support-and-community-links")) {
+                    content.classList.toggle("active");
+                    element.classList.toggle("active")
+                    content.style.transition = "max-block-size 3s ease-in";
+                }
+            })
+            } else if(target.classList.contains("acc-h2")) {
+                console.log("this is true:", target);
+                target.classList.toggle("active")
+                accordianContent.forEach(content => {
+                    if(content.classList.contains("legal-container-links")) {
+                        content.classList.toggle("active");
+                        element.classList.toggle("active");
+                    }
+                })
+            } else if(target.classList.contains("acc-h3")) {
+                console.log("this is true:", target);
+                target.classList.toggle("active")
+                accordianContent.forEach(content => {
+                    if(content.classList.contains("partners-container-links")) {
+                        content.classList.toggle("active");
+                        element.classList.toggle("active");
+                    }
+                })
+            } else if(target.classList.contains("acc-h4")) {
+                console.log("this is true:", target);
+                target.classList.toggle("active")
+                accordianContent.forEach(content => {
+                    if(content.classList.contains("company-container-links")) {
+                        content.classList.toggle("active");
+                        element.classList.toggle("active");
+                    }
+                })
+            } else if(target.classList.contains("acc-h5")) {
+                console.log("this is true:", target);
+                target.classList.toggle("active")
+                accordianContent.forEach(content => {
+                    if(content.classList.contains("health-solutions-container-links")) {
+                        content.classList.toggle("active");
+                        element.classList.toggle("active");
+                    }
+                })
+            }
+        }
+    });
+})
+
+
+
+
+
+
+/**
+ *   if(target.classList.contains("accordian-header")) {
             console.log("its clicked");
             target.classList.toggle("active");
             accordianContent.forEach(element => element.style.opacity = "1");
             accordianContainer.forEach(element => {
-             
+              if(element.classList.contains("support-and-community-links")) {
+                element.classList.toggle("active")
+              };
                
             });
         } else {
             accordianContent.forEach(element => element.style.opacity = "0");
             accordianContainer.forEach(element => element.classList.remove("active"));
         }
-    })
-
-
-
-
-
-
-
-
+ */
 
 // function acc() {
 //     for(let i = 0; i < accordianHeader.length; i++) {
