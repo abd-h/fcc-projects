@@ -1371,9 +1371,10 @@ footer ul a:hover:not(.social-media a) {
         max-inline-size: 100%;
         gap: 0;
         border-bottom: 1px solid rgb(208, 208, 208);
+        transition: 0.7s;
    }
 
-    section.accordian-container > :not(ul) {
+    section.accordian-container > :not(hr) {
         padding-inline: 1rem;
         max-inline-size: 100%;
    }
@@ -1385,13 +1386,14 @@ footer ul a:hover:not(.social-media a) {
    .accordian-container h2.accordian-header {
         position: relative;
         color: var(--dark-navy);
-        padding-block: 2rem;
+        padding-block: 2.7rem;
         margin-block: 0;
         margin-block-end: -3rem;
         margin-inline: 0;
         font-size: 1.005rem;
         text-transform: uppercase;
-        letter-spacing: 1.5px;   
+        letter-spacing: 1.5px;  
+        transition: 0.5s; 
    }
 
    .accordian-header::before {
@@ -1409,19 +1411,16 @@ footer ul a:hover:not(.social-media a) {
    }
 
    .accordian-content{
+        gap: 0.1rem;
         max-block-size: 0;
+        padding-block: 0;
         inline-size: 100%;
         overflow: hidden;
-        opacity: 0;
+        transition: max-block-size 0.2s ease-in-out;
    }
   
    .accordian-content.active{
-        max-block-size: 30%;
-        inline-size: 100%;
         background-color: white;
-        opacity: 1;
-        gap: 0;
-        padding-block-start: 1rem;
         
    }
 
@@ -1433,12 +1432,14 @@ footer ul a:hover:not(.social-media a) {
 
    
 
-   .accordian-content.active li a {
+   .accordian-content li {
         inline-size: 100%;
         font-weight: 550;
         margin-inline-start: 1rem;
-        line-height: 1.8;
+        line-height: 1.4;
         font-size: 1.1rem;
+        padding-block: 1.2rem;
+        margin-block: 0.1rem;
    }
 
    .accordian-content.active li {
@@ -1450,9 +1451,10 @@ footer ul a:hover:not(.social-media a) {
     /* border-bottom: none; */
    }
 
-   .accordian.content.active {
+   .accordian-.company-container {
         background-color: white;
    }
+
 
    .footer-container > section {
         max-inline-size: 100%;
@@ -1464,7 +1466,8 @@ footer ul a:hover:not(.social-media a) {
     .countries {
         position: relative;
         justify-content: flex-start;
-        margin-block: 1rem;
+        margin-block: 2rem;
+        padding-block: 3rem;
         inset-inline-start: 1rem;
     }
 

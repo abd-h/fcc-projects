@@ -228,109 +228,38 @@ function openFullscreen() {
  * +++++++++++++++++++++++++++++++++++++++++++*/
 
 
-let accordianContainer = document.querySelectorAll(".accordian-container"),
-    accordianHeader = document.getElementsByClassName("accordian-header"),
-    accordianContent = document.querySelectorAll(".accordian-content"),
-    footerContainer = document.querySelectorAll(".footer-container")[0];
-console.log(accordianContent);
+let accordianHeader = document.querySelectorAll(".accordian-header"),
+    accordianContainer = document.querySelectorAll(".accordian-container");
+console.log(accordianHeader);
 
-
-accordianContainer.forEach(element => {
-    element.addEventListener("click", (e) => {
-        let target = e.target;
-        if(window.matchMedia("(max-width: 950px)").matches){
-            if(target.classList.contains("acc-h1")) {
-            console.log("this is true:", target);
-            target.classList.toggle("active")
-            accordianContent.forEach(content => {
-                if(content.classList.contains("support-and-community-links")) {
-                    content.classList.toggle("active");
-                    element.classList.toggle("active")
-                    content.style.transition = "max-block-size 3s ease-in";
-                }
-            })
-            } else if(target.classList.contains("acc-h2")) {
-                console.log("this is true:", target);
-                target.classList.toggle("active")
-                accordianContent.forEach(content => {
-                    if(content.classList.contains("legal-container-links")) {
-                        content.classList.toggle("active");
-                        element.classList.toggle("active");
-                    }
-                })
-            } else if(target.classList.contains("acc-h3")) {
-                console.log("this is true:", target);
-                target.classList.toggle("active")
-                accordianContent.forEach(content => {
-                    if(content.classList.contains("partners-container-links")) {
-                        content.classList.toggle("active");
-                        element.classList.toggle("active");
-                    }
-                })
-            } else if(target.classList.contains("acc-h4")) {
-                console.log("this is true:", target);
-                target.classList.toggle("active")
-                accordianContent.forEach(content => {
-                    if(content.classList.contains("company-container-links")) {
-                        content.classList.toggle("active");
-                        element.classList.toggle("active");
-                    }
-                })
-            } else if(target.classList.contains("acc-h5")) {
-                console.log("this is true:", target);
-                target.classList.toggle("active")
-                accordianContent.forEach(content => {
-                    if(content.classList.contains("health-solutions-container-links")) {
-                        content.classList.toggle("active");
-                        element.classList.toggle("active");
-                    }
-                })
+function accordian(element) {
+    for(let i = 0; i < element.length; i++) {
+        element[i].addEventListener("click", function(e){
+            e.preventDefault();
+            this.classList.toggle("active");
+            let accordianContent = this.nextElementSibling;
+            console.log(accordianContent);
+            if(accordianContent.style.maxHeight) {
+                accordianContent.style.maxHeight = null;
+                 accordianContent.style.backgroundColor = "none"
+                  accordianContainer[i].classList.remove("active")
+            } else {
+                accordianContent.style.maxHeight = `${accordianContent.scrollHeight}px`;
+                accordianContainer[i].classList.add("active")
             }
-        }
-    });
-})
+        })
+    }
+}
+accordian(accordianHeader)
 
 
 
 
 
 
-/**
- *   if(target.classList.contains("accordian-header")) {
-            console.log("its clicked");
-            target.classList.toggle("active");
-            accordianContent.forEach(element => element.style.opacity = "1");
-            accordianContainer.forEach(element => {
-              if(element.classList.contains("support-and-community-links")) {
-                element.classList.toggle("active")
-              };
-               
-            });
-        } else {
-            accordianContent.forEach(element => element.style.opacity = "0");
-            accordianContainer.forEach(element => element.classList.remove("active"));
-        }
- */
 
-// function acc() {
-//     for(let i = 0; i < accordianHeader.length; i++) {
-//         accordianHeader[i].addEventListener("click", function(e) {
-//             let target = e.target;
-//             accordianContent[i].classList.toggle("active")
-//             if(window.matchMedia("(max-width: 950px)").matches && accordianContent[i].classList.contains("active")) {
-//                 target.classList.add("active");
-//                 accordianContent[i].style.opacity = "1";
-//                 accordianContainer[i].classList.add("active");
-//             } else {
-//                 accordianContent[i].style.opacity = "0";
-//                  target.classList.remove("active");
-//                  accordianContainer[i].classList.remove("active");
-//             }
-           
-//         })
-//     }
-// }
-// acc();
+
+
 
 
 console.log(window.innerWidth);
