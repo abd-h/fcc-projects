@@ -16,7 +16,7 @@
     --sale-red: rgba(159, 0, 0, 0.8);
 
     /* background-image */
-    --body-background-img: url("images/smartwatches-versa4-sense2-fall22.jpeg");
+    --body-background-img: url("images/meet-the-new-crew/all-products-inspire3-sense2-pixel-fall22-tablet.jpeg");
 
     /* font-family */
     --header-fonts-family: neuzeit-grotesk, sans-serif;
@@ -80,11 +80,12 @@ body::-webkit-scrollbar-thumb {
 }
 .hero-pannel {
     background: var(--body-background-img);
-    background-position: 100% 2rem;
+    background-position: 0rem -10rem;
     background-repeat: no-repeat;
-    background-size: contain;
-    block-size: 52rem;
+    background-size: cover;
+    block-size: fit-content;
 }
+
 
 a {
     text-decoration: none;
@@ -1092,7 +1093,14 @@ footer ul a:hover:not(.social-media a) {
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
  *              Media Quary!                   *
  * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>****/
+
 @media only screen and (min-width: 951px) and (max-width: 1300px) {
+    .hero-pannel {
+    background-position: 0rem 5rem;
+    background-size: cover;
+    background-color: var(--light-background);
+    }
+
     .navbar-product-selection-links {
         inline-size: 100%;
         font-size: clamp(0.8rem);
@@ -1101,7 +1109,6 @@ footer ul a:hover:not(.social-media a) {
     .watch-collection-container {
         max-inline-size: 100%;
         grid-template-columns: repeat(3, 1fr);
-        background-color: red;
         grid-template-areas:
             "slogan slogan slogan"
             "watch1 watch2 watch3"
@@ -1144,9 +1151,9 @@ footer ul a:hover:not(.social-media a) {
 
     .hero-pannel {
         max-inline-size: 100%;
-        background-size: 90%;
+        background-size: 100%;
         block-size: 50rem;
-        background-position: left -5rem top 5rem;
+        background-position: 0rem 0rem;
         background-repeat: no-repeat;
         background-color: rgb(240, 247, 251);
         box-shadow: 0px 0px 5px 12px #282a2d;
@@ -1416,7 +1423,7 @@ footer ul a:hover:not(.social-media a) {
         padding-block: 0;
         inline-size: 100%;
         overflow: hidden;
-        transition: max-block-size 0.2s ease-in-out;
+        transition: max-block-size 0.3s ease-in;
    }
   
    .accordian-content.active{
@@ -1548,7 +1555,8 @@ footer ul a:hover:not(.social-media a) {
     } 
 
     .hero-pannel {
-        background-position: left 0rem top 12rem;
+        background-position:  0rem 3rem;
+        background-size: 100%;
     }
 
     .navbar-links-right {
@@ -1779,7 +1787,7 @@ footer ul a:hover:not(.social-media a) {
     }
     
     .hero-pannel {
-        background-position: left 0rem top 14rem;
+        background-position: left 0rem top 10rem;
     }
 
     .shop-and-cashback-container>div:last-child {
