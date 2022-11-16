@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+.section-1-3-container {
+    max-inline-size: 1000px;
+    position: relative;
+    margin-block: auto;
+    margin-inline: auto;
+    background-color: aqua;
+}
+
+.section-1, 
+.section-2,
+.section-3 {
+    position: relative;
+    /* display: none; */
+}
+
